@@ -60,41 +60,53 @@
 
     /* ── HERO ── */
     #hero {
-      background: var(--main-light);
-      padding: 80px 24px;
-      text-align: center;
+      background: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 8vw;
       border-bottom: 1px solid var(--border);
+      position: relative;
     }
-    .hero-label {
-      display: inline-block;
-      background: var(--main);
-      color: #fff;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 6px 20px;
-      border-radius: 2px;
-      margin-bottom: 24px;
-      letter-spacing: .05em;
-    }
-    .hero-title {
-      font-size: clamp(28px, 5vw, 52px);
+    .hero-main {
+      font-size: clamp(56px, 12vw, 160px);
       font-weight: 900;
-      line-height: 1.4;
-      margin-bottom: 20px;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
       color: var(--text);
+      margin-bottom: 48px;
     }
-    .hero-title span { color: var(--main); }
+    .hero-main span { color: var(--main); }
     .hero-sub {
-      font-size: 18px;
+      font-size: clamp(15px, 1.8vw, 20px);
       color: var(--sub);
-      max-width: 600px;
-      margin: 0 auto 40px;
+      max-width: 480px;
       line-height: 1.9;
+      margin-bottom: 48px;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 8vw;
+      font-size: 12px;
+      letter-spacing: .15em;
+      color: var(--sub);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: var(--sub);
     }
     .hero-cta {
       display: flex;
       gap: 16px;
-      justify-content: center;
       flex-wrap: wrap;
     }
     .btn-primary {
@@ -364,19 +376,18 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-label">板橋区発 SNSマーケティング会社</div>
-  <h1 class="hero-title">
-    SNSを活用して、<br />
-    <span>お客様を増やしませんか？</span>
-  </h1>
-  <p class="hero-sub">
-    Instagram・TikTok運用代行から、動画制作、TikTok Shopの参入支援まで。<br />
-    中小企業・店舗の集客・売上アップを丁寧にサポートします。
-  </p>
-  <div class="hero-cta">
-    <a href="#cta" class="btn-primary">無料で相談する</a>
-    <a href="#services" class="btn-outline">サービスを見る</a>
+  <div>
+    <h1 class="hero-main">SNSを、<br /><span>売上に。</span></h1>
+    <p class="hero-sub">
+      Instagram・TikTok運用代行、動画制作、TikTok Shop参入支援。<br />
+      板橋区発の4人チームが、中小企業・店舗の集客を支援します。
+    </p>
+    <div class="hero-cta">
+      <a href="#cta" class="btn-primary">無料で相談する</a>
+      <a href="#services" class="btn-outline">サービスを見る</a>
+    </div>
   </div>
+  <div class="hero-scroll">SCROLL</div>
 </section>
 
 <!-- STATS -->
