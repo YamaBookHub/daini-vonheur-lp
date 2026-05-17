@@ -33,66 +33,104 @@
 
     /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
+      position: fixed;
+      top: 0; left: 0; right: 0;
       z-index: 100;
-      background: #fff;
-      border-bottom: 2px solid var(--main);
+      background: transparent;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 40px;
+      padding: 28px 8vw;
+    }
+    nav.scrolled {
+      background: #111;
+      padding: 16px 8vw;
+      transition: all .3s;
     }
     .nav-logo {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 900;
-      color: var(--main);
+      color: #fff;
+      letter-spacing: .05em;
     }
     nav a.cta-btn {
-      background: var(--main);
+      background: #f97316;
       color: #fff;
-      padding: 12px 28px;
-      border-radius: 4px;
-      font-size: 15px;
+      padding: 10px 24px;
+      border-radius: 0;
+      font-size: 14px;
       font-weight: 700;
       text-decoration: none;
+      letter-spacing: .05em;
     }
 
     /* ── HERO ── */
     #hero {
-      background: #fff;
+      background: #111;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: flex-start;
-      padding: 0 8vw;
-      border-bottom: 1px solid var(--border);
+      padding: 0 8vw 80px;
       position: relative;
+      overflow: hidden;
     }
     .hero-main {
-      font-size: clamp(56px, 12vw, 160px);
+      font-size: clamp(52px, 11vw, 148px);
       font-weight: 900;
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      color: var(--text);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+    .hero-main em {
+      font-style: normal;
+      color: #f97316;
+    }
+    .hero-sub {
+      font-size: clamp(14px, 1.6vw, 18px);
+      color: rgba(255,255,255,0.55);
+      max-width: 440px;
+      line-height: 2.0;
       margin-bottom: 48px;
     }
-    .hero-main span { color: var(--main); }
-    .hero-sub {
-      font-size: clamp(15px, 1.8vw, 20px);
-      color: var(--sub);
-      max-width: 480px;
-      line-height: 1.9;
-      margin-bottom: 48px;
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #f97316;
+      color: #fff;
+      padding: 18px 48px;
+      border-radius: 0;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: .05em;
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 18px 40px;
+      border-radius: 0;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: .05em;
     }
     .hero-scroll {
       position: absolute;
       bottom: 40px;
-      left: 8vw;
-      font-size: 12px;
-      letter-spacing: .15em;
-      color: var(--sub);
+      right: 8vw;
+      font-size: 11px;
+      letter-spacing: .2em;
+      color: rgba(255,255,255,0.35);
+      writing-mode: vertical-rl;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -100,14 +138,17 @@
     .hero-scroll::after {
       content: '';
       display: block;
-      width: 60px;
-      height: 1px;
-      background: var(--sub);
+      width: 1px;
+      height: 60px;
+      background: rgba(255,255,255,0.25);
     }
-    .hero-cta {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+    .hero-label-top {
+      position: absolute;
+      top: 40px;
+      left: 8vw;
+      font-size: 12px;
+      letter-spacing: .15em;
+      color: rgba(255,255,255,0.35);
     }
     .btn-primary {
       background: var(--main);
@@ -376,11 +417,14 @@
 
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-label-top">SNS MARKETING AGENCY / ITABASHI, TOKYO</div>
   <div>
-    <h1 class="hero-main">SNSを、<br /><span>売上に。</span></h1>
+    <h1 class="hero-main">
+      SNSで、<br />売上を<em>動かせ。</em>
+    </h1>
     <p class="hero-sub">
       Instagram・TikTok運用代行、動画制作、TikTok Shop参入支援。<br />
-      板橋区発の4人チームが、中小企業・店舗の集客を支援します。
+      板橋区発の4人チームが、中小企業・店舗の売上に直結するSNS戦略を実行します。
     </p>
     <div class="hero-cta">
       <a href="#cta" class="btn-primary">無料で相談する</a>
@@ -608,5 +652,10 @@
   <p style="margin-top:8px;">© 2026 第弐ヴォヌール. All rights reserved.</p>
 </footer>
 
+<script>
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 80);
+  });
+</script>
 </body>
 </html>
