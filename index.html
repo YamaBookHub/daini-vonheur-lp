@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>第弐ヴォヌール｜SNS運用・動画制作・TikTok Shop支援</title>
-  <meta name="description" content="Instagram・TikTok運用代行、動画制作、TikTok Shop参入支援。板橋区の中小企業・店舗向けSNSマーケティング会社。" />
+  <meta name="description" content="Instagram/TikTok運用代行、Makuake運用、TikTok LIVE、TikTok Shop、動画撮影・編集・台本制作。板橋区発のSNSマーケティングチーム。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
@@ -12,23 +12,25 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --main: #2563eb;
-      --main-light: #eff6ff;
-      --text: #1a1a1a;
-      --sub: #555;
-      --border: #e5e7eb;
-      --bg: #ffffff;
-      --bg2: #f8fafc;
+      --black: #111;
+      --white: #fff;
+      --orange: #f97316;
+      --gray: rgba(255,255,255,0.45);
+      --border: rgba(255,255,255,0.1);
+      --bg2: #1a1a1a;
+      --text-dark: #1a1a1a;
+      --sub-dark: #555;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: var(--black);
+      color: var(--white);
       line-height: 1.8;
       font-size: 16px;
+      overflow-x: hidden;
     }
 
     /* ── NAV ── */
@@ -36,28 +38,27 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: transparent;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 28px 8vw;
+      transition: background .3s, padding .3s;
     }
     nav.scrolled {
-      background: #111;
+      background: var(--black);
       padding: 16px 8vw;
-      transition: all .3s;
+      border-bottom: 1px solid var(--border);
     }
     .nav-logo {
       font-size: 18px;
       font-weight: 900;
-      color: #fff;
+      color: var(--white);
       letter-spacing: .05em;
     }
     nav a.cta-btn {
-      background: #f97316;
+      background: var(--orange);
       color: #fff;
       padding: 10px 24px;
-      border-radius: 0;
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
@@ -66,7 +67,7 @@
 
     /* ── HERO ── */
     #hero {
-      background: #111;
+      background: var(--black);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -76,21 +77,29 @@
       position: relative;
       overflow: hidden;
     }
+    .hero-label-top {
+      position: absolute;
+      top: 120px;
+      left: 8vw;
+      font-size: 11px;
+      letter-spacing: .2em;
+      color: var(--gray);
+    }
     .hero-main {
       font-size: clamp(52px, 11vw, 148px);
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -0.02em;
-      color: #fff;
+      color: var(--white);
       margin-bottom: 40px;
     }
     .hero-main em {
       font-style: normal;
-      color: #f97316;
+      color: var(--orange);
     }
     .hero-sub {
       font-size: clamp(14px, 1.6vw, 18px);
-      color: rgba(255,255,255,0.55);
+      color: var(--gray);
       max-width: 440px;
       line-height: 2.0;
       margin-bottom: 48px;
@@ -101,23 +110,21 @@
       flex-wrap: wrap;
     }
     .btn-primary {
-      background: #f97316;
+      background: var(--orange);
       color: #fff;
       padding: 18px 48px;
-      border-radius: 0;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       text-decoration: none;
       display: inline-block;
       letter-spacing: .05em;
     }
-    .btn-outline {
+    .btn-ghost {
       background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
       padding: 18px 40px;
-      border-radius: 0;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       text-decoration: none;
       display: inline-block;
@@ -129,7 +136,7 @@
       right: 8vw;
       font-size: 11px;
       letter-spacing: .2em;
-      color: rgba(255,255,255,0.35);
+      color: var(--gray);
       writing-mode: vertical-rl;
       display: flex;
       align-items: center;
@@ -140,277 +147,290 @@
       display: block;
       width: 1px;
       height: 60px;
-      background: rgba(255,255,255,0.25);
-    }
-    .hero-label-top {
-      position: absolute;
-      top: 40px;
-      left: 8vw;
-      font-size: 12px;
-      letter-spacing: .15em;
-      color: rgba(255,255,255,0.35);
-    }
-    .btn-primary {
-      background: var(--main);
-      color: #fff;
-      padding: 18px 48px;
-      border-radius: 4px;
-      font-size: 18px;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-outline {
-      background: #fff;
-      color: var(--main);
-      border: 2px solid var(--main);
-      padding: 16px 40px;
-      border-radius: 4px;
-      font-size: 18px;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
+      background: rgba(255,255,255,0.2);
     }
 
-    /* ── STATS ── */
-    #stats {
-      background: var(--main);
-      padding: 60px 24px;
+    /* ── CONCEPT ── */
+    #concept {
+      background: var(--orange);
+      padding: 100px 8vw;
     }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 40px;
+    .concept-inner {
       max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
     }
-    .stat-num {
-      font-size: clamp(36px, 5vw, 56px);
+    .concept-label {
+      font-size: 11px;
+      letter-spacing: .2em;
+      color: rgba(0,0,0,0.5);
+      margin-bottom: 32px;
+    }
+    .concept-title {
+      font-size: clamp(28px, 5vw, 56px);
       font-weight: 900;
+      line-height: 1.3;
       color: #fff;
-      line-height: 1;
+      margin-bottom: 32px;
+      letter-spacing: -0.01em;
     }
-    .stat-label {
-      font-size: 15px;
-      color: rgba(255,255,255,0.8);
-      margin-top: 8px;
+    .concept-body {
+      font-size: clamp(15px, 1.6vw, 18px);
+      color: rgba(255,255,255,0.85);
+      line-height: 2.1;
+      max-width: 640px;
     }
 
-    /* ── SECTION COMMON ── */
-    section { padding: 80px 24px; }
-    .container { max-width: 1000px; margin: 0 auto; }
+    /* ── SERVICE ── */
+    #service {
+      background: var(--black);
+      padding: 100px 8vw;
+    }
     .section-label {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--main);
-      letter-spacing: .1em;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-    .section-title {
-      font-size: clamp(24px, 3.5vw, 38px);
-      font-weight: 900;
-      line-height: 1.4;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-    .section-sub {
-      font-size: 16px;
-      color: var(--sub);
-      max-width: 560px;
-      margin-bottom: 48px;
-      line-height: 1.9;
-    }
-    .divider {
-      width: 48px;
-      height: 4px;
-      background: var(--main);
-      margin: 16px 0 40px;
-      border-radius: 2px;
-    }
-
-    /* ── PROBLEMS ── */
-    #problems { background: var(--bg2); }
-    .problem-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-    .problem-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--main);
-      border-radius: 4px;
-      padding: 28px 24px;
-    }
-    .problem-card h3 {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
-    .problem-card p {
-      font-size: 15px;
-      color: var(--sub);
-      line-height: 1.8;
-    }
-
-    /* ── SERVICES ── */
-    #services { background: #fff; }
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-    .service-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 36px 28px;
-    }
-    .service-card.featured {
-      border: 2px solid var(--main);
-    }
-    .service-badge {
-      display: inline-block;
-      background: var(--main);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 3px 12px;
-      border-radius: 2px;
+      font-size: 11px;
+      letter-spacing: .2em;
+      color: var(--orange);
       margin-bottom: 16px;
     }
-    .service-icon { font-size: 40px; margin-bottom: 16px; display: block; }
-    .service-card h3 {
-      font-size: 20px;
+    .section-title {
+      font-size: clamp(28px, 4vw, 48px);
       font-weight: 900;
-      margin-bottom: 12px;
-      color: var(--text);
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 64px;
+      letter-spacing: -0.01em;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2px;
+      background: var(--border);
+    }
+    .service-card {
+      background: var(--black);
+      padding: 48px 40px;
+      transition: background .2s;
+      cursor: default;
+    }
+    .service-card:hover { background: var(--bg2); }
+    .service-num {
+      font-size: 11px;
+      letter-spacing: .2em;
+      color: var(--orange);
+      margin-bottom: 24px;
+    }
+    .service-card h3 {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.3;
     }
     .service-card p {
-      font-size: 15px;
-      color: var(--sub);
+      font-size: 14px;
+      color: var(--gray);
       line-height: 1.9;
     }
     .service-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 20px;
+      margin-top: 24px;
     }
     .service-tag {
-      font-size: 13px;
-      background: var(--main-light);
-      color: var(--main);
-      border-radius: 2px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.15);
       padding: 4px 12px;
-      font-weight: 500;
+      letter-spacing: .05em;
     }
 
-    /* ── TARGETS ── */
-    #targets { background: var(--bg2); }
-    .target-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      max-width: 680px;
+    /* ── FOR ── */
+    #for {
+      background: var(--bg2);
+      padding: 100px 8vw;
     }
-    .target-item {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    .for-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      background: rgba(255,255,255,0.06);
+      margin-top: 64px;
     }
-    .target-icon { font-size: 32px; flex-shrink: 0; }
-    .target-item h4 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-    .target-item p { font-size: 14px; color: var(--sub); }
+    .for-card {
+      background: var(--bg2);
+      padding: 40px 32px;
+    }
+    .for-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .for-card p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.9;
+    }
+    .for-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+      display: block;
+    }
 
     /* ── FLOW ── */
-    #flow { background: #fff; }
-    .flow-steps {
+    #flow {
+      background: var(--black);
+      padding: 100px 8vw;
+    }
+    .flow-list {
       display: flex;
       flex-direction: column;
       gap: 0;
-      max-width: 640px;
+      max-width: 680px;
+      margin-top: 64px;
     }
-    .flow-step {
+    .flow-item {
       display: flex;
-      gap: 24px;
+      gap: 32px;
+      padding-bottom: 48px;
       position: relative;
     }
-    .flow-step:not(:last-child)::before {
+    .flow-item:not(:last-child)::before {
       content: '';
       position: absolute;
       left: 19px;
-      top: 48px;
-      bottom: -8px;
-      width: 2px;
+      top: 44px;
+      bottom: 0;
+      width: 1px;
       background: var(--border);
     }
     .flow-num {
       width: 40px;
       height: 40px;
       min-width: 40px;
-      background: var(--main);
-      color: #fff;
-      border-radius: 50%;
+      border: 1px solid var(--orange);
+      color: var(--orange);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
-      font-weight: 900;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .05em;
       flex-shrink: 0;
     }
-    .flow-content { padding-bottom: 36px; }
-    .flow-content h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-    .flow-content p { font-size: 15px; color: var(--sub); }
+    .flow-item h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+    .flow-item p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.9;
+    }
 
     /* ── CTA ── */
     #cta {
-      background: var(--main-light);
-      text-align: center;
-      padding: 100px 24px;
-      border-top: 1px solid var(--border);
+      background: var(--white);
+      padding: 120px 8vw;
     }
-    #cta .section-title { margin-bottom: 16px; }
-    #cta .section-sub { margin: 0 auto 40px; }
-    .cta-note { font-size: 14px; color: var(--sub); margin-top: 16px; }
+    .cta-inner {
+      max-width: 800px;
+    }
+    .cta-label {
+      font-size: 11px;
+      letter-spacing: .2em;
+      color: var(--orange);
+      margin-bottom: 24px;
+    }
+    .cta-title {
+      font-size: clamp(32px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .cta-sub {
+      font-size: 16px;
+      color: var(--sub-dark);
+      line-height: 2.0;
+      margin-bottom: 48px;
+      max-width: 520px;
+    }
+    .btn-cta {
+      background: var(--orange);
+      color: #fff;
+      padding: 22px 64px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: .05em;
+    }
+    .cta-note {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 20px;
+    }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--text);
-      color: rgba(255,255,255,0.7);
-      padding: 40px 24px;
-      text-align: center;
-      font-size: 14px;
+      background: #0a0a0a;
+      padding: 60px 8vw 40px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 32px;
     }
     .footer-logo {
       font-size: 20px;
       font-weight: 900;
-      color: #fff;
-      margin-bottom: 12px;
+      color: var(--white);
+      letter-spacing: .05em;
     }
-    footer p { margin-top: 6px; }
+    .footer-info {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 2.0;
+    }
+    .footer-nav {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .footer-nav a {
+      font-size: 13px;
+      color: var(--gray);
+      text-decoration: none;
+      letter-spacing: .05em;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: .05em;
+    }
 
-    /* ── MOBILE ── */
-    @media (max-width: 600px) {
-      nav { padding: 14px 20px; }
-      .nav-logo { font-size: 16px; }
-      nav a.cta-btn { padding: 10px 16px; font-size: 14px; }
-      section { padding: 60px 20px; }
-      .hero-sub { font-size: 16px; }
+    @media (max-width: 640px) {
+      nav { padding: 20px 6vw; }
+      nav.scrolled { padding: 14px 6vw; }
+      #hero, #concept, #service, #for, #flow, #cta, footer { padding-left: 6vw; padding-right: 6vw; }
+      .footer-top { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="nav">
   <div class="nav-logo">第弐ヴォヌール</div>
   <a href="#cta" class="cta-btn">無料相談する</a>
 </nav>
@@ -423,207 +443,163 @@
       SNSで、<br />売上を<em>動かせ。</em>
     </h1>
     <p class="hero-sub">
-      Instagram・TikTok運用代行、動画制作、TikTok Shop参入支援。<br />
-      板橋区発の4人チームが、中小企業・店舗の売上に直結するSNS戦略を実行します。
+      Instagram・TikTok運用代行から、TikTok Shop参入、動画制作まで。<br />
+      板橋区発の4人チームが、売上に直結するSNS戦略を実行します。
     </p>
     <div class="hero-cta">
       <a href="#cta" class="btn-primary">無料で相談する</a>
-      <a href="#services" class="btn-outline">サービスを見る</a>
+      <a href="#service" class="btn-ghost">サービスを見る</a>
     </div>
   </div>
   <div class="hero-scroll">SCROLL</div>
 </section>
 
-<!-- STATS -->
-<section id="stats">
-  <div class="stats-grid">
-    <div>
-      <div class="stat-num">30社以上</div>
-      <div class="stat-label">支援実績</div>
-    </div>
-    <div>
-      <div class="stat-num">10万人超</div>
-      <div class="stat-label">フォロワー獲得支援</div>
-    </div>
-    <div>
-      <div class="stat-num">最短2週間</div>
-      <div class="stat-label">運用開始まで</div>
-    </div>
-    <div>
-      <div class="stat-num">4名</div>
-      <div class="stat-label">専任チーム</div>
-    </div>
+<!-- CONCEPT -->
+<section id="concept">
+  <div class="concept-inner">
+    <div class="concept-label">CONCEPT</div>
+    <h2 class="concept-title">
+      4人だから、<br />全員が本気で動く。
+    </h2>
+    <p class="concept-body">
+      大手代理店のように担当者が変わることも、下請けに丸投げすることもありません。
+      私たちは4人全員がクライアントのSNSに向き合い、戦略から実行・改善まで一気通貫で動きます。
+      小さいチームだからこそ、フットワークが速く、成果に直結する動きができる。
+      それが第弐ヴォヌールの強みです。
+    </p>
   </div>
 </section>
 
-<!-- PROBLEMS -->
-<section id="problems">
-  <div class="container">
-    <div class="section-label">Problem</div>
-    <h2 class="section-title">こんなお悩みはありませんか？</h2>
-    <div class="divider"></div>
-    <div class="problem-grid">
-      <div class="problem-card">
-        <h3>SNSを始めたが<br />フォロワーが増えない</h3>
-        <p>投稿しても反応がなく、何が悪いのかわからない。時間だけが過ぎてしまっている。</p>
-      </div>
-      <div class="problem-card">
-        <h3>動画を作りたいが<br />やり方がわからない</h3>
-        <p>リール・TikTok動画の作り方がわからず、社内で対応できる人もいない。</p>
-      </div>
-      <div class="problem-card">
-        <h3>TikTok Shopが気になるが<br />参入方法がわからない</h3>
-        <p>ネット販売をしているがTikTok Shopは未対応。始め方がわからず後回しになっている。</p>
-      </div>
-      <div class="problem-card">
-        <h3>SNSに時間を使っているが<br />売上につながらない</h3>
-        <p>投稿は続けているが、実際に問い合わせや来店・購入につながっているか不明。</p>
+<!-- SERVICE -->
+<section id="service">
+  <div class="section-label">SERVICE</div>
+  <h2 class="section-title">できること、全部やる。</h2>
+  <div class="service-grid">
+
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3>Instagram / TikTok<br />運用代行</h3>
+      <p>アカウント設計から投稿・ストーリー・リール動画の制作・投稿まで一括代行。数値を見ながら改善を繰り返します。</p>
+      <div class="service-tags">
+        <span class="service-tag">投稿作成</span>
+        <span class="service-tag">ストーリー</span>
+        <span class="service-tag">リール</span>
+        <span class="service-tag">分析・改善</span>
       </div>
     </div>
+
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3>TikTok Shop<br />参入支援</h3>
+      <p>EC事業者向けにTikTok Shopのアカウント開設から商品登録・ライブ販売・広告運用まで支援します。</p>
+      <div class="service-tags">
+        <span class="service-tag">アカウント開設</span>
+        <span class="service-tag">商品登録</span>
+        <span class="service-tag">広告運用</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3>TikTok LIVE<br />運用</h3>
+      <p>TikTokライブ配信の企画・運営・進行をサポート。ライブコマースや認知拡大に活用できます。</p>
+      <div class="service-tags">
+        <span class="service-tag">配信企画</span>
+        <span class="service-tag">進行サポート</span>
+        <span class="service-tag">ライブコマース</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <h3>Makuake<br />運用支援</h3>
+      <p>クラウドファンディング掲載中・掲載後の認知拡大をSNSで支援。プロジェクトの勢いをSNSで加速させます。</p>
+      <div class="service-tags">
+        <span class="service-tag">認知拡大</span>
+        <span class="service-tag">SNS連動</span>
+        <span class="service-tag">動画制作</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <h3>動画撮影・編集<br />台本制作</h3>
+      <p>採用動画・CM動画・商品PR動画など、企画・台本・撮影・編集までワンストップで対応。単発依頼も歓迎です。</p>
+      <div class="service-tags">
+        <span class="service-tag">台本制作</span>
+        <span class="service-tag">撮影</span>
+        <span class="service-tag">編集</span>
+        <span class="service-tag">採用動画</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="section-label">Services</div>
-    <h2 class="section-title">サービス内容</h2>
-    <p class="section-sub">企画から運用・動画制作・販売まで、すべてワンストップで対応します。</p>
-    <div class="service-grid">
-
-      <div class="service-card featured">
-        <div class="service-badge">人気 No.1</div>
-        <span class="service-icon">📱</span>
-        <h3>Instagram / TikTok<br />運用代行</h3>
-        <p>アカウントの設計から、投稿・ストーリー・リール動画の制作・投稿まで一括でお任せいただけます。</p>
-        <div class="service-tags">
-          <span class="service-tag">投稿作成</span>
-          <span class="service-tag">ストーリー</span>
-          <span class="service-tag">リール動画</span>
-          <span class="service-tag">月次レポート</span>
-        </div>
-      </div>
-
-      <div class="service-card featured">
-        <div class="service-badge">注目サービス</div>
-        <span class="service-icon">🛍️</span>
-        <h3>TikTok Shop<br />参入支援</h3>
-        <p>EC事業者向けにTikTok Shopのアカウント開設から商品登録・ライブ配信・広告運用まで対応します。</p>
-        <div class="service-tags">
-          <span class="service-tag">アカウント開設</span>
-          <span class="service-tag">商品登録</span>
-          <span class="service-tag">ライブ販売</span>
-          <span class="service-tag">広告運用</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">🎥</span>
-        <h3>採用動画 / CM動画<br />制作</h3>
-        <p>会社紹介・採用・商品PRに使える動画を、企画から撮影・編集まで対応します。単発のご依頼もOKです。</p>
-        <div class="service-tags">
-          <span class="service-tag">採用動画</span>
-          <span class="service-tag">CM動画</span>
-          <span class="service-tag">企画・台本</span>
-          <span class="service-tag">撮影・編集</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">🌐</span>
-        <h3>ホームページ<br />制作</h3>
-        <p>SNSと連動したホームページ・ランディングページを制作します。Google Mapからの集客にも対応します。</p>
-        <div class="service-tags">
-          <span class="service-tag">LP制作</span>
-          <span class="service-tag">HP制作</span>
-          <span class="service-tag">集客設計</span>
-        </div>
-      </div>
-
+<!-- FOR -->
+<section id="for">
+  <div class="section-label">FOR WHOM</div>
+  <h2 class="section-title">こんな方へ。</h2>
+  <div class="for-grid">
+    <div class="for-card">
+      <span class="for-icon">🏪</span>
+      <h4>中小企業・店舗オーナー</h4>
+      <p>Instagram・TikTokで集客を強化したい飲食・美容・小売などの事業者</p>
     </div>
-  </div>
-</section>
-
-<!-- TARGETS -->
-<section id="targets">
-  <div class="container">
-    <div class="section-label">For Whom</div>
-    <h2 class="section-title">こんな方に選ばれています</h2>
-    <div class="divider"></div>
-    <div class="target-list">
-      <div class="target-item">
-        <div class="target-icon">🏪</div>
-        <div>
-          <h4>中小企業・店舗オーナー</h4>
-          <p>Instagram・TikTokでの集客を強化したい飲食・美容・小売などの事業者様</p>
-        </div>
-      </div>
-      <div class="target-item">
-        <div class="target-icon">📦</div>
-        <div>
-          <h4>EC事業者</h4>
-          <p>TikTok Shopへの参入を検討中、またはSNS経由の販売を伸ばしたい方</p>
-        </div>
-      </div>
-      <div class="target-item">
-        <div class="target-icon">🚀</div>
-        <div>
-          <h4>Makuake出品者</h4>
-          <p>クラウドファンディング後の認知拡大・ファン獲得にSNSを活用したい方</p>
-        </div>
-      </div>
-      <div class="target-item">
-        <div class="target-icon">👥</div>
-        <div>
-          <h4>採用を強化したい企業</h4>
-          <p>採用動画やSNS採用で若い世代へのアプローチを始めたい会社様</p>
-        </div>
-      </div>
-      <div class="target-item">
-        <div class="target-icon">🏥</div>
-        <div>
-          <h4>介護・医療系施設</h4>
-          <p>Instagramを活用して採用・地域への信頼づくりを進めたい施設・クリニック</p>
-        </div>
-      </div>
+    <div class="for-card">
+      <span class="for-icon">📦</span>
+      <h4>EC事業者</h4>
+      <p>TikTok Shopへの参入を検討中、またはSNS経由の売上を伸ばしたい方</p>
+    </div>
+    <div class="for-card">
+      <span class="for-icon">🚀</span>
+      <h4>Makuake出品者</h4>
+      <p>クラファン中・終了後の認知拡大とファン獲得にSNSを使いたい方</p>
+    </div>
+    <div class="for-card">
+      <span class="for-icon">🎬</span>
+      <h4>採用・PR動画が必要な企業</h4>
+      <p>採用強化・ブランディング用の動画を単発で依頼したい会社</p>
+    </div>
+    <div class="for-card">
+      <span class="for-icon">🏥</span>
+      <h4>介護・医療系施設</h4>
+      <p>Instagramで採用・地域への信頼づくりを進めたい施設・クリニック</p>
     </div>
   </div>
 </section>
 
 <!-- FLOW -->
 <section id="flow">
-  <div class="container">
-    <div class="section-label">Flow</div>
-    <h2 class="section-title">ご依頼の流れ</h2>
-    <p class="section-sub">お問い合わせから最短2週間で運用を開始できます。</p>
-    <div class="flow-steps">
-      <div class="flow-step">
-        <div class="flow-num">1</div>
-        <div class="flow-content">
-          <h3>無料相談（オンライン・対面）</h3>
-          <p>現状のSNS状況・目標・課題をヒアリングします。板橋区近郊は対面訪問も対応します。</p>
-        </div>
+  <div class="section-label">FLOW</div>
+  <h2 class="section-title">ご依頼の流れ。</h2>
+  <div class="flow-list">
+    <div class="flow-item">
+      <div class="flow-num">01</div>
+      <div>
+        <h3>無料相談</h3>
+        <p>現状・目標・課題をヒアリングします。オンライン・対面どちらでも対応。板橋区近郊は訪問も可能です。</p>
       </div>
-      <div class="flow-step">
-        <div class="flow-num">2</div>
-        <div class="flow-content">
-          <h3>ご提案・お見積もり</h3>
-          <p>ご状況に合わせたプランと料金をご提示します。無理な押し売りはありません。</p>
-        </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">02</div>
+      <div>
+        <h3>ご提案・お見積もり</h3>
+        <p>状況に合わせたプランと費用をご提示します。無理な提案はしません。</p>
       </div>
-      <div class="flow-step">
-        <div class="flow-num">3</div>
-        <div class="flow-content">
-          <h3>アカウント設計・準備</h3>
-          <p>ターゲット設定・投稿方針・スケジュールを一緒に決めていきます。</p>
-        </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">03</div>
+      <div>
+        <h3>戦略設計・準備</h3>
+        <p>アカウント設計・投稿方針・スケジュールを一緒に決めていきます。</p>
       </div>
-      <div class="flow-step">
-        <div class="flow-num">4</div>
-        <div class="flow-content">
-          <h3>運用スタート</h3>
-          <p>投稿・分析・改善を繰り返しながら、数字を着実に伸ばしていきます。</p>
-        </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">04</div>
+      <div>
+        <h3>実行・改善</h3>
+        <p>投稿・分析・改善を繰り返しながら、売上につながる数字を着実に伸ばします。</p>
       </div>
     </div>
   </div>
@@ -631,31 +607,46 @@
 
 <!-- CTA -->
 <section id="cta">
-  <div class="container">
-    <div class="section-label">Contact</div>
-    <h2 class="section-title">まずは無料でご相談ください</h2>
-    <p class="section-sub">
-      SNS・動画・TikTok Shopについて、どんな小さな疑問でもお気軽にご連絡ください。
-      返信は営業日2日以内にお送りします。
+  <div class="cta-inner">
+    <div class="cta-label">CONTACT</div>
+    <h2 class="cta-title">まず、<br />話しましょう。</h2>
+    <p class="cta-sub">
+      SNS・動画・TikTok Shopについて、どんな小さな疑問でも構いません。
+      無料相談から始められます。
     </p>
-    <a href="mailto:info@daini-vonheur.com" class="btn-primary" style="font-size:18px;padding:20px 56px;">
-      無料相談を申し込む
-    </a>
+    <a href="mailto:info@daini-vonheur.com" class="btn-cta">無料相談を申し込む</a>
     <p class="cta-note">※ 返信は営業日2日以内にお送りします</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">第弐ヴォヌール</div>
-  <p>東京都板橋区 ｜ SNSマーケティング・動画制作</p>
-  <p style="margin-top:8px;">© 2026 第弐ヴォヌール. All rights reserved.</p>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">第弐ヴォヌール</div>
+      <div class="footer-info" style="margin-top:16px;">
+        東京都板橋区<br />
+        SNSマーケティング・動画制作
+      </div>
+    </div>
+    <nav class="footer-nav">
+      <a href="#concept">CONCEPT</a>
+      <a href="#service">SERVICE</a>
+      <a href="#for">FOR WHOM</a>
+      <a href="#flow">FLOW</a>
+      <a href="#cta">CONTACT</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    © 2026 第弐ヴォヌール. All rights reserved.
+  </div>
 </footer>
 
 <script>
   window.addEventListener('scroll', () => {
-    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 80);
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 80);
   });
 </script>
+
 </body>
 </html>
