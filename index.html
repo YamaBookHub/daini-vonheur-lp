@@ -231,7 +231,7 @@
     }
     .results-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
     .result-item {
       padding: 72px 8vw;
@@ -661,9 +661,10 @@
       .flow-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .flow-card { padding: 32px 24px; }
 
-      .results-grid { grid-template-columns: 1fr; }
-      .result-item { padding: 48px 8vw; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-      .result-item:last-child { border-bottom: none; }
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+      .result-item { padding: 40px 5vw; }
+      .result-item:nth-child(odd) { border-right: 1px solid var(--green-mid); }
+      .result-item:nth-child(1), .result-item:nth-child(2) { border-bottom: 1px solid var(--green-mid); }
 
       footer { padding: 48px 6vw 28px; }
       .footer-inner { flex-direction: column; gap: 24px; }
@@ -713,6 +714,11 @@
       <div class="result-num"><span class="count" data-target="9" data-suffix="割">0</span></div>
       <div class="result-name">リピーター率</div>
       <div class="result-sub">顧客継続率</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num"><span class="count" data-target="50" data-suffix="万">0</span></div>
+      <div class="result-name">初回インプレッション</div>
+      <div class="result-sub">自社Instagram / かおよTV</div>
     </div>
   </div>
 </section>
