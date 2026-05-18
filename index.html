@@ -252,10 +252,22 @@
       font-size: 15px;
       color: var(--text-mid);
       line-height: 2.4;
+      margin-bottom: 20px;
     }
     .concept-body strong {
       color: var(--text-dark);
       font-weight: 700;
+    }
+    .concept-belief {
+      border-left: 3px solid var(--green);
+      padding: 20px 24px;
+      margin: 28px 0;
+      background: linear-gradient(to right, rgba(26,175,82,0.07), transparent);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.9;
+      letter-spacing: -.01em;
     }
 
     /* ── SERVICE ── */
@@ -315,6 +327,16 @@
       font-size: 14px;
       color: var(--text-mid);
       line-height: 2.0;
+    }
+    .service-hook {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green-dark);
+      background: linear-gradient(to right, var(--green-mid), transparent);
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      border-left: 2px solid var(--green);
+      line-height: 1.6;
     }
     .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 24px; }
     .service-tag {
@@ -561,8 +583,8 @@
       .nav-logo { font-size: 12px; }
       nav a.cta-btn { padding: 8px 14px; font-size: 12px; }
 
-      #hero { padding: 0 6vw; }
-      .hero-main { font-size: clamp(40px, 12vw, 72px); margin-bottom: 28px; }
+      #hero { padding: 0 6vw; justify-content: flex-start; padding-top: 26vh; }
+      .hero-main { font-size: clamp(40px, 11vw, 68px); margin-bottom: 0; }
       .hero-scroll { display: none; }
 
       .sec { padding: 88px 6vw; }
@@ -618,10 +640,14 @@
   </div>
   <div class="concept-right">
     <p class="concept-body">
-      株式会社第弐ヴォヌールは、東京・板橋区を拠点とする<strong>4人のSNSマーケティングチーム</strong>です。<br /><br />
-      大手代理店のように担当者が頻繁に変わることなく、クライアントと長く向き合い続けることが私たちのあり方です。
-      戦略の立案から日々の運用・動画制作・改善まで、すべて自分たちで責任を持って実行します。<br /><br />
-      小さなチームだからこそ動きが速く、クライアントの変化にも柔軟に対応できる。それが、私たちの強みです。
+      SNS運用の現場では、<strong>「担当者がすぐ変わる」「施策の意図が伝わらない」「成果が数字に出ない」</strong>という声を多く耳にします。
+    </p>
+    <blockquote class="concept-belief">
+      私たちは、売上に直結するSNS戦略を<br />クライアントと一緒に実行するチームです。
+    </blockquote>
+    <p class="concept-body">
+      株式会社第弐ヴォヌールは、東京・板橋区を拠点とする4人のSNSマーケティングチームです。小規模だからこそ、同じメンバーが担当し続け、クライアントの事業を深く理解した上で動けます。<br /><br />
+      戦略設計から日々の投稿・動画制作・数値改善まで、<strong>すべて自分たちの責任で実行します。</strong>
     </p>
   </div>
 </section>
@@ -635,22 +661,23 @@
     <div class="service-card">
       <div class="service-num">01</div>
       <h3>Instagram / TikTok<br />運用代行</h3>
-      <p>アカウント設計から投稿・ストーリー・リール動画の制作まで一括代行。数値を見ながら継続的に改善します。</p>
+      <div class="service-hook">「何を投稿すれば伸びるか」わからない方へ</div>
+      <p>アカウント設計から投稿・ストーリー・リール制作まで一括代行。<strong>数字を見ながら改善を繰り返し</strong>、フォロワーを「顧客」に変えていきます。投稿の丸投げではなく、<strong>事業成長のための運用</strong>を提供します。</p>
       <div class="service-tags">
-        <span class="service-tag">投稿作成</span>
-        <span class="service-tag">ストーリー</span>
-        <span class="service-tag">リール</span>
-        <span class="service-tag">分析・改善</span>
+        <span class="service-tag">アカウント設計</span>
+        <span class="service-tag">投稿・リール制作</span>
+        <span class="service-tag">数値分析・改善</span>
       </div>
     </div>
 
     <div class="service-card">
       <div class="service-num">02</div>
       <h3>TikTok Shop<br />/ LIVE 支援</h3>
-      <p>アカウント開設・商品登録からライブ配信の企画・運営まで対応。TikTokを販売チャネルとして活用できます。</p>
+      <div class="service-hook">TikTokを「売れる販売チャネル」にしたい方へ</div>
+      <p>アカウント開設・商品登録からライブ配信の企画・運営まで対応。<strong>TikTok Shopは参入タイミングが重要です。</strong>早く動いた事業者ほど優位に立てる、今が仕込みどきのチャネルです。</p>
       <div class="service-tags">
         <span class="service-tag">アカウント開設</span>
-        <span class="service-tag">ライブ配信</span>
+        <span class="service-tag">ライブ配信設計</span>
         <span class="service-tag">広告運用</span>
       </div>
     </div>
@@ -658,23 +685,24 @@
     <div class="service-card">
       <div class="service-num">03</div>
       <h3>Makuake<br />運用支援</h3>
-      <p>クラウドファンディング掲載中・終了後の認知拡大をSNSで支援。プロジェクトの勢いを加速させます。</p>
+      <div class="service-hook">良いプロダクトなのに埋もれている方へ</div>
+      <p>クラファン掲載中・終了後の認知拡大をSNSで加速。<strong>プロジェクトへの共感を広げ</strong>、支援者とファンを同時につくります。Makuakeは「終わり」ではなく、<strong>ブランドの起点</strong>にできます。</p>
       <div class="service-tags">
-        <span class="service-tag">認知拡大</span>
-        <span class="service-tag">SNS連動</span>
+        <span class="service-tag">SNS連動拡散</span>
         <span class="service-tag">動画制作</span>
+        <span class="service-tag">ファン獲得</span>
       </div>
     </div>
 
     <div class="service-card">
       <div class="service-num">04</div>
       <h3>動画撮影・編集<br />台本制作</h3>
-      <p>採用動画・商品PR動画など、企画・台本・撮影・編集までワンストップで対応。単発依頼も歓迎です。</p>
+      <div class="service-hook">「動画が必要」はわかっているが進められない方へ</div>
+      <p>企画・台本・撮影・編集までワンストップで対応。<strong>「なんとなくいい感じ」ではなく、目的から逆算した動画</strong>を制作します。採用・商品PR・ブランディング、単発依頼も歓迎です。</p>
       <div class="service-tags">
-        <span class="service-tag">台本制作</span>
-        <span class="service-tag">撮影</span>
-        <span class="service-tag">編集</span>
-        <span class="service-tag">採用動画</span>
+        <span class="service-tag">台本・企画</span>
+        <span class="service-tag">撮影・編集</span>
+        <span class="service-tag">採用・PR動画</span>
       </div>
     </div>
 
