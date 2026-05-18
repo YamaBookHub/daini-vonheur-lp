@@ -58,27 +58,46 @@
       color: var(--white);
       letter-spacing: .04em;
       white-space: nowrap;
+      transition: color .3s;
     }
-    nav.scrolled .nav-logo { color: var(--text-dark); }
+    nav.scrolled .nav-logo {
+      background: linear-gradient(135deg, var(--green-dark) 0%, #22c55e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     nav a.cta-btn {
-      background: var(--green);
-      color: #fff;
-      padding: 10px 20px;
+      color: rgba(255,255,255,0.85);
+      border: 1.5px solid rgba(255,255,255,0.4);
+      background: transparent;
+      padding: 10px 22px;
       font-size: 13px;
       font-weight: 700;
       text-decoration: none;
-      letter-spacing: .04em;
+      letter-spacing: .06em;
       white-space: nowrap;
       flex-shrink: 0;
       opacity: 0;
       pointer-events: none;
       transform: translateY(-6px);
-      transition: opacity .3s, transform .3s;
+      transition: opacity .3s, transform .3s, background .25s, color .25s, border-color .25s;
+    }
+    nav a.cta-btn::after {
+      content: ' →';
+      font-size: 14px;
     }
     nav.scrolled a.cta-btn {
       opacity: 1;
       pointer-events: auto;
       transform: translateY(0);
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, var(--green-dark) 0%, #22c55e 100%) border-box;
+      border: 1.5px solid transparent;
+      color: var(--green-dark);
+    }
+    nav.scrolled a.cta-btn:hover {
+      background: linear-gradient(135deg, var(--green-dark) 0%, #22c55e 100%);
+      color: #fff;
     }
 
     /* ── HERO ── */
