@@ -74,8 +74,7 @@
 
     /* ── HERO ── */
     #hero {
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-                  url('https://images.unsplash.com/photo-1504608524841-42584120d94b?w=1920&q=80') center/cover no-repeat;
+      background: #0a2a1a;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -84,6 +83,38 @@
       padding: 0 8vw 80px;
       position: relative;
       overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 120% 80% at 20% 0%, rgba(56,189,248,0.5) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 60% at 80% 10%, rgba(125,211,252,0.3) 0%, transparent 50%),
+        radial-gradient(ellipse 100% 70% at 50% 100%, rgba(22,163,74,0.4) 0%, transparent 60%),
+        linear-gradient(180deg, #0c4a6e 0%, #0f5132 60%, #052e16 100%);
+      animation: skyMove 12s ease-in-out infinite alternate;
+    }
+    .hero-cloud {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 300px 80px at 15% 20%, rgba(255,255,255,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 200px 60px at 70% 30%, rgba(255,255,255,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 100px at 40% 15%, rgba(255,255,255,0.05) 0%, transparent 70%);
+      animation: cloudDrift 20s linear infinite alternate;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+    }
+    @keyframes skyMove {
+      0%   { opacity: 1; transform: scale(1) translateY(0); }
+      100% { opacity: 0.85; transform: scale(1.05) translateY(-12px); }
+    }
+    @keyframes cloudDrift {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(60px); }
     }
     .hero-label-top {
       position: absolute;
@@ -444,8 +475,11 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-label-top">SNS MARKETING AGENCY / ITABASHI, TOKYO</div>
-  <div>
+  <div class="hero-bg"></div>
+  <div class="hero-cloud"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-label-top" style="position:relative;z-index:1;">SNS MARKETING AGENCY / ITABASHI, TOKYO</div>
+  <div style="position:relative;z-index:1;">
     <h1 class="hero-main">
       SNSで、<br />売上を<em>動かせ。</em>
     </h1>
@@ -455,7 +489,7 @@
       <a href="#service" class="btn-ghost">サービスを見る</a>
     </div>
   </div>
-  <div class="hero-scroll">SCROLL</div>
+  <div class="hero-scroll" style="position:absolute;z-index:1;">SCROLL</div>
 </section>
 
 <!-- CONCEPT -->
