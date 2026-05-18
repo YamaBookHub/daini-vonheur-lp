@@ -222,6 +222,54 @@
       color: var(--text-dark);
     }
 
+    /* ── RESULTS ── */
+    #results {
+      background: #111;
+      padding: 0;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .result-item {
+      padding: 72px 8vw;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      position: relative;
+    }
+    .result-item:last-child { border-right: none; }
+    .result-num {
+      font-size: clamp(52px, 7.5vw, 96px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -.04em;
+      line-height: 1;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 4px;
+    }
+    .result-unit {
+      font-size: .45em;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0;
+    }
+    .result-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: .1em;
+      margin-bottom: 6px;
+    }
+    .result-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: .12em;
+    }
+
     /* ── WHO WE ARE ── */
     #concept {
       background: linear-gradient(150deg, #ffffff 0%, #f0fdf4 55%, #e8f8ef 100%);
@@ -613,6 +661,10 @@
       .flow-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .flow-card { padding: 32px 24px; }
 
+      .results-grid { grid-template-columns: 1fr; }
+      .result-item { padding: 48px 8vw; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .result-item:last-child { border-bottom: none; }
+
       footer { padding: 48px 6vw 28px; }
       .footer-inner { flex-direction: column; gap: 24px; }
       .footer-links { gap: 16px; }
@@ -642,6 +694,27 @@
 
   </div>
   <div class="hero-scroll" style="position:absolute;z-index:1;">SCROLL</div>
+</section>
+
+<!-- RESULTS -->
+<section id="results">
+  <div class="results-grid">
+    <div class="result-item">
+      <div class="result-num"><span class="count" data-target="3500" data-suffix="万">0</span><span class="result-unit">円</span></div>
+      <div class="result-name">クラファン達成金額</div>
+      <div class="result-sub">ROLLS Eclipse</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num"><span class="count" data-target="3000" data-suffix="本">0</span></div>
+      <div class="result-name">動画納品数</div>
+      <div class="result-sub">累計実績</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num"><span class="count" data-target="9" data-suffix="割">0</span></div>
+      <div class="result-name">リピーター率</div>
+      <div class="result-sub">継続支援の信頼</div>
+    </div>
+  </div>
 </section>
 
 <!-- WHO WE ARE -->
@@ -813,6 +886,27 @@
   window.addEventListener('scroll', () => {
     document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 80);
   });
+
+  // Count-up animation
+  const counters = document.querySelectorAll('.count');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = +el.dataset.target;
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.floor(current).toLocaleString() + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 16);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => observer.observe(c));
 </script>
 
 </body>
