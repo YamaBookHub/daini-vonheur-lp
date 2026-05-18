@@ -611,21 +611,32 @@
       position: relative;
       z-index: 1;
     }
+    .cta-btns {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      position: relative; z-index: 1; margin-bottom: 8px;
+    }
     .btn-cta {
       background: #fff;
       color: var(--green-dark);
-      padding: 22px 72px;
+      padding: 20px 48px;
       font-size: 15px;
       font-weight: 900;
       text-decoration: none;
       display: inline-block;
-      letter-spacing: .08em;
+      letter-spacing: .06em;
       border-radius: 2px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.15);
       transition: transform .25s, box-shadow .25s;
       position: relative;
       z-index: 1;
     }
+    .btn-cta-sub {
+      background: transparent;
+      color: rgba(255,255,255,0.9);
+      border: 2px solid rgba(255,255,255,0.5);
+      box-shadow: none;
+    }
+    .btn-cta-sub:hover { border-color: #fff; color: #fff; box-shadow: none; }
     .btn-cta:hover {
       transform: translateY(-2px);
       box-shadow: 0 16px 48px rgba(0,0,0,0.2);
@@ -640,6 +651,43 @@
 
     /* ── PRICE ── */
     #price { background: #f8fdf9; }
+    .price-compare {
+      max-width: 860px; margin: 0 auto 48px;
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid #cde8d8;
+      box-shadow: 0 4px 24px rgba(45,110,80,.08);
+    }
+    .price-compare-header {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      background: var(--green); color: #fff;
+    }
+    .price-compare-header div {
+      padding: 16px 20px; font-size: 13px; font-weight: 700;
+      letter-spacing: .06em; text-align: center;
+    }
+    .price-compare-header div:first-child { text-align: left; background: rgba(0,0,0,.15); }
+    .price-compare-row {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      border-top: 1px solid #e8f5ee;
+    }
+    .price-compare-row:nth-child(even) { background: #f4fdf8; }
+    .price-compare-row div {
+      padding: 14px 20px; font-size: 14px; color: var(--text-dark);
+      text-align: center; display: flex; align-items: center; justify-content: center;
+    }
+    .price-compare-row div:first-child {
+      text-align: left; justify-content: flex-start;
+      font-size: 13px; color: var(--text-mid); font-weight: 600;
+    }
+    .price-compare-row .col-other { color: var(--text-mid); font-size: 13px; }
+    .price-compare-row .col-us {
+      font-weight: 800; color: var(--green);
+      font-size: 16px;
+    }
+    .price-compare-note {
+      text-align: center; font-size: 12px; color: var(--text-mid);
+      margin-bottom: 40px;
+    }
     .price-lead {
       text-align: center;
       font-size: 15px;
@@ -1042,9 +1090,44 @@
   <div class="sec-label">PRICE</div>
   <h2 class="sec-title">料金プラン</h2>
   <p class="price-lead">
-    事業の規模や目的に合わせて、必要な施策だけを組み合わせます。<br />
-    まずは無料相談で、現状とご要望をお聞かせください。
+    大手代理店の相場と比べてみてください。<br />
+    同じクオリティで、圧倒的にリーズナブルに動けます。
   </p>
+
+  <div class="price-compare fade-in">
+    <div class="price-compare-header">
+      <div>サービス内容</div>
+      <div>大手代理店 相場</div>
+      <div>第弐ヴォヌール</div>
+    </div>
+    <div class="price-compare-row">
+      <div>SNS運用代行（月額）</div>
+      <div class="col-other">30万円〜</div>
+      <div class="col-us">5万円〜</div>
+    </div>
+    <div class="price-compare-row">
+      <div>リール・ショート動画制作（1本）</div>
+      <div class="col-other">3〜10万円</div>
+      <div class="col-us">1万円〜</div>
+    </div>
+    <div class="price-compare-row">
+      <div>アカウント設計・初期構築</div>
+      <div class="col-other">別途10万円〜</div>
+      <div class="col-us">込み</div>
+    </div>
+    <div class="price-compare-row">
+      <div>担当者の固定</div>
+      <div class="col-other">都度変わる</div>
+      <div class="col-us">最初から最後まで同じ</div>
+    </div>
+    <div class="price-compare-row">
+      <div>補助金対応</div>
+      <div class="col-other">非対応が多い</div>
+      <div class="col-us">相談・申請サポートあり</div>
+    </div>
+  </div>
+  <p class="price-compare-note">※ 料金は事業規模・依頼内容により変動します。まずは無料相談でお見積もりします。</p>
+
   <div class="price-grid">
     <div class="price-card fade-in">
       <div class="price-card-label">Starter</div>
@@ -1083,8 +1166,7 @@
     </div>
   </div>
   <p class="price-sub-note">
-    ※ 単発・スポット依頼もお気軽にご相談ください。<br />
-    ※ 各種補助金の活用で、実質負担を抑えられる場合があります。
+    ※ 単発・スポット依頼もお気軽にご相談ください。補助金活用で実質負担を抑えられます。
   </p>
 </section>
 
@@ -1288,22 +1370,24 @@
   <h2 class="sec-title">支援実績・成功事例</h2>
   <div class="cases-grid">
     <div class="case-card fade-in">
-      <div class="case-genre">飲食店 / 運用3ヶ月</div>
-      <div class="case-num">240<span style="font-size:0.5em">%</span></div>
-      <div class="case-label">来店数 前年比UP</div>
-      <div class="case-desc">SNS運用開始から3ヶ月でターゲット層へのリーチを最大化。リール投稿を軸にした戦略で来店数が前年比240%に。</div>
+      <div class="case-genre">🍽️ 飲食店 / 運用3ヶ月</div>
+      <div class="case-num">来店数<br /><span style="font-size:1.1em;color:var(--green)">前年比 240%</span></div>
+      <div class="case-label" style="margin-top:12px">リール投稿を軸に3ヶ月でターゲット層へのリーチを最大化。来店数が前年比2.4倍に。</div>
     </div>
     <div class="case-card fade-in">
-      <div class="case-genre">ECサイト / 運用2ヶ月</div>
-      <div class="case-num">400<span style="font-size:0.5em">%</span></div>
-      <div class="case-label">売上 前月比UP</div>
-      <div class="case-desc">SNS経由の販売導線を設計し直し、運用2ヶ月目で売上が前月比400%を達成。商品訴求動画が起爆剤に。</div>
+      <div class="case-genre">🛍️ ECサイト / 運用2ヶ月</div>
+      <div class="case-num">売上<br /><span style="font-size:1.1em;color:var(--green)">前月比 400%</span></div>
+      <div class="case-label" style="margin-top:12px">SNS経由の販売導線を設計し直し、運用2ヶ月目で売上が4倍に。商品訴求動画が起爆剤に。</div>
     </div>
     <div class="case-card fade-in">
-      <div class="case-genre">採用系 / 運用1ヶ月</div>
-      <div class="case-num">5<span style="font-size:0.5em">名</span></div>
-      <div class="case-label">面談獲得</div>
-      <div class="case-desc">採用ターゲットに絞ったアカウント設計で、運用1ヶ月目から面談5名を獲得。再生数ではなく「会いたい人に届ける」設計が効いた。</div>
+      <div class="case-genre">👤 採用 / 運用1ヶ月</div>
+      <div class="case-num">面談獲得<br /><span style="font-size:1.1em;color:var(--green)">5名 / 1ヶ月</span></div>
+      <div class="case-label" style="margin-top:12px">採用ターゲットに絞ったアカウント設計で即効果。「再生数」より「会いたい人に届ける」設計が決め手。</div>
+    </div>
+    <div class="case-card fade-in">
+      <div class="case-genre">☁️ クラウドファンディング</div>
+      <div class="case-num">達成金額<br /><span style="font-size:1.1em;color:var(--green)">3,500万円</span></div>
+      <div class="case-label" style="margin-top:12px">SNSと動画を組み合わせたプロジェクト拡散で、クラウドファンディング3,500万円を達成。</div>
     </div>
   </div>
 </section>
@@ -1314,10 +1398,17 @@
   <h2 class="cta-title">まずは、<br />お気軽にご相談ください。</h2>
   <p class="cta-sub">
     SNS・動画・ライブ販売・クラウドファンディングなど、どんな小さな疑問でも構いません。<br />
-    無料相談から始められます。
+    無料相談から始められます。返信は通常24時間以内。
   </p>
-  <a href="https://lin.ee/daini-vonheur" class="btn-cta">LINEで相談する</a>
-  <p class="cta-note">※ メールでのご相談は <a href="mailto:info@daini-vonheur.com" style="color:rgba(255,255,255,0.5);text-decoration:underline;">こちら</a></p>
+  <div class="cta-btns">
+    <a href="https://www.instagram.com/daini_vonheur/" target="_blank" rel="noopener" class="btn-cta btn-cta-main">
+      📸 InstagramのDMで相談する
+    </a>
+    <a href="https://lin.ee/daini-vonheur" target="_blank" rel="noopener" class="btn-cta btn-cta-sub">
+      💬 LINEで相談する
+    </a>
+  </div>
+  <p class="cta-note">※ メールでのご相談は <a href="mailto:info@daini-vonheur.com" style="color:rgba(255,255,255,0.4);text-decoration:underline;">こちら</a></p>
 </section>
 
 <!-- FOOTER -->
