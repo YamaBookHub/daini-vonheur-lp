@@ -192,48 +192,46 @@
 
     /* ── WHO WE ARE ── */
     #concept {
-      background: #0f0f0f;
+      background: #fff;
       padding: 120px 8vw;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: start;
     }
-    #concept .sec-label { color: rgba(255,255,255,0.35); }
     .concept-headline {
-      font-size: clamp(52px, 7vw, 96px);
+      font-size: clamp(44px, 6vw, 80px);
       font-weight: 900;
-      color: #fff;
-      line-height: 1.0;
+      color: var(--text-dark);
+      line-height: 1.05;
       letter-spacing: -.03em;
       margin-top: 16px;
     }
     .concept-headline em {
       font-style: normal;
-      color: #86efac;
+      color: var(--green);
     }
     .concept-right { padding-top: 56px; }
     .concept-body {
       font-size: 15px;
-      color: rgba(255,255,255,0.55);
+      color: #555;
       line-height: 2.3;
     }
     .concept-body strong {
-      color: rgba(255,255,255,0.9);
+      color: var(--text-dark);
       font-weight: 700;
     }
 
     /* ── SERVICE ── */
-    #service { background: #f5f4f0; }
-    #service .sec-title { color: #0f0f0f; }
+    #service { background: var(--green-light); }
     .service-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2px;
-      background: #dedad5;
+      background: #bbf7d0;
     }
     .service-card {
-      background: #f5f4f0;
+      background: #f0fdf4;
       padding: 56px 48px;
       transition: background .25s;
     }
@@ -241,23 +239,23 @@
     .service-num {
       font-size: clamp(64px, 8vw, 96px);
       font-weight: 900;
-      color: #0f0f0f;
-      opacity: .06;
+      color: var(--green);
+      opacity: .12;
       line-height: 1;
       letter-spacing: -.04em;
       margin-bottom: -8px;
     }
     .service-card h3 {
-      font-size: clamp(20px, 2.2vw, 28px);
+      font-size: clamp(20px, 2.2vw, 26px);
       font-weight: 900;
-      color: #0f0f0f;
+      color: var(--text-dark);
       margin-bottom: 16px;
       line-height: 1.3;
       letter-spacing: -.01em;
     }
     .service-card p {
       font-size: 14px;
-      color: #777;
+      color: #555;
       line-height: 2.0;
     }
     .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 24px; }
@@ -266,28 +264,27 @@
       font-weight: 700;
       letter-spacing: .1em;
       color: var(--green);
-      border: 1px solid #b3e8c8;
+      border: 1px solid #86efac;
+      background: #fff;
       padding: 4px 12px;
     }
 
     /* ── FOR WHOM ── */
     #for {
-      background: #0f0f0f;
+      background: #fff;
       padding: 120px 8vw;
     }
-    #for .sec-label { color: rgba(255,255,255,0.35); }
-    #for .sec-title { color: #fff; }
     .for-list {
       display: flex;
       flex-direction: column;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid var(--border);
       background: none;
       gap: 0;
       max-width: none;
     }
     .for-item {
       background: transparent;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid var(--border);
       padding: 36px 0;
       display: grid;
       grid-template-columns: 72px 1fr 1.2fr;
@@ -305,39 +302,38 @@
       flex-shrink: 0;
     }
     .for-item-text h4 {
-      font-size: clamp(16px, 1.8vw, 22px);
+      font-size: clamp(16px, 1.8vw, 20px);
       font-weight: 700;
-      color: #fff;
+      color: var(--text-dark);
       margin-bottom: 0;
       letter-spacing: -.01em;
     }
     .for-item-desc {
       font-size: 14px;
-      color: rgba(255,255,255,0.4);
+      color: #777;
       line-height: 1.8;
     }
 
     /* ── FLOW ── */
-    #flow { background: #fff; }
-    #flow .sec-title { color: #0f0f0f; }
+    #flow { background: var(--green-light); }
     .flow-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      border: 1px solid #e8e8e8;
+      border: 1px solid #bbf7d0;
     }
     .flow-card {
-      background: #fff;
+      background: #f0fdf4;
       padding: 48px 36px;
-      border-right: 1px solid #e8e8e8;
+      border-right: 1px solid #bbf7d0;
       transition: background .25s;
     }
     .flow-card:last-child { border-right: none; }
-    .flow-card:hover { background: #f5f4f0; }
+    .flow-card:hover { background: #fff; }
     .flow-card-num {
       font-size: 72px;
       font-weight: 900;
-      color: #0f0f0f;
-      opacity: .06;
+      color: var(--green);
+      opacity: .18;
       line-height: 1;
       margin-bottom: 24px;
       letter-spacing: -.04em;
@@ -345,19 +341,19 @@
     .flow-card h3 {
       font-size: 17px;
       font-weight: 900;
-      color: #0f0f0f;
+      color: var(--text-dark);
       margin-bottom: 12px;
       letter-spacing: -.01em;
     }
     .flow-card p {
       font-size: 13px;
-      color: #999;
+      color: #666;
       line-height: 2.0;
     }
 
     /* ── CTA ── */
     #cta {
-      background: #0f0f0f;
+      background: var(--green);
       padding: 140px 8vw;
       text-align: center;
       position: relative;
@@ -368,7 +364,7 @@
       position: absolute;
       font-size: clamp(80px, 18vw, 220px);
       font-weight: 900;
-      color: rgba(255,255,255,0.025);
+      color: rgba(255,255,255,0.06);
       letter-spacing: -.04em;
       top: 50%;
       left: 50%;
@@ -377,7 +373,7 @@
       pointer-events: none;
       line-height: 1;
     }
-    #cta .sec-label { color: rgba(255,255,255,0.35); position: relative; }
+    #cta .sec-label { color: rgba(255,255,255,0.6); position: relative; }
     .cta-title {
       font-size: clamp(36px, 5.5vw, 72px);
       font-weight: 900;
@@ -389,7 +385,7 @@
     }
     .cta-sub {
       font-size: 15px;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.75);
       line-height: 2.0;
       margin-bottom: 56px;
       max-width: 440px;
@@ -398,8 +394,8 @@
       position: relative;
     }
     .btn-cta {
-      background: var(--green);
-      color: #fff;
+      background: #fff;
+      color: var(--green);
       padding: 22px 72px;
       font-size: 15px;
       font-weight: 900;
@@ -412,7 +408,7 @@
     .btn-cta:hover { opacity: .85; }
     .cta-note {
       font-size: 12px;
-      color: rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.5);
       margin-top: 24px;
       position: relative;
     }
@@ -477,7 +473,8 @@
       .sec { padding: 80px 6vw; }
       #concept { grid-template-columns: 1fr; gap: 40px; padding: 80px 6vw; }
       .concept-right { padding-top: 0; }
-      #for, #cta { padding: 80px 6vw; }
+      #for { padding: 80px 6vw; }
+      #cta { padding: 80px 6vw; }
       .sec-title { margin-bottom: 48px; }
 
       .service-grid { grid-template-columns: 1fr; }
