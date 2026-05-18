@@ -56,6 +56,10 @@
       font-weight: 900;
       letter-spacing: .04em;
       white-space: nowrap;
+      color: rgba(255,255,255,0.75);
+      transition: color .3s;
+    }
+    .nav-logo .logo-main {
       /* 空の画像を文字の形に切り抜き → 太陽バックライト効果 */
       background-image: url('https://images.unsplash.com/photo-1601297183305-6df142704ea2?w=1920&q=85');
       background-attachment: fixed;
@@ -69,6 +73,9 @@
       transition: filter .3s;
     }
     nav.scrolled .nav-logo {
+      color: var(--text-dark);
+    }
+    nav.scrolled .nav-logo .logo-main {
       background-image: none;
       -webkit-text-fill-color: var(--text-dark);
       color: var(--text-dark);
@@ -828,7 +835,7 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-logo">株式会社第弐ヴォヌール</div>
+  <div class="nav-logo">株式会社<span class="logo-main">第弐ヴォヌール</span></div>
   <a href="#cta" class="cta-btn">無料相談する</a>
 </nav>
 
