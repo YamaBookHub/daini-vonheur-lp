@@ -670,6 +670,69 @@
     @media (max-width: 480px) {
       .flow-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+    .service-card.fade-in:nth-child(2) { transition-delay: .1s; }
+    .service-card.fade-in:nth-child(3) { transition-delay: .2s; }
+    .service-card.fade-in:nth-child(4) { transition-delay: .3s; }
+    .for-item.fade-in:nth-child(2) { transition-delay: .08s; }
+    .for-item.fade-in:nth-child(3) { transition-delay: .16s; }
+    .for-item.fade-in:nth-child(4) { transition-delay: .24s; }
+    .flow-card.fade-in:nth-child(2) { transition-delay: .1s; }
+    .flow-card.fade-in:nth-child(3) { transition-delay: .2s; }
+    .flow-card.fade-in:nth-child(4) { transition-delay: .3s; }
+    .result-item.fade-in:nth-child(2) { transition-delay: .08s; }
+    .result-item.fade-in:nth-child(3) { transition-delay: .16s; }
+    .result-item.fade-in:nth-child(4) { transition-delay: .24s; }
+
+    /* ── CTA BUTTON ── */
+    .btn-cta::after { content: ' →'; }
+    @keyframes pulse-cta {
+      0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,.15); }
+      50% { box-shadow: 0 8px 32px rgba(0,0,0,.15), 0 0 0 10px rgba(255,255,255,.12); }
+    }
+
+    /* ── MOBILE ENHANCEMENTS ── */
+    @media (max-width: 768px) {
+      /* Service card: top green bar always visible */
+      .service-card::before { transform: scaleX(1); }
+
+      /* CTA button pulse */
+      .btn-cta { animation: pulse-cta 2.5s ease-in-out infinite; }
+
+      /* FOR WHOM: card redesign */
+      .for-list { border-top: none; gap: 10px; }
+      .for-item {
+        display: block;
+        background: linear-gradient(135deg, #fff 0%, #f8fdf9 100%);
+        border: 1px solid #cde8d8;
+        border-radius: 12px;
+        padding: 22px 20px;
+        transition: transform .2s, box-shadow .2s;
+      }
+      .for-item:active { transform: scale(.99); box-shadow: 0 2px 12px rgba(45,110,80,.1); }
+      .for-item-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px; height: 30px;
+        background: var(--green);
+        color: #fff;
+        border-radius: 50%;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0;
+        margin-bottom: 12px;
+      }
+      .for-item-text h4 { font-size: 16px; font-weight: 700; letter-spacing: -.01em; margin-bottom: 6px; }
+      .for-item-desc { display: block; font-size: 13px; color: var(--text-mid); line-height: 1.75; }
+    }
   </style>
 </head>
 <body>
@@ -696,22 +759,22 @@
 <!-- RESULTS -->
 <section id="results">
   <div class="results-grid">
-    <div class="result-item">
+    <div class="result-item fade-in">
       <div class="result-num"><span class="count" data-target="3500" data-suffix="万">0</span><span class="result-unit">円</span></div>
       <div class="result-name">クラファン達成金額</div>
       <div class="result-sub">ROLLS Eclipse</div>
     </div>
-    <div class="result-item">
+    <div class="result-item fade-in">
       <div class="result-num"><span class="count" data-target="3000" data-suffix="本">0</span></div>
       <div class="result-name">動画納品数</div>
       <div class="result-sub">累計実績</div>
     </div>
-    <div class="result-item">
+    <div class="result-item fade-in">
       <div class="result-num"><span class="count" data-target="9" data-suffix="割">0</span></div>
       <div class="result-name">リピーター率</div>
       <div class="result-sub">顧客継続率</div>
     </div>
-    <div class="result-item">
+    <div class="result-item fade-in">
       <div class="result-num"><span class="count" data-target="50" data-suffix="万">0</span></div>
       <div class="result-name">初回インプレッション</div>
       <div class="result-sub">自社Instagram / かおよTV</div>
@@ -745,7 +808,7 @@
   <h2 class="sec-title">サービス内容</h2>
   <div class="service-grid">
 
-    <div class="service-card">
+    <div class="service-card fade-in">
       <div class="service-num">01</div>
       <h3>Instagram / TikTok<br />運用代行</h3>
       <div class="service-hook">「何を投稿すれば伸びるか」がわからない方へ</div>
@@ -757,7 +820,7 @@
       </div>
     </div>
 
-    <div class="service-card">
+    <div class="service-card fade-in">
       <div class="service-num">02</div>
       <h3>TikTok Shop<br />/ LIVE 支援</h3>
       <div class="service-hook">TikTokを「売れる販売チャネル」にしたい方へ</div>
@@ -769,7 +832,7 @@
       </div>
     </div>
 
-    <div class="service-card">
+    <div class="service-card fade-in">
       <div class="service-num">03</div>
       <h3>Makuake<br />運用支援</h3>
       <div class="service-hook">良いプロダクトなのに埋もれている方へ</div>
@@ -781,7 +844,7 @@
       </div>
     </div>
 
-    <div class="service-card">
+    <div class="service-card fade-in">
       <div class="service-num">04</div>
       <h3>動画撮影・編集<br />台本制作</h3>
       <div class="service-hook">動画が必要とわかっているのに、なかなか進められない方へ</div>
@@ -801,22 +864,22 @@
   <div class="sec-label">FOR WHOM</div>
   <h2 class="sec-title">こんな方に選ばれています</h2>
   <div class="for-list">
-    <div class="for-item">
+    <div class="for-item fade-in">
       <div class="for-item-num">01</div>
       <div class="for-item-text"><h4>中小企業・店舗オーナー</h4></div>
       <div class="for-item-desc">Instagram・TikTokで集客を強化したい飲食・美容・小売などの事業者</div>
     </div>
-    <div class="for-item">
+    <div class="for-item fade-in">
       <div class="for-item-num">02</div>
       <div class="for-item-text"><h4>EC事業者</h4></div>
       <div class="for-item-desc">TikTok Shopへの参入を検討中、またはSNS経由の売上を伸ばしたい方</div>
     </div>
-    <div class="for-item">
+    <div class="for-item fade-in">
       <div class="for-item-num">03</div>
       <div class="for-item-text"><h4>Makuake出品者</h4></div>
       <div class="for-item-desc">クラファン中・終了後の認知拡大とファン獲得にSNSを活用したい方</div>
     </div>
-    <div class="for-item">
+    <div class="for-item fade-in">
       <div class="for-item-num">04</div>
       <div class="for-item-text"><h4>採用・PR動画が必要な企業</h4></div>
       <div class="for-item-desc">採用強化やブランディング用の動画を単発で依頼したい会社</div>
@@ -829,22 +892,22 @@
   <div class="sec-label">FLOW</div>
   <h2 class="sec-title">ご依頼の流れ</h2>
   <div class="flow-grid">
-    <div class="flow-card">
+    <div class="flow-card fade-in">
       <div class="flow-card-num">01</div>
       <h3>無料相談</h3>
       <p>現状・目標・課題をヒアリングします。オンライン・対面どちらでも対応可能です。</p>
     </div>
-    <div class="flow-card">
+    <div class="flow-card fade-in">
       <div class="flow-card-num">02</div>
       <h3>ご提案・お見積もり</h3>
       <p>状況に合わせたプランと費用をご提示します。無理な提案はしません。</p>
     </div>
-    <div class="flow-card">
+    <div class="flow-card fade-in">
       <div class="flow-card-num">03</div>
       <h3>戦略設計・準備</h3>
       <p>アカウント設計・投稿方針・スケジュールを一緒に決めていきます。</p>
     </div>
-    <div class="flow-card">
+    <div class="flow-card fade-in">
       <div class="flow-card-num">04</div>
       <h3>実行・改善</h3>
       <p>投稿・分析・改善を繰り返しながら、成果につながる数字を着実に伸ばします。</p>
@@ -909,6 +972,16 @@
     });
   }, { threshold: 0.4 });
   counters.forEach(c => observer.observe(c));
+
+  // Scroll fade-in animation
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 </script>
 
 </body>
