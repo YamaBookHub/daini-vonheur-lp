@@ -56,11 +56,16 @@
       font-weight: 900;
       letter-spacing: .04em;
       white-space: nowrap;
-      color: rgba(255,255,255,0.75);
-      transition: color .3s;
     }
+    /* 「株式会社」→ 通常の白文字 */
+    .nav-logo .logo-prefix {
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+      transition: color .3s, -webkit-text-fill-color .3s;
+    }
+    /* 「第弐ヴォヌール」→ 空の画像を文字に切り抜き */
     .nav-logo .logo-main {
-      /* 空の画像を文字の形に切り抜き → 太陽バックライト効果 */
       background-image: url('https://images.unsplash.com/photo-1601297183305-6df142704ea2?w=1920&q=85');
       background-attachment: fixed;
       background-size: cover;
@@ -72,8 +77,10 @@
       filter: brightness(1.25) saturate(1.1) contrast(1.02);
       transition: filter .3s;
     }
-    nav.scrolled .nav-logo {
+    nav.scrolled .nav-logo .logo-prefix {
       color: var(--text-dark);
+      -webkit-text-fill-color: var(--text-dark);
+      text-shadow: none;
     }
     nav.scrolled .nav-logo .logo-main {
       background-image: none;
@@ -835,7 +842,7 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-logo">株式会社<span class="logo-main">第弐ヴォヌール</span></div>
+  <div class="nav-logo"><span class="logo-prefix">株式会社</span><span class="logo-main">第弐ヴォヌール</span></div>
   <a href="#cta" class="cta-btn">無料相談する</a>
 </nav>
 
