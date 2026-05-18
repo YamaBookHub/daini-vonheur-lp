@@ -56,37 +56,10 @@
       font-weight: 900;
       letter-spacing: .04em;
       white-space: nowrap;
-    }
-    /* 「株式会社」→ 通常の白文字 */
-    .nav-logo .logo-prefix {
       color: #fff;
-      -webkit-text-fill-color: #fff;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.55), 0 2px 14px rgba(0,0,0,0.4);
-      transition: color .3s, -webkit-text-fill-color .3s;
     }
-    /* 「第弐ヴォヌール」→ 空の画像を文字に切り抜き */
-    .nav-logo .logo-main {
-      background-image: url('https://images.unsplash.com/photo-1601297183305-6df142704ea2?w=1920&q=85');
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center top;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-      filter: brightness(1.1) saturate(1.05);
-      transition: filter .3s;
-    }
-    nav.scrolled .nav-logo .logo-prefix {
+    nav.scrolled .nav-logo {
       color: var(--text-dark);
-      -webkit-text-fill-color: var(--text-dark);
-      text-shadow: none;
-    }
-    nav.scrolled .nav-logo .logo-main {
-      background-image: none;
-      -webkit-text-fill-color: var(--text-dark);
-      color: var(--text-dark);
-      filter: none;
     }
     nav a.cta-btn {
       background: transparent;
@@ -161,28 +134,12 @@
       line-height: 1.05;
       letter-spacing: -0.02em;
       margin-bottom: 40px;
-      /* 空の画像を文字の形に切り抜き */
-      background-image: url('https://images.unsplash.com/photo-1601297183305-6df142704ea2?w=1920&q=85');
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-      /* 空より明るく + 白縁取りglow で読みやすく */
-      filter: brightness(1.85) saturate(1.05)
-              drop-shadow(0 0 10px rgba(255,255,255,0.65))
-              drop-shadow(0 0 28px rgba(255,235,160,0.4));
+      color: #fff;
     }
     .sp-br { display: none; }
     .hero-main em {
       font-style: normal;
-      /* 親のbrightness(1.85)を考慮して暗めの緑を指定 → 結果: 明るい緑に */
-      background-image: linear-gradient(120deg, #337a55, #2a6e4a);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #86efac;
     }
     .hero-sub {
       font-size: clamp(14px, 1.6vw, 18px);
@@ -734,14 +691,8 @@
       #hero { padding: 0 6vw; justify-content: flex-start; padding-top: 18vh; }
       .hero-main {
         font-size: clamp(60px, 16vw, 80px); line-height: 1.0; margin-bottom: 0;
-        /* モバイルは白文字に戻す (background-attachment:fixedがiOSで非対応) */
-        background-image: none;
-        -webkit-text-fill-color: var(--white);
-        color: var(--white);
-        filter: none;
-        text-shadow: 0 2px 20px rgba(0,0,0,0.2);
       }
-      .hero-main em { background-image: none; -webkit-text-fill-color: #86efac; }
+      .hero-main em { color: #86efac; }
       .sp-br { display: inline; }
       .hero-scroll { display: none; }
 
@@ -842,7 +793,7 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-logo"><span class="logo-prefix">株式会社</span><span class="logo-main">第弐ヴォヌール</span></div>
+  <div class="nav-logo">株式会社第弐ヴォヌール</div>
   <a href="#cta" class="cta-btn">無料相談する</a>
 </nav>
 
