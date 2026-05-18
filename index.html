@@ -194,7 +194,7 @@
     }
 
     /* ── SHARED ── */
-    .sec { padding: 128px 8vw; }
+    .sec { padding: 96px 8vw; }
     .sec-label {
       font-size: 10px;
       font-weight: 700;
@@ -273,40 +273,25 @@
 
     /* ── WHO WE ARE ── */
     #concept {
-      background: linear-gradient(150deg, #ffffff 0%, #f0fdf4 55%, #e8f8ef 100%);
-      padding: 128px 8vw;
+      background: linear-gradient(150deg, #ffffff 0%, #f0fdf4 100%);
+      padding: 96px 8vw;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 96px;
+      gap: 80px;
       align-items: center;
-      position: relative;
       overflow: hidden;
     }
-    #concept::after {
-      content: '';
-      position: absolute;
-      right: -120px;
-      top: -120px;
-      width: 480px;
-      height: 480px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(26,175,82,0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
     .concept-headline {
-      font-size: clamp(48px, 6.5vw, 88px);
+      font-size: clamp(44px, 5.5vw, 80px);
       font-weight: 900;
       color: var(--text-dark);
-      line-height: 1.05;
-      letter-spacing: -.035em;
-      margin-top: 20px;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+      margin-top: 16px;
     }
     .concept-headline em {
       font-style: normal;
-      background: linear-gradient(135deg, var(--green) 0%, #4ade80 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--green);
     }
     .concept-right { position: relative; }
     .concept-body {
@@ -334,7 +319,7 @@
     /* ── SERVICE ── */
     #service {
       background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
-      padding: 128px 8vw;
+      padding: 96px 8vw;
     }
     .service-grid {
       display: grid;
@@ -414,7 +399,7 @@
     /* ── FOR WHOM ── */
     #for {
       background: linear-gradient(150deg, #f0fdf4 0%, #ffffff 60%);
-      padding: 128px 8vw;
+      padding: 96px 8vw;
     }
     .for-list {
       display: flex;
@@ -462,7 +447,7 @@
     /* ── FLOW ── */
     #flow {
       background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
-      padding: 128px 8vw;
+      padding: 96px 8vw;
     }
     .flow-grid {
       display: grid;
@@ -510,7 +495,7 @@
     /* ── CTA ── */
     #cta {
       background: linear-gradient(135deg, #1f4f3a 0%, #2d6e50 50%, #3a8a66 100%);
-      padding: 148px 8vw;
+      padding: 112px 8vw;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -648,9 +633,9 @@
       .hero-main { font-size: clamp(40px, 11vw, 68px); margin-bottom: 0; }
       .hero-scroll { display: none; }
 
-      .sec { padding: 88px 6vw; }
-      #concept { grid-template-columns: 1fr; gap: 48px; padding: 88px 6vw; }
-      #for, #cta { padding: 88px 6vw; }
+      .sec { padding: 64px 6vw; }
+      #concept { grid-template-columns: 1fr; gap: 40px; padding: 64px 6vw; }
+      #for, #cta { padding: 64px 6vw; }
       .sec-title { margin-bottom: 48px; }
 
       .service-grid { grid-template-columns: 1fr; gap: 12px; }
