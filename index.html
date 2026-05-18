@@ -695,54 +695,6 @@
       line-height: 1.9;
       margin-bottom: 48px;
     }
-    .price-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .price-card {
-      background: #fff;
-      border: 1px solid #cde8d8;
-      border-radius: 16px;
-      padding: 36px 28px;
-      text-align: center;
-    }
-    .price-card.featured {
-      border-color: var(--green);
-      box-shadow: 0 8px 32px rgba(45,110,80,.12);
-      position: relative;
-    }
-    .price-card.featured::before {
-      content: '人気';
-      position: absolute;
-      top: -12px; left: 50%; transform: translateX(-50%);
-      background: var(--green); color: #fff;
-      font-size: 11px; font-weight: 700; letter-spacing: .08em;
-      padding: 4px 14px; border-radius: 20px;
-    }
-    .price-card-label {
-      font-size: 11px; font-weight: 700; letter-spacing: .12em;
-      color: var(--green); text-transform: uppercase; margin-bottom: 12px;
-    }
-    .price-card-title { font-size: 18px; font-weight: 800; color: var(--text-dark); margin-bottom: 16px; }
-    .price-card-price {
-      font-size: 36px; font-weight: 900; color: var(--text-dark);
-      letter-spacing: -0.02em; margin-bottom: 8px;
-    }
-    .price-card-price span { font-size: 14px; font-weight: 400; color: var(--text-mid); }
-    .price-card-note { font-size: 12px; color: var(--text-mid); margin-bottom: 20px; }
-    .price-card-items {
-      list-style: none; text-align: left; font-size: 13px;
-      color: var(--text-mid); line-height: 2; border-top: 1px solid #edf7f0; padding-top: 16px;
-    }
-    .price-card-items li::before { content: '✓ '; color: var(--green); font-weight: 700; }
-    .price-sub-note {
-      text-align: center; font-size: 12px; color: var(--text-mid);
-      margin-top: 32px; line-height: 1.8;
-    }
-
     /* ── SOCIAL ── */
     #social { background: #f8fdf9; }
     .social-grid {
@@ -860,7 +812,7 @@
     .case-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
 
     @media (max-width: 768px) {
-      .price-grid { grid-template-columns: 1fr; }
+
       .team-grid { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
     }
@@ -1167,46 +1119,6 @@
   </div>
   <p class="price-compare-note">※ 料金は事業規模・依頼内容により変動します。まずは無料相談でお見積もりします。</p>
 
-  <div class="price-grid">
-    <div class="price-card fade-in">
-      <div class="price-card-label">Starter</div>
-      <div class="price-card-title">スタータープラン</div>
-      <div class="price-card-price">¥50,000<span>/月〜</span></div>
-      <div class="price-card-note">SNSをはじめて運用する方に</div>
-      <ul class="price-card-items">
-        <li>アカウント設計・初期構築</li>
-        <li>投稿12本/月</li>
-        <li>月次レポート・改善提案</li>
-      </ul>
-    </div>
-    <div class="price-card featured fade-in">
-      <div class="price-card-label">Standard</div>
-      <div class="price-card-title">スタンダードプラン</div>
-      <div class="price-card-price">¥100,000<span>/月〜</span></div>
-      <div class="price-card-note">運用＋動画で成果を加速したい方に</div>
-      <ul class="price-card-items">
-        <li>アカウント設計・運用代行</li>
-        <li>投稿12本＋リール4本/月</li>
-        <li>数値分析・PDCAサポート</li>
-        <li>月次ミーティング（60分）</li>
-      </ul>
-    </div>
-    <div class="price-card fade-in">
-      <div class="price-card-label">Full Support</div>
-      <div class="price-card-title">フルサポートプラン</div>
-      <div class="price-card-price">¥200,000<span>/月〜</span></div>
-      <div class="price-card-note">販売導線まで一気通貫で任せたい方に</div>
-      <ul class="price-card-items">
-        <li>全プラットフォーム対応</li>
-        <li>ライブ・ショップ販売支援含む</li>
-        <li>戦略設計から実行・改善まで</li>
-        <li>週次レポート＆随時相談対応</li>
-      </ul>
-    </div>
-  </div>
-  <p class="price-sub-note">
-    ※ 単発・スポット依頼もお気軽にご相談ください。補助金活用で実質負担を抑えられます。
-  </p>
 </section>
 
 <!-- SERVICE -->
