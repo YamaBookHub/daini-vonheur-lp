@@ -53,12 +53,13 @@
     }
     nav.scrolled .nav-logo { color: var(--text-dark); }
     .nav-logo {
-      font-size: 20px;
+      font-size: 26px;
       font-weight: 900;
       color: var(--white);
       letter-spacing: .04em;
       white-space: nowrap;
     }
+    nav.scrolled .nav-logo { color: var(--text-dark); }
     nav a.cta-btn {
       background: var(--green);
       color: #fff;
@@ -69,6 +70,15 @@
       letter-spacing: .04em;
       white-space: nowrap;
       flex-shrink: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity .3s, transform .3s;
+    }
+    nav.scrolled a.cta-btn {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
     /* ── HERO ── */
