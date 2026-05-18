@@ -224,25 +224,25 @@
 
     /* ── RESULTS ── */
     #results {
-      background: #111;
+      background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
       padding: 0;
+      border-top: 1px solid var(--green-mid);
+      border-bottom: 1px solid var(--green-mid);
     }
     .results-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid rgba(255,255,255,0.06);
     }
     .result-item {
       padding: 72px 8vw;
-      border-right: 1px solid rgba(255,255,255,0.06);
+      border-right: 1px solid var(--green-mid);
       text-align: center;
-      position: relative;
     }
     .result-item:last-child { border-right: none; }
     .result-num {
       font-size: clamp(52px, 7.5vw, 96px);
       font-weight: 900;
-      color: #fff;
+      color: var(--text-dark);
       letter-spacing: -.04em;
       line-height: 1;
       margin-bottom: 20px;
@@ -254,19 +254,19 @@
     .result-unit {
       font-size: .45em;
       font-weight: 700;
-      color: rgba(255,255,255,0.5);
+      color: var(--text-sub);
       letter-spacing: 0;
     }
     .result-name {
       font-size: 13px;
       font-weight: 700;
-      color: rgba(255,255,255,0.85);
+      color: var(--text-dark);
       letter-spacing: .1em;
       margin-bottom: 6px;
     }
     .result-sub {
       font-size: 11px;
-      color: rgba(255,255,255,0.3);
+      color: var(--text-sub);
       letter-spacing: .12em;
     }
 
