@@ -12,12 +12,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black: #111;
+      --black: #1a1a1a;
       --white: #fff;
-      --orange: #f97316;
-      --gray: rgba(255,255,255,0.45);
-      --border: rgba(255,255,255,0.1);
-      --bg2: #1a1a1a;
+      --green: #16a34a;
+      --green-light: #f0fdf4;
+      --sky: #f0f9ff;
+      --gray: #6b7280;
+      --border: #e5e7eb;
+      --bg2: #f8fafc;
       --text-dark: #1a1a1a;
       --sub-dark: #555;
     }
@@ -26,8 +28,8 @@
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background: var(--black);
-      color: var(--white);
+      background: var(--white);
+      color: var(--text-dark);
       line-height: 1.8;
       font-size: 16px;
       overflow-x: hidden;
@@ -45,10 +47,12 @@
       transition: background .3s, padding .3s;
     }
     nav.scrolled {
-      background: var(--black);
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
       padding: 16px 8vw;
       border-bottom: 1px solid var(--border);
     }
+    nav.scrolled .nav-logo { color: var(--text-dark); }
     .nav-logo {
       font-size: 14px;
       font-weight: 900;
@@ -57,7 +61,7 @@
       white-space: nowrap;
     }
     nav a.cta-btn {
-      background: var(--orange);
+      background: var(--green);
       color: #fff;
       padding: 10px 20px;
       font-size: 13px;
@@ -99,7 +103,7 @@
     }
     .hero-main em {
       font-style: normal;
-      color: var(--orange);
+      color: #86efac;
     }
     .hero-sub {
       font-size: clamp(14px, 1.6vw, 18px);
@@ -114,7 +118,7 @@
       flex-wrap: wrap;
     }
     .btn-primary {
-      background: var(--orange);
+      background: var(--green);
       color: #fff;
       padding: 18px 48px;
       font-size: 15px;
@@ -156,7 +160,7 @@
 
     /* ── CONCEPT ── */
     #concept {
-      background: var(--orange);
+      background: var(--green);
       padding: 100px 8vw;
     }
     .concept-inner {
@@ -165,7 +169,7 @@
     .concept-label {
       font-size: 11px;
       letter-spacing: .2em;
-      color: rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.6);
       margin-bottom: 32px;
     }
     .concept-title {
@@ -185,20 +189,20 @@
 
     /* ── SERVICE ── */
     #service {
-      background: var(--black);
+      background: var(--white);
       padding: 100px 8vw;
     }
     .section-label {
       font-size: 11px;
       letter-spacing: .2em;
-      color: var(--orange);
+      color: var(--green);
       margin-bottom: 16px;
     }
     .section-title {
       font-size: clamp(28px, 4vw, 48px);
       font-weight: 900;
       line-height: 1.2;
-      color: var(--white);
+      color: var(--text-dark);
       margin-bottom: 64px;
       letter-spacing: -0.01em;
     }
@@ -209,22 +213,22 @@
       background: var(--border);
     }
     .service-card {
-      background: var(--black);
+      background: var(--white);
       padding: 48px 40px;
       transition: background .2s;
       cursor: default;
     }
-    .service-card:hover { background: var(--bg2); }
+    .service-card:hover { background: var(--green-light); }
     .service-num {
       font-size: 11px;
       letter-spacing: .2em;
-      color: var(--orange);
+      color: var(--green);
       margin-bottom: 24px;
     }
     .service-card h3 {
       font-size: 22px;
       font-weight: 900;
-      color: var(--white);
+      color: var(--text-dark);
       margin-bottom: 16px;
       line-height: 1.3;
     }
@@ -241,32 +245,33 @@
     }
     .service-tag {
       font-size: 12px;
-      color: rgba(255,255,255,0.5);
-      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--green);
+      border: 1px solid #bbf7d0;
+      background: var(--green-light);
       padding: 4px 12px;
       letter-spacing: .05em;
     }
 
     /* ── FOR ── */
     #for {
-      background: var(--bg2);
+      background: var(--sky);
       padding: 100px 8vw;
     }
     .for-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2px;
-      background: rgba(255,255,255,0.06);
+      background: var(--border);
       margin-top: 64px;
     }
     .for-card {
-      background: var(--bg2);
+      background: var(--white);
       padding: 40px 32px;
     }
     .for-card h4 {
       font-size: 17px;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-dark);
       margin-bottom: 10px;
     }
     .for-card p {
@@ -282,7 +287,7 @@
 
     /* ── FLOW ── */
     #flow {
-      background: var(--black);
+      background: var(--green-light);
       padding: 100px 8vw;
     }
     .flow-list {
@@ -311,8 +316,8 @@
       width: 40px;
       height: 40px;
       min-width: 40px;
-      border: 1px solid var(--orange);
-      color: var(--orange);
+      border: 1px solid var(--green);
+      color: var(--green);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -324,7 +329,7 @@
     .flow-item h3 {
       font-size: 18px;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-dark);
       margin-bottom: 8px;
       margin-top: 8px;
     }
@@ -345,7 +350,7 @@
     .cta-label {
       font-size: 11px;
       letter-spacing: .2em;
-      color: var(--orange);
+      color: var(--green);
       margin-bottom: 24px;
     }
     .cta-title {
@@ -364,7 +369,7 @@
       max-width: 520px;
     }
     .btn-cta {
-      background: var(--orange);
+      background: var(--green);
       color: #fff;
       padding: 22px 64px;
       font-size: 16px;
@@ -381,7 +386,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #0a0a0a;
+      background: #0f1a13;
       padding: 60px 8vw 40px;
       border-top: 1px solid var(--border);
     }
