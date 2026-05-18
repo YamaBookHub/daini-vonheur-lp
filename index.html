@@ -51,16 +51,29 @@
       padding: 16px 8vw;
       border-bottom: 1px solid var(--border);
     }
-    nav.scrolled .nav-logo { color: var(--text-dark); }
     .nav-logo {
       font-size: 39px;
       font-weight: 900;
-      color: var(--white);
       letter-spacing: .04em;
       white-space: nowrap;
-      transition: color .3s;
+      /* 空の画像を文字の形に切り抜き → 太陽バックライト効果 */
+      background-image: url('https://images.unsplash.com/photo-1601297183305-6df142704ea2?w=1920&q=85');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center top;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      filter: brightness(1.55) saturate(1.15) contrast(1.05);
+      transition: filter .3s;
     }
-    nav.scrolled .nav-logo { color: var(--text-dark); }
+    nav.scrolled .nav-logo {
+      background-image: none;
+      -webkit-text-fill-color: var(--text-dark);
+      color: var(--text-dark);
+      filter: none;
+    }
     nav a.cta-btn {
       background: transparent;
       color: rgba(255,255,255,0.85);
