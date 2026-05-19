@@ -1022,12 +1022,12 @@
     }
 
     /* ── SCROLL ANIMATIONS ── */
-    .fade-in {
+    .js-loaded .fade-in {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity .55s ease, transform .55s ease;
     }
-    .fade-in.visible { opacity: 1; transform: none; }
+    .js-loaded .fade-in.visible { opacity: 1; transform: none; }
     .service-card.fade-in:nth-child(2) { transition-delay: .1s; }
     .service-card.fade-in:nth-child(3) { transition-delay: .2s; }
     .service-card.fade-in:nth-child(4) { transition-delay: .3s; }
@@ -1424,6 +1424,9 @@
 </footer>
 
 <script>
+  // JSが読み込まれた時点でfade-inアニメーションを有効化
+  document.body.classList.add('js-loaded');
+
   window.addEventListener('scroll', () => {
     document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 80);
   });
