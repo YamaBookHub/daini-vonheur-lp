@@ -210,7 +210,7 @@
     }
 
     /* ── SHARED ── */
-    .sec { padding: 96px 8vw; }
+    .sec { padding: 72px 8vw; }
     .sec-label {
       font-size: 10px;
       font-weight: 700;
@@ -303,7 +303,7 @@
     /* ── WHO WE ARE ── */
     #concept {
       background: linear-gradient(150deg, #ffffff 0%, #f0fdf4 100%);
-      padding: 96px 8vw;
+      padding: 72px 8vw;
       display: grid;
       grid-template-columns: 5fr 7fr;
       gap: 64px;
@@ -557,6 +557,55 @@
     }
     .case-label { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
     .case-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+    /* case-featured */
+    .case-featured {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 0;
+      background: #fff; border: 1px solid #cde8d8; border-radius: 20px;
+      overflow: hidden;
+    }
+    .case-featured-left {
+      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 100%);
+      padding: 48px 36px; display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+    }
+    .case-featured-left .case-genre {
+      color: rgba(255,255,255,0.7); margin-bottom: 20px;
+    }
+    .case-featured-num {
+      font-size: clamp(52px, 7vw, 84px); font-weight: 900;
+      color: #fff; letter-spacing: -0.04em; line-height: 1;
+    }
+    .case-featured-unit {
+      font-size: 0.45em; font-weight: 700; vertical-align: baseline;
+    }
+    .case-featured-left .case-label {
+      color: rgba(255,255,255,0.85); margin-top: 12px; font-size: 13px;
+    }
+    .case-featured-right {
+      padding: 48px 40px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .case-featured-body {
+      font-size: 15px; color: var(--text-mid); line-height: 2; margin-bottom: 24px;
+    }
+    .case-featured-points {
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+    }
+    .case-featured-points li {
+      font-size: 14px; font-weight: 700; color: var(--text-dark);
+      padding-left: 20px; position: relative;
+    }
+    .case-featured-points li::before {
+      content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 900;
+    }
+    .cases-note {
+      margin-top: 20px; font-size: 12px; color: var(--text-sub); text-align: center;
+    }
+    @media (max-width: 768px) {
+      .case-featured { grid-template-columns: 1fr; }
+      .case-featured-left { padding: 36px 28px; }
+      .case-featured-right { padding: 32px 28px; }
+    }
 
     /* ── SUBSIDY ── */
     #subsidy { background: #fff; }
@@ -905,9 +954,9 @@
 <!-- HERO CTA -->
 <div class="hero-below-cta">
   <p class="hero-sub">
-    Instagram・TikTok・YouTube・Threads・Xを縦横無尽に活用し、<br />
-    問い合わせ・採用・売上につながる導線を設計。<br />
-    CM出身の代表が、最初から最後まで直接動きます。
+    「再生数は伸びてるのに、売上が変わらない」<br />
+    その悩み、SNSの設計から変えます。<br />
+    CM・MV制作出身の代表が、全案件を直接担当します。
   </p>
   <div class="hero-cta">
     <a href="#cta" class="btn-primary">無料相談する →</a>
@@ -934,32 +983,22 @@
   </div>
 </section>
 
-<!-- RESULTS -->
-<section id="results">
-  <div class="results-grid results-grid--single">
-    <div class="result-item fade-in">
-      <div class="result-num"><span class="count" data-target="3500" data-suffix="万">0</span><span class="result-unit">円</span></div>
-      <div class="result-name">クラウドファンディング達成</div>
-      <div class="result-sub">SNS・動画による認知拡大で目標額を大幅突破</div>
-    </div>
-  </div>
-</section>
 
 <!-- WHO WE ARE -->
 <section id="concept">
   <div class="concept-left">
     <div class="sec-label">WHO WE ARE</div>
-    <h2 class="concept-headline">結果に、<br /><em>向き合う。</em></h2>
+    <h2 class="concept-headline">再生数より、<br /><em>売上。</em></h2>
   </div>
   <div class="concept-right">
     <p class="concept-body">
-      SNS運用の現場では、<strong>「担当者がすぐ変わる」「施策の意図が伝わらない」「成果が数字に出ない」</strong>という声を多く耳にします。
+      CM・ミュージックビデオの制作現場を経てSNSマーケティングに転じた代表が、すべての案件を直接担当しています。
     </p>
     <blockquote class="concept-belief">
-      私たちは、売上に直結するSNS戦略を<br />クライアントと一緒に実行するチームです。
+      「バズっても売上が出ない」をなくしたい。<br />だから、KPIは「再生数」じゃなく「売上・来店・面談数」で設定します。
     </blockquote>
     <p class="concept-body">
-      私たちは、<strong>再生数より「実利」</strong>にこだわるSNSマーケティングチームです。担当者が最初から最後まで変わらず、クライアントの事業を深く理解した上で動きます。採用なら面談数、店舗なら来店数、ECなら売上という<strong>事業の目的に直結するKPI</strong>を設定し、3ヶ月かけて「勝ちパターン」を見つけます。
+      担当者は最初から最後まで変わりません。あなたの事業を深く理解した上で動く、<strong>1社専属に近い感覚</strong>で使えるSNSチームです。
     </p>
   </div>
 </section>
@@ -1068,22 +1107,22 @@
 <!-- STRENGTH -->
 <section id="strength" class="sec">
   <div class="sec-label">STRENGTH</div>
-  <h2 class="sec-title">選ばれる3つの理由</h2>
+  <h2 class="sec-title">他との違い、3つ</h2>
   <div class="strength-grid">
     <div class="strength-card fade-in">
       <div class="strength-num">01</div>
-      <h3 class="strength-title">社長が直接動く</h3>
-      <p class="strength-desc">CM・ミュージックビデオ制作出身の代表が、最初から最後まで直接担当。「担当者がすぐ変わる」問題が起きません。</p>
+      <h3 class="strength-title">代表が、全案件を直担当</h3>
+      <p class="strength-desc">CM・MV制作出身の代表が最初から最後まで動きます。「いつの間にか担当者が変わってた」は起きません。</p>
     </div>
     <div class="strength-card fade-in">
       <div class="strength-num">02</div>
-      <h3 class="strength-title">SNS × 動画 × 販売導線の一気通貫</h3>
-      <p class="strength-desc">運用・動画制作・販売導線設計・クラウドファンディングまで、バラバラに外注せず1社で完結。窓口が一本化されるため、コミュニケーションコストを大幅に削減できます。</p>
+      <h3 class="strength-title">SNS・動画・販売導線を1社で完結</h3>
+      <p class="strength-desc">運用・動画・ライブ配信・クラウドファンディングを、窓口1本でまかせられます。外注をバラバラ管理するコストがなくなります。</p>
     </div>
     <div class="strength-card fade-in">
       <div class="strength-num">03</div>
-      <h3 class="strength-title">中小企業・個人事業主向け価格</h3>
-      <p class="strength-desc">大手代理店に頼むような内容を、中小企業・個人事業主が手を出しやすい価格で。補助金を活用すれば実質負担をさらに抑えられます。</p>
+      <h3 class="strength-title">月5万円〜、補助金も使える</h3>
+      <p class="strength-desc">中小企業・個人事業主が動きやすい価格帯で提供。補助金を活用すれば、実質の自己負担をさらに下げることも可能です。</p>
     </div>
   </div>
 </section>
@@ -1092,14 +1131,22 @@
 <section id="cases" class="sec">
   <div class="sec-label">CASE STUDY</div>
   <h2 class="sec-title">実績紹介</h2>
-  <div class="cases-grid cases-grid--single">
-    <div class="case-card fade-in">
-      <div class="case-genre">☁️ クラウドファンディング</div>
-      <div class="case-num">3,500<span style="font-size:0.5em">万円</span></div>
+  <div class="case-featured fade-in">
+    <div class="case-featured-left">
+      <div class="case-genre">クラウドファンディング支援</div>
+      <div class="case-featured-num">3,500<span class="case-featured-unit">万円</span></div>
       <div class="case-label">達成金額</div>
-      <div class="case-desc">SNSと動画を組み合わせた認知拡大・拡散設計で、クラウドファンディング3,500万円を達成。</div>
+    </div>
+    <div class="case-featured-right">
+      <p class="case-featured-body">SNSと動画を組み合わせ、プロジェクト公開前から認知を積み上げる設計を実施。掲載中の拡散も並走し、クラウドファンディング3,500万円を達成しました。</p>
+      <ul class="case-featured-points">
+        <li>掲載前〜終了後まで一貫サポート</li>
+        <li>SNS投稿・動画・ライブを組み合わせた拡散設計</li>
+        <li>目標金額を大幅に超えて達成</li>
+      </ul>
     </div>
   </div>
+  <p class="cases-note">※ 現在も複数のクライアントと進行中です。実績・事例のご相談はお気軽に。</p>
 </section>
 
 <!-- SUBSIDY -->
@@ -1163,10 +1210,10 @@
 <!-- CTA -->
 <section id="cta">
   <div class="sec-label">CONTACT</div>
-  <h2 class="cta-title">まずは、<br />お気軽にご相談ください。</h2>
+  <h2 class="cta-title">まず、話だけでも<br />聞かせてください。</h2>
   <p class="cta-sub">
-    SNS・動画・ライブ販売・クラウドファンディングなど、どんな小さな疑問でも構いません。<br />
-    無料相談から始められます。返信は通常24時間以内。
+    「何から始めればいいかわからない」「今のSNS運用が正しいか不安」<br />
+    そんな段階からでも大丈夫です。無料相談、返信は24時間以内。
   </p>
   <div class="cta-btns">
     <a href="https://www.instagram.com/daini_vonheur/" target="_blank" rel="noopener" class="btn-cta btn-cta-main">
