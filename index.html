@@ -333,6 +333,48 @@
       letter-spacing: -.01em;
     }
 
+    /* ── VISION ── */
+    #vision {
+      background: #f0f8f4;
+      padding: 80px 8vw;
+      text-align: center;
+    }
+    .vision-inner { max-width: 700px; margin: 0 auto; }
+    .vision-copy {
+      font-size: clamp(32px, 5vw, 60px);
+      font-weight: 900;
+      letter-spacing: -.025em;
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 24px;
+    }
+    .vision-copy em { font-style: normal; color: var(--green); }
+    .vision-sub {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+
+    /* ── NEEDS CTA ── */
+    #needs-cta { background: #fff; padding: 96px 8vw; }
+    .needs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .needs-card {
+      background: #f8fdf9;
+      border: 1px solid #cde8d8;
+      border-radius: 20px;
+      padding: 48px 36px;
+      text-align: center;
+    }
+    .needs-icon { font-size: 48px; margin-bottom: 20px; }
+    .needs-title { font-size: 20px; font-weight: 800; color: var(--text-dark); margin-bottom: 16px; }
+    .needs-desc { font-size: 14px; color: var(--text-mid); line-height: 1.9; margin-bottom: 32px; }
+
     /* ── SERVICE ── */
     #service {
       background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
@@ -416,146 +458,176 @@
       border-radius: 2px;
     }
 
-    /* ── FOR WHOM ── */
-    #for {
-      background: linear-gradient(150deg, #f0fdf4 0%, #ffffff 60%);
-      padding: 96px 8vw;
-    }
-    .for-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      border-top: none;
-      background: none;
-    }
-    .for-item {
-      background: #fff;
+    /* ── PRICE ── */
+    #price { background: #f8fdf9; }
+    .price-compare {
+      max-width: 860px; margin: 0 auto 48px;
+      border-radius: 16px; overflow: hidden;
       border: 1px solid #cde8d8;
-      border-bottom: 1px solid #cde8d8;
-      border-radius: 16px;
-      padding: 36px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      transition: transform .25s, box-shadow .25s, border-color .25s, background .25s;
-      position: relative;
-      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(45,110,80,.08);
     }
-    .for-item::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--green), #4ade80);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .35s;
+    .price-compare-header {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      background: var(--green); color: #fff;
     }
-    .for-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(45,110,80,.1);
-      border-color: var(--green);
-      background: linear-gradient(135deg, #fff 0%, #f4fdf8 100%);
-      padding-left: 32px;
+    .price-compare-header div {
+      padding: 16px 20px; font-size: 13px; font-weight: 700;
+      letter-spacing: .06em; text-align: center;
     }
-    .for-item:hover::before { transform: scaleX(1); }
-    .for-item-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px; height: 36px;
-      background: var(--green);
-      color: #fff;
-      border-radius: 50%;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0;
-      margin-bottom: 18px;
-      flex-shrink: 0;
+    .price-compare-header div:first-child { text-align: left; background: rgba(0,0,0,.15); }
+    .price-compare-row {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      border-top: 1px solid #e8f5ee;
     }
-    .for-item-text h4 {
-      font-size: clamp(17px, 1.6vw, 21px);
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 10px;
-      letter-spacing: -.015em;
+    .price-compare-row:nth-child(even) { background: #f4fdf8; }
+    .price-compare-row div {
+      padding: 14px 20px; font-size: 14px; color: var(--text-dark);
+      text-align: center; display: flex; align-items: center; justify-content: center;
     }
-    .for-item-desc {
-      font-size: 14px;
+    .price-compare-row div:first-child {
+      text-align: left; justify-content: flex-start;
+      font-size: 13px; color: var(--text-mid); font-weight: 600;
+    }
+    .price-compare-row .col-other { color: var(--text-mid); font-size: 13px; }
+    .price-compare-row .col-us {
+      font-weight: 800; color: var(--green);
+      font-size: 16px;
+    }
+    .price-compare-note {
+      text-align: center; font-size: 12px; color: var(--text-mid);
+      margin-bottom: 40px;
+    }
+    .price-lead {
+      text-align: center;
+      font-size: 15px;
       color: var(--text-mid);
-      line-height: 1.85;
+      line-height: 1.9;
+      margin-bottom: 48px;
     }
 
-    /* ── FLOW ── */
-    #flow {
-      background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
-      padding: 96px 8vw;
-    }
-    .flow-grid {
+    /* ── STRENGTH ── */
+    #strength { background: #f8fdf9; }
+    .strength-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      position: relative;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
-    .flow-grid::before {
-      content: '';
-      position: absolute;
-      top: 52px;
-      left: 12.5%;
-      right: 12.5%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--green-mid), var(--green), var(--green-mid), transparent);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .flow-card {
-      background: linear-gradient(180deg, #f8fdf9 0%, #fff 50%);
-      padding: 44px 28px 36px;
+    .strength-card {
+      background: #fff;
       border: 1px solid #cde8d8;
-      border-radius: 12px;
-      box-shadow: 0 2px 16px rgba(45,110,80,.05);
-      transition: box-shadow .3s, transform .3s, border-color .3s;
-      position: relative;
-      z-index: 1;
+      border-radius: 20px;
+      padding: 40px 32px;
     }
-    .flow-card:hover {
-      box-shadow: 0 12px 40px rgba(45,110,80,.12);
-      transform: translateY(-5px);
-      border-color: var(--green);
-    }
-    .flow-card:not(:last-child)::after {
-      content: '→';
-      position: absolute;
-      top: 48px;
-      right: -16px;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--green-mid);
-      z-index: 2;
-    }
-    .flow-card-num {
-      font-size: 72px;
+    .strength-num {
+      font-size: 48px;
       font-weight: 900;
-      background: linear-gradient(135deg, var(--green) 0%, #4ade80 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      opacity: .28;
+      color: var(--green);
+      opacity: .15;
       line-height: 1;
-      margin-bottom: 20px;
-      letter-spacing: -.05em;
+      margin-bottom: 16px;
+      letter-spacing: -.04em;
     }
-    .flow-card h3 {
-      font-size: 16px;
-      font-weight: 900;
-      color: var(--text-dark);
-      margin-bottom: 12px;
-      letter-spacing: -.01em;
+    .strength-title { font-size: 17px; font-weight: 800; color: var(--text-dark); margin-bottom: 16px; line-height: 1.4; }
+    .strength-desc { font-size: 14px; color: var(--text-mid); line-height: 1.9; }
+
+    /* ── CASES ── */
+    #cases { background: #f8fdf9; }
+    .cases-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
     }
-    .flow-card p {
-      font-size: 13px;
-      color: var(--text-mid);
-      line-height: 2.0;
+    @media (max-width: 900px) {
+      .cases-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .case-card {
+      background: #fff; border: 1px solid #cde8d8; border-radius: 16px;
+      padding: 32px 28px; position: relative; overflow: hidden;
+    }
+    .case-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--green-mid), var(--green));
+    }
+    .case-genre {
+      font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      color: var(--green); text-transform: uppercase; margin-bottom: 16px;
+    }
+    .case-num {
+      font-size: clamp(36px, 5vw, 52px); font-weight: 900;
+      color: var(--text-dark); letter-spacing: -0.02em; line-height: 1;
+      margin-bottom: 8px;
+    }
+    .case-label { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
+    .case-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+    /* ── SUBSIDY ── */
+    #subsidy { background: #fff; }
+    .subsidy-inner {
+      max-width: 900px; margin: 0 auto; text-align: center;
+    }
+    .subsidy-badge {
+      display: inline-block;
+      background: linear-gradient(120deg, var(--green-mid), var(--green));
+      color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      padding: 6px 18px; border-radius: 20px; margin-bottom: 24px;
+    }
+    .subsidy-title { font-size: clamp(22px, 3vw, 32px); font-weight: 900; color: var(--text-dark); margin-bottom: 20px; line-height: 1.4; }
+    .subsidy-body { font-size: 15px; color: var(--text-mid); line-height: 1.9; margin-bottom: 40px; }
+    .subsidy-cards {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 20px; margin-bottom: 48px;
+    }
+    .subsidy-card {
+      background: #f8fdf9; border: 1px solid #cde8d8;
+      border-radius: 16px; padding: 32px 28px; text-align: left;
+    }
+    .subsidy-card-tag {
+      display: inline-block; background: var(--green); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: .08em;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
+    }
+    .subsidy-card-title {
+      font-size: 17px; font-weight: 800; color: var(--text-dark);
+      line-height: 1.4; margin-bottom: 16px;
+    }
+    .subsidy-card-max {
+      font-size: 28px; font-weight: 900; color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .subsidy-card-max strong { color: var(--green); }
+    .subsidy-card-rate {
+      font-size: 13px; color: var(--text-mid); margin-bottom: 16px;
+      padding-bottom: 16px; border-bottom: 1px solid #cde8d8;
+    }
+    .subsidy-card-example {
+      font-size: 13px; color: var(--text-mid); line-height: 1.8;
+      background: #fff; border-radius: 8px; padding: 12px 16px;
+    }
+    .subsidy-highlight {
+      font-size: 18px; font-weight: 900; color: var(--green);
+    }
+    .subsidy-flow { margin-top: 0; }
+    .subsidy-flow-title {
+      font-size: 13px; font-weight: 700; letter-spacing: .1em;
+      color: var(--text-mid); text-transform: uppercase; margin-bottom: 24px;
+    }
+    .subsidy-flow-steps {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; flex-wrap: wrap;
+    }
+    .subsidy-step {
+      background: #f8fdf9; border: 1px solid #cde8d8;
+      border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px;
+    }
+    .subsidy-step-num {
+      font-size: 11px; font-weight: 700; color: var(--green);
+      letter-spacing: .08em; margin-bottom: 6px;
+    }
+    .subsidy-step-text { font-size: 13px; font-weight: 600; color: var(--text-dark); line-height: 1.5; }
+    .subsidy-step-arrow { font-size: 18px; color: var(--green-mid); }
+    @media (max-width: 768px) {
+      .subsidy-cards { grid-template-columns: 1fr; }
+      .subsidy-flow-steps { gap: 6px; }
+      .subsidy-step { min-width: 80px; padding: 12px 10px; }
+      .subsidy-step-arrow { display: none; }
     }
 
     /* ── CTA ── */
@@ -653,174 +725,6 @@
       z-index: 1;
     }
 
-    /* ── PRICE ── */
-    #price { background: #f8fdf9; }
-    .price-compare {
-      max-width: 860px; margin: 0 auto 48px;
-      border-radius: 16px; overflow: hidden;
-      border: 1px solid #cde8d8;
-      box-shadow: 0 4px 24px rgba(45,110,80,.08);
-    }
-    .price-compare-header {
-      display: grid; grid-template-columns: 1fr 1fr 1fr;
-      background: var(--green); color: #fff;
-    }
-    .price-compare-header div {
-      padding: 16px 20px; font-size: 13px; font-weight: 700;
-      letter-spacing: .06em; text-align: center;
-    }
-    .price-compare-header div:first-child { text-align: left; background: rgba(0,0,0,.15); }
-    .price-compare-row {
-      display: grid; grid-template-columns: 1fr 1fr 1fr;
-      border-top: 1px solid #e8f5ee;
-    }
-    .price-compare-row:nth-child(even) { background: #f4fdf8; }
-    .price-compare-row div {
-      padding: 14px 20px; font-size: 14px; color: var(--text-dark);
-      text-align: center; display: flex; align-items: center; justify-content: center;
-    }
-    .price-compare-row div:first-child {
-      text-align: left; justify-content: flex-start;
-      font-size: 13px; color: var(--text-mid); font-weight: 600;
-    }
-    .price-compare-row .col-other { color: var(--text-mid); font-size: 13px; }
-    .price-compare-row .col-us {
-      font-weight: 800; color: var(--green);
-      font-size: 16px;
-    }
-    .price-compare-note {
-      text-align: center; font-size: 12px; color: var(--text-mid);
-      margin-bottom: 40px;
-    }
-    .price-lead {
-      text-align: center;
-      font-size: 15px;
-      color: var(--text-mid);
-      line-height: 1.9;
-      margin-bottom: 48px;
-    }
-    /* ── SOCIAL ── */
-    #social { background: #f8fdf9; }
-    .social-grid {
-      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
-    }
-    .social-card {
-      background: #fff; border: 1px solid #cde8d8; border-radius: 16px;
-      padding: 32px 40px; text-align: center; min-width: 200px;
-      text-decoration: none; color: var(--text-dark);
-      transition: transform .25s, box-shadow .25s;
-    }
-    .social-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(45,110,80,.1); }
-    .social-card-icon { font-size: 36px; margin-bottom: 12px; }
-    .social-card-name { font-size: 13px; font-weight: 700; letter-spacing: .06em; color: var(--text-dark); margin-bottom: 4px; }
-    .social-card-handle { font-size: 12px; color: var(--text-mid); }
-
-    /* ── SUBSIDY ── */
-    #subsidy { background: #fff; }
-    .subsidy-inner {
-      max-width: 900px; margin: 0 auto; text-align: center;
-    }
-    .subsidy-badge {
-      display: inline-block;
-      background: linear-gradient(120deg, var(--green-mid), var(--green));
-      color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .1em;
-      padding: 6px 18px; border-radius: 20px; margin-bottom: 24px;
-    }
-    .subsidy-title { font-size: clamp(22px, 3vw, 32px); font-weight: 900; color: var(--text-dark); margin-bottom: 20px; line-height: 1.4; }
-    .subsidy-body { font-size: 15px; color: var(--text-mid); line-height: 1.9; margin-bottom: 40px; }
-    .subsidy-cards {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 20px; margin-bottom: 48px;
-    }
-    .subsidy-card {
-      background: #f8fdf9; border: 1px solid #cde8d8;
-      border-radius: 16px; padding: 32px 28px; text-align: left;
-    }
-    .subsidy-card-tag {
-      display: inline-block; background: var(--green); color: #fff;
-      font-size: 11px; font-weight: 700; letter-spacing: .08em;
-      padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
-    }
-    .subsidy-card-title {
-      font-size: 17px; font-weight: 800; color: var(--text-dark);
-      line-height: 1.4; margin-bottom: 16px;
-    }
-    .subsidy-card-max {
-      font-size: 28px; font-weight: 900; color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-    .subsidy-card-max strong { color: var(--green); }
-    .subsidy-card-rate {
-      font-size: 13px; color: var(--text-mid); margin-bottom: 16px;
-      padding-bottom: 16px; border-bottom: 1px solid #cde8d8;
-    }
-    .subsidy-card-example {
-      font-size: 13px; color: var(--text-mid); line-height: 1.8;
-      background: #fff; border-radius: 8px; padding: 12px 16px;
-    }
-    .subsidy-highlight {
-      font-size: 18px; font-weight: 900; color: var(--green);
-    }
-    .subsidy-flow { margin-top: 0; }
-    .subsidy-flow-title {
-      font-size: 13px; font-weight: 700; letter-spacing: .1em;
-      color: var(--text-mid); text-transform: uppercase; margin-bottom: 24px;
-    }
-    .subsidy-flow-steps {
-      display: flex; align-items: center; justify-content: center;
-      gap: 8px; flex-wrap: wrap;
-    }
-    .subsidy-step {
-      background: #f8fdf9; border: 1px solid #cde8d8;
-      border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px;
-    }
-    .subsidy-step-num {
-      font-size: 11px; font-weight: 700; color: var(--green);
-      letter-spacing: .08em; margin-bottom: 6px;
-    }
-    .subsidy-step-text { font-size: 13px; font-weight: 600; color: var(--text-dark); line-height: 1.5; }
-    .subsidy-step-arrow { font-size: 18px; color: var(--green-mid); }
-    @media (max-width: 768px) {
-      .subsidy-cards { grid-template-columns: 1fr; }
-      .subsidy-flow-steps { gap: 6px; }
-      .subsidy-step { min-width: 80px; padding: 12px 10px; }
-      .subsidy-step-arrow { display: none; }
-    }
-
-    /* ── CASES ── */
-    #cases { background: #f8fdf9; }
-    .cases-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-    }
-    @media (max-width: 900px) {
-      .cases-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    .case-card {
-      background: #fff; border: 1px solid #cde8d8; border-radius: 16px;
-      padding: 32px 28px; position: relative; overflow: hidden;
-    }
-    .case-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--green-mid), var(--green));
-    }
-    .case-genre {
-      font-size: 11px; font-weight: 700; letter-spacing: .1em;
-      color: var(--green); text-transform: uppercase; margin-bottom: 16px;
-    }
-    .case-num {
-      font-size: clamp(36px, 5vw, 52px); font-weight: 900;
-      color: var(--text-dark); letter-spacing: -0.02em; line-height: 1;
-      margin-bottom: 8px;
-    }
-    .case-label { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
-    .case-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
-
-    @media (max-width: 768px) {
-
-      .team-grid { grid-template-columns: 1fr; }
-      .cases-grid { grid-template-columns: 1fr; }
-    }
-
     /* ── FOOTER ── */
     footer {
       background: linear-gradient(135deg, #0d1f14 0%, #111 100%);
@@ -913,22 +817,20 @@
       .sec { padding: 64px 6vw; }
       #concept { grid-template-columns: 1fr; gap: 40px; padding: 64px 6vw; }
       .concept-left { position: static; }
-      #for, #cta { padding: 64px 6vw; }
+      #cta { padding: 64px 6vw; }
       .sec-title { margin-bottom: 48px; }
 
       .service-grid { grid-template-columns: 1fr; gap: 12px; }
       .service-card { padding: 40px 28px; }
 
-      .for-item { grid-template-columns: 52px 1fr; gap: 20px; }
-      .for-item-desc { display: none; }
-
-      .flow-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .flow-card { padding: 32px 24px; }
-
       .results-grid { grid-template-columns: repeat(2, 1fr); }
       .result-item { padding: 40px 16px; }
       .result-item:nth-child(odd) { border-right: 1px solid var(--green-mid); }
       .result-item:nth-child(1), .result-item:nth-child(2) { border-bottom: 1px solid var(--green-mid); }
+
+      .needs-grid { grid-template-columns: 1fr; }
+      .strength-grid { grid-template-columns: 1fr; gap: 16px; }
+      .cases-grid { grid-template-columns: repeat(2, 1fr); }
 
       footer { padding: 48px 6vw 28px; }
       .footer-inner { flex-direction: column; gap: 24px; }
@@ -936,7 +838,7 @@
     }
 
     @media (max-width: 480px) {
-      .flow-grid { grid-template-columns: 1fr; }
+      .cases-grid { grid-template-columns: 1fr; }
     }
 
     /* ── SCROLL ANIMATIONS ── */
@@ -949,15 +851,11 @@
     .service-card.fade-in:nth-child(2) { transition-delay: .1s; }
     .service-card.fade-in:nth-child(3) { transition-delay: .2s; }
     .service-card.fade-in:nth-child(4) { transition-delay: .3s; }
-    .for-item.fade-in:nth-child(2) { transition-delay: .08s; }
-    .for-item.fade-in:nth-child(3) { transition-delay: .16s; }
-    .for-item.fade-in:nth-child(4) { transition-delay: .24s; }
-    .flow-card.fade-in:nth-child(2) { transition-delay: .1s; }
-    .flow-card.fade-in:nth-child(3) { transition-delay: .2s; }
-    .flow-card.fade-in:nth-child(4) { transition-delay: .3s; }
     .result-item.fade-in:nth-child(2) { transition-delay: .08s; }
     .result-item.fade-in:nth-child(3) { transition-delay: .16s; }
     .result-item.fade-in:nth-child(4) { transition-delay: .24s; }
+    .strength-card.fade-in:nth-child(2) { transition-delay: .1s; }
+    .strength-card.fade-in:nth-child(3) { transition-delay: .2s; }
 
     /* ── CTA BUTTON ── */
     .btn-cta::after { content: ' →'; }
@@ -976,33 +874,6 @@
 
       /* CTA button pulse */
       .btn-cta { animation: pulse-cta 2.5s ease-in-out infinite; }
-
-      /* FOR WHOM: card redesign */
-      .for-list { grid-template-columns: 1fr; gap: 10px; }
-      .for-item {
-        display: block;
-        background: linear-gradient(135deg, #fff 0%, #f8fdf9 100%);
-        border: 1px solid #cde8d8;
-        border-radius: 12px;
-        padding: 22px 20px;
-        transition: transform .2s, box-shadow .2s;
-      }
-      .for-item:active { transform: scale(.99); box-shadow: 0 2px 12px rgba(45,110,80,.1); }
-      .for-item-num {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px; height: 30px;
-        background: var(--green);
-        color: #fff;
-        border-radius: 50%;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0;
-        margin-bottom: 12px;
-      }
-      .for-item-text h4 { font-size: 16px; font-weight: 700; letter-spacing: -.01em; margin-bottom: 6px; }
-      .for-item-desc { display: block; font-size: 13px; color: var(--text-mid); line-height: 1.75; }
     }
   </style>
 </head>
@@ -1084,49 +955,31 @@
   </div>
 </section>
 
-<!-- PRICE -->
-<section id="price" class="sec">
-  <div class="sec-label">PRICE</div>
-  <h2 class="sec-title">料金プラン</h2>
-  <p class="price-lead">
-    大手代理店の相場と比べてみてください。<br />
-    同じクオリティで、圧倒的にリーズナブルに動けます。
-  </p>
+<!-- VISION -->
+<section id="vision">
+  <div class="vision-inner">
+    <div class="vision-copy">SNSを、<em>売上に直結させる</em></div>
+    <p class="vision-sub">再生数やフォロワーではなく、問い合わせ・来店・採用・売上という<br />「事業のゴール」にコミットします。</p>
+  </div>
+</section>
 
-  <div class="price-compare fade-in">
-    <div class="price-compare-header">
-      <div>サービス内容</div>
-      <div>大手代理店 相場</div>
-      <div>第弐ヴォヌール</div>
+<!-- NEEDS CTA -->
+<section id="needs-cta">
+  <h2 class="sec-title" style="text-align:center">あなたの課題はどちらですか？</h2>
+  <div class="needs-grid">
+    <div class="needs-card">
+      <div class="needs-icon">📈</div>
+      <h3 class="needs-title">集客・売上を上げたい</h3>
+      <p class="needs-desc">Instagram / TikTok / YouTube を活用して、来店・問い合わせ・EC売上につなげたい事業者様へ</p>
+      <a href="#cta" class="btn-primary">無料相談する →</a>
     </div>
-    <div class="price-compare-row">
-      <div>SNS運用代行（月額）</div>
-      <div class="col-other">30万円〜</div>
-      <div class="col-us">5万円〜</div>
-    </div>
-    <div class="price-compare-row">
-      <div>リール・ショート動画制作（1本）</div>
-      <div class="col-other">3〜10万円</div>
-      <div class="col-us">1万円〜</div>
-    </div>
-    <div class="price-compare-row">
-      <div>アカウント設計・初期構築</div>
-      <div class="col-other">別途10万円〜</div>
-      <div class="col-us">込み</div>
-    </div>
-    <div class="price-compare-row">
-      <div>担当者の固定</div>
-      <div class="col-other">都度変わる</div>
-      <div class="col-us">最初から最後まで同じ</div>
-    </div>
-    <div class="price-compare-row">
-      <div>補助金対応</div>
-      <div class="col-other">非対応が多い</div>
-      <div class="col-us">相談・申請サポートあり</div>
+    <div class="needs-card">
+      <div class="needs-icon">🎯</div>
+      <h3 class="needs-title">採用を強化したい</h3>
+      <p class="needs-desc">SNSで求職者にリーチし、会いたい人材に届く採用アカウントを構築したい企業様へ</p>
+      <a href="#cta" class="btn-primary">無料相談する →</a>
     </div>
   </div>
-  <p class="price-compare-note">※ 料金は事業規模・依頼内容により変動します。まずは無料相談でお見積もりします。</p>
-
 </section>
 
 <!-- SERVICE -->
@@ -1186,26 +1039,114 @@
   </div>
 </section>
 
-<!-- SOCIAL -->
-<section id="social" class="sec">
-  <div class="sec-label">OFFICIAL ACCOUNT</div>
-  <h2 class="sec-title">公式アカウント</h2>
-  <div class="social-grid">
-    <a href="https://www.instagram.com/daini_vonheur/" target="_blank" rel="noopener" class="social-card fade-in">
-      <div class="social-card-icon">📸</div>
-      <div class="social-card-name">Instagram</div>
-      <div class="social-card-handle">@daini_vonheur</div>
-    </a>
-    <a href="https://www.tiktok.com/@daini_vonheur" target="_blank" rel="noopener" class="social-card fade-in">
-      <div class="social-card-icon">🎵</div>
-      <div class="social-card-name">TikTok</div>
-      <div class="social-card-handle">@daini_vonheur</div>
-    </a>
-    <a href="https://www.youtube.com/@daini_vonheur" target="_blank" rel="noopener" class="social-card fade-in">
-      <div class="social-card-icon">▶️</div>
-      <div class="social-card-name">YouTube</div>
-      <div class="social-card-handle">第弐ヴォヌール公式</div>
-    </a>
+<!-- PRICE -->
+<section id="price" class="sec">
+  <div class="sec-label">PRICE</div>
+  <h2 class="sec-title">料金プラン</h2>
+  <p class="price-lead">
+    大手代理店の相場と比べてみてください。<br />
+    同じクオリティで、圧倒的にリーズナブルに動けます。
+  </p>
+
+  <div class="price-compare fade-in">
+    <div class="price-compare-header">
+      <div>サービス内容</div>
+      <div>大手代理店 相場</div>
+      <div>第弐ヴォヌール</div>
+    </div>
+    <div class="price-compare-row">
+      <div>SNS運用代行（月額）</div>
+      <div class="col-other">30万円〜</div>
+      <div class="col-us">5万円〜</div>
+    </div>
+    <div class="price-compare-row">
+      <div>リール・ショート動画制作（1本）</div>
+      <div class="col-other">3〜10万円</div>
+      <div class="col-us">1万円〜</div>
+    </div>
+    <div class="price-compare-row">
+      <div>アカウント設計・初期構築</div>
+      <div class="col-other">別途10万円〜</div>
+      <div class="col-us">込み</div>
+    </div>
+    <div class="price-compare-row">
+      <div>担当者の固定</div>
+      <div class="col-other">都度変わる</div>
+      <div class="col-us">最初から最後まで同じ</div>
+    </div>
+    <div class="price-compare-row">
+      <div>補助金対応</div>
+      <div class="col-other">非対応が多い</div>
+      <div class="col-us">相談・申請サポートあり</div>
+    </div>
+  </div>
+  <p class="price-compare-note">※ 料金は事業規模・依頼内容により変動します。まずは無料相談でお見積もりします。</p>
+</section>
+
+<!-- STRENGTH -->
+<section id="strength" class="sec">
+  <div class="sec-label">STRENGTH</div>
+  <h2 class="sec-title">選ばれる3つの理由</h2>
+  <div class="strength-grid">
+    <div class="strength-card fade-in">
+      <div class="strength-num">01</div>
+      <h3 class="strength-title">社長が直接動く</h3>
+      <p class="strength-desc">CM・ミュージックビデオ制作出身の代表が、最初から最後まで直接担当。「担当者がすぐ変わる」問題が起きません。</p>
+    </div>
+    <div class="strength-card fade-in">
+      <div class="strength-num">02</div>
+      <h3 class="strength-title">SNS × 動画 × 販売導線の一気通貫</h3>
+      <p class="strength-desc">運用・動画制作・販売導線設計・クラウドファンディングまで、バラバラに外注せず1社で完結。コストも手間も半分以下に。</p>
+    </div>
+    <div class="strength-card fade-in">
+      <div class="strength-num">03</div>
+      <h3 class="strength-title">中小企業・個人事業主向け価格</h3>
+      <p class="strength-desc">大手代理店と同クオリティを、圧倒的にリーズナブルな価格で。補助金活用で実質負担をさらに抑えることも可能です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases" class="sec">
+  <div class="sec-label">CASE STUDY</div>
+  <h2 class="sec-title">支援実績・成功事例</h2>
+  <div class="cases-grid">
+    <div class="case-card fade-in">
+      <div class="case-genre">🍽️ 飲食店 / 運用3ヶ月</div>
+      <div class="case-num">240<span style="font-size:0.5em">%</span></div>
+      <div class="case-label">来店数 前年比UP</div>
+      <div class="case-desc">リール投稿を軸に3ヶ月でターゲット層へのリーチを最大化。来店数が前年比2.4倍に。</div>
+    </div>
+    <div class="case-card fade-in">
+      <div class="case-genre">🛍️ ECサイト / 運用2ヶ月</div>
+      <div class="case-num">400<span style="font-size:0.5em">%</span></div>
+      <div class="case-label">売上 前月比UP</div>
+      <div class="case-desc">SNS経由の販売導線を設計し直し、運用2ヶ月目で売上が4倍に。商品訴求動画が起爆剤に。</div>
+    </div>
+    <div class="case-card fade-in">
+      <div class="case-genre">👤 採用 / 運用1ヶ月</div>
+      <div class="case-num">5<span style="font-size:0.5em">名</span></div>
+      <div class="case-label">面談獲得</div>
+      <div class="case-desc">採用ターゲットに絞ったアカウント設計で即効果。「再生数」より「会いたい人に届ける」設計が決め手。</div>
+    </div>
+    <div class="case-card fade-in">
+      <div class="case-genre">☁️ クラウドファンディング</div>
+      <div class="case-num">3,500<span style="font-size:0.5em">万円</span></div>
+      <div class="case-label">達成金額</div>
+      <div class="case-desc">SNSと動画を組み合わせたプロジェクト拡散で、クラウドファンディング3,500万円を達成。</div>
+    </div>
+    <div class="case-card fade-in">
+      <div class="case-genre">💆 介護・福祉 / 運用4ヶ月</div>
+      <div class="case-num">180<span style="font-size:0.5em">%</span></div>
+      <div class="case-label">採用応募数 前期比UP</div>
+      <div class="case-desc">福祉施設の採用SNSをゼロから構築。「働く現場のリアル」を発信し、採用応募が1.8倍に増加。</div>
+    </div>
+    <div class="case-card fade-in">
+      <div class="case-genre">🛒 小売店 / 運用2ヶ月</div>
+      <div class="case-num">8<span style="font-size:0.5em">倍</span></div>
+      <div class="case-label">SNS経由売上</div>
+      <div class="case-desc">TikTokショップ導入と動画訴求の組み合わせで、SNS経由の売上が2ヶ月で8倍に。</div>
+    </div>
   </div>
 </section>
 
@@ -1267,94 +1208,6 @@
   </div>
 </section>
 
-<!-- FOR -->
-<section id="for" class="sec">
-  <div class="sec-label">FOR WHOM</div>
-  <h2 class="sec-title">こんな方に選ばれています</h2>
-  <div class="for-list">
-    <div class="for-item fade-in">
-      <div class="for-item-num">01</div>
-      <div class="for-item-text"><h4>中小企業・店舗オーナー</h4></div>
-      <div class="for-item-desc">Instagram・TikTokで集客を強化したい飲食・美容・小売などの事業者</div>
-    </div>
-    <div class="for-item fade-in">
-      <div class="for-item-num">02</div>
-      <div class="for-item-text"><h4>EC・物販事業者</h4></div>
-      <div class="for-item-desc">SNS経由の売上を伸ばしたい、またはライブ・ショップ販売に挑戦したい方</div>
-    </div>
-    <div class="for-item fade-in">
-      <div class="for-item-num">03</div>
-      <div class="for-item-text"><h4>クラウドファンディング挑戦者</h4></div>
-      <div class="for-item-desc">掲載前から掲載終了後まで、SNSと動画で商品・プロジェクトを広めたい方</div>
-    </div>
-    <div class="for-item fade-in">
-      <div class="for-item-num">04</div>
-      <div class="for-item-text"><h4>採用・PR動画が必要な企業</h4></div>
-      <div class="for-item-desc">採用強化やブランディング用の動画を単発で依頼したい会社</div>
-    </div>
-  </div>
-</section>
-
-<!-- FLOW -->
-<section id="flow" class="sec">
-  <div class="sec-label">FLOW</div>
-  <h2 class="sec-title">ご依頼の流れ</h2>
-  <div class="flow-grid">
-    <div class="flow-card fade-in">
-      <div class="flow-card-num">01</div>
-      <h3>無料相談</h3>
-      <p>現状・目標・課題をヒアリングします。オンライン・対面どちらでも対応可能です。</p>
-    </div>
-    <div class="flow-card fade-in">
-      <div class="flow-card-num">02</div>
-      <h3>ご提案・お見積もり</h3>
-      <p>状況に合わせたプランと費用をご提示します。無理な提案はしません。</p>
-    </div>
-    <div class="flow-card fade-in">
-      <div class="flow-card-num">03</div>
-      <h3>戦略設計・準備</h3>
-      <p>アカウント設計・投稿方針・スケジュールを一緒に決めていきます。</p>
-    </div>
-    <div class="flow-card fade-in">
-      <div class="flow-card-num">04</div>
-      <h3>実行・改善</h3>
-      <p>投稿・分析・改善を繰り返しながら、成果につながる数字を着実に伸ばします。</p>
-    </div>
-  </div>
-</section>
-
-<!-- CASES -->
-<section id="cases" class="sec">
-  <div class="sec-label">CASE STUDY</div>
-  <h2 class="sec-title">支援実績・成功事例</h2>
-  <div class="cases-grid">
-    <div class="case-card fade-in">
-      <div class="case-genre">🍽️ 飲食店 / 運用3ヶ月</div>
-      <div class="case-num">240<span style="font-size:0.5em">%</span></div>
-      <div class="case-label">来店数 前年比UP</div>
-      <div class="case-desc">リール投稿を軸に3ヶ月でターゲット層へのリーチを最大化。来店数が前年比2.4倍に。</div>
-    </div>
-    <div class="case-card fade-in">
-      <div class="case-genre">🛍️ ECサイト / 運用2ヶ月</div>
-      <div class="case-num">400<span style="font-size:0.5em">%</span></div>
-      <div class="case-label">売上 前月比UP</div>
-      <div class="case-desc">SNS経由の販売導線を設計し直し、運用2ヶ月目で売上が4倍に。商品訴求動画が起爆剤に。</div>
-    </div>
-    <div class="case-card fade-in">
-      <div class="case-genre">👤 採用 / 運用1ヶ月</div>
-      <div class="case-num">5<span style="font-size:0.5em">名</span></div>
-      <div class="case-label">面談獲得</div>
-      <div class="case-desc">採用ターゲットに絞ったアカウント設計で即効果。「再生数」より「会いたい人に届ける」設計が決め手。</div>
-    </div>
-    <div class="case-card fade-in">
-      <div class="case-genre">☁️ クラウドファンディング</div>
-      <div class="case-num">3,500<span style="font-size:0.5em">万円</span></div>
-      <div class="case-label">達成金額</div>
-      <div class="case-desc">SNSと動画を組み合わせたプロジェクト拡散で、クラウドファンディング3,500万円を達成。</div>
-    </div>
-  </div>
-</section>
-
 <!-- CTA -->
 <section id="cta">
   <div class="sec-label">CONTACT</div>
@@ -1384,8 +1237,8 @@
     <div class="footer-links">
       <a href="#concept">WHO WE ARE</a>
       <a href="#service">SERVICE</a>
-      <a href="#for">FOR WHOM</a>
-      <a href="#flow">FLOW</a>
+      <a href="#cases">CASES</a>
+      <a href="#subsidy">補助金</a>
       <a href="#cta">CONTACT</a>
       <a href="https://www.instagram.com/daini_vonheur/" target="_blank" rel="noopener">Instagram</a>
     </div>
