@@ -309,31 +309,32 @@
     }
 
     /* ── STATS ── */
-    #stats { background: var(--green-dark); padding: 48px 8vw; }
+    #stats { background: var(--green-dark); padding: 56px 8vw; }
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
     }
     .stats-item {
       text-align: center;
-      padding: 32px 24px;
-      border-right: 1px solid rgba(255,255,255,0.15);
+      padding: 40px 24px;
+      border-right: 1px solid rgba(255,255,255,0.12);
     }
     .stats-item:last-child { border-right: none; }
     .stats-num {
-      font-size: clamp(28px, 4vw, 48px);
+      font-size: clamp(36px, 5vw, 60px);
       font-weight: 900;
       color: #fff;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
     }
-    .stats-unit { font-size: 0.5em; font-weight: 700; }
-    .stats-label { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 10px; line-height: 1.6; }
+    .stats-unit { font-size: 0.45em; font-weight: 700; opacity: .85; }
+    .stats-label { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 12px; line-height: 1.7; }
     @media(max-width:640px) {
+      #stats { padding: 0; }
       .stats-grid { grid-template-columns: 1fr; }
-      .stats-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .stats-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 32px 24px; }
       .stats-item:last-child { border-bottom: none; }
     }
 
@@ -420,7 +421,7 @@
     .service-card {
       background: #fff;
       padding: 44px 40px;
-      border-radius: 2px;
+      border-radius: 16px;
       border: 1px solid #cde8d8;
       border-left: 3px solid var(--green-mid);
       box-shadow: 0 2px 16px rgba(26,175,82,0.04);
@@ -524,6 +525,7 @@
     .price-compare-row .col-us {
       font-weight: 800; color: var(--green);
       font-size: 16px;
+      background: #f0fdf4;
     }
     .price-compare-note {
       text-align: center; font-size: 12px; color: var(--text-mid);
@@ -538,32 +540,35 @@
     }
 
     /* ── STRENGTH ── */
-    #strength { background: #f8fdf9; }
+    #strength { background: var(--green-dark); }
+    #strength .sec-label { color: rgba(255,255,255,0.5); }
+    #strength .sec-label::before { background: rgba(255,255,255,0.3); }
+    #strength .sec-title { color: #fff; }
     .strength-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
     .strength-card {
-      background: #fff;
-      border: 1px solid #cde8d8;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 16px;
-      padding: 32px 28px;
+      padding: 36px 28px;
     }
     .strength-num {
-      font-size: 48px;
+      font-size: 52px;
       font-weight: 900;
-      color: var(--green);
-      opacity: .15;
+      color: #fff;
+      opacity: .2;
       line-height: 1;
       margin-bottom: 16px;
       letter-spacing: -.04em;
     }
-    .strength-title { font-size: 17px; font-weight: 800; color: var(--text-dark); margin-bottom: 16px; line-height: 1.4; }
-    .strength-desc { font-size: 14px; color: var(--text-mid); line-height: 1.9; }
+    .strength-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.4; }
+    .strength-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.9; }
 
     /* ── CASES ── */
-    #cases { background: #f8fdf9; }
+    #cases { background: #fff; }
     .cases-grid {
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
     }
@@ -1000,7 +1005,8 @@
       .needs-grid { grid-template-columns: 1fr; }
       #needs-cta { padding: 56px 6vw; }
       .needs-card { padding: 32px 24px; }
-      .strength-grid { grid-template-columns: 1fr; gap: 16px; }
+      .strength-grid { grid-template-columns: 1fr; gap: 12px; }
+      .strength-card { padding: 28px 24px; }
       .cases-grid { grid-template-columns: 1fr; }
       .hero-below-cta { padding: 48px 6vw; grid-template-columns: 1fr; gap: 28px; }
       .hero-cta { flex-direction: column; }
@@ -1167,8 +1173,8 @@
     <div class="service-card fade-in">
       <div class="service-num">04</div>
       <h3>動画撮影・編集<br />台本制作</h3>
-      <div class="service-hook">他社より圧倒的にいい映像を、格安で作りたい方へ</div>
-      <p>CM・ミュージックビデオの制作経験をもつメンバーが<strong>企画・台本・撮影・編集まで一貫対応</strong>。他社と比べて圧倒的にクオリティの高い映像を格安で提供できます。SNS運用とセットでなくても、単体でのご依頼も歓迎です。</p>
+      <div class="service-hook">CM・MV出身チームが作る、本格映像を格安で</div>
+      <p>CM・ミュージックビデオの制作経験をもつメンバーが<strong>企画・台本・撮影・編集まで一貫対応</strong>。CM・MV現場で培った技術でクオリティの高い映像を格安で提供できます。SNS運用とセットでなくても、単体でのご依頼も歓迎です。</p>
       <div class="service-tags">
         <span class="service-tag">CM・MV制作経験多数</span>
         <span class="service-tag">台本・企画・撮影・編集</span>
@@ -1184,14 +1190,13 @@
   <div class="sec-label">PRICE</div>
   <h2 class="sec-title">料金プラン</h2>
   <p class="price-lead">
-    大手代理店の相場と比べてみてください。<br />
-    中小企業・個人事業主が動きやすい価格で提供しています。
+    中小企業・個人事業主が動きやすい料金設定にしています。
   </p>
 
   <div class="price-compare fade-in">
     <div class="price-compare-header">
       <div>サービス内容</div>
-      <div>大手代理店 相場</div>
+      <div>一般的な相場</div>
       <div>第弐ヴォヌール</div>
     </div>
     <div class="price-compare-row">
@@ -1226,7 +1231,7 @@
 <!-- STRENGTH -->
 <section id="strength" class="sec">
   <div class="sec-label">STRENGTH</div>
-  <h2 class="sec-title">他との違い、3つ</h2>
+  <h2 class="sec-title">選ばれる理由、3つ</h2>
   <div class="strength-grid">
     <div class="strength-card fade-in">
       <div class="strength-num">01</div>
@@ -1451,7 +1456,7 @@
       entry.target.classList.add('visible');
       fadeObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.05, rootMargin: "0px 0px -40px 0px" });
   document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 </script>
 
