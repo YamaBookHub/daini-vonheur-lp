@@ -21,6 +21,7 @@
       --text-mid: #4b5563;
       --text-sub: #9ca3af;
       --border: #e5e7eb;
+      --gray: rgba(255,255,255,0.75);
     }
 
     html { scroll-behavior: smooth; }
@@ -172,8 +173,8 @@
     }
     .btn-ghost {
       background: transparent;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.35);
+      color: var(--green-dark);
+      border: 1.5px solid var(--green-dark);
       padding: 18px 40px;
       font-size: 15px;
       font-weight: 700;
@@ -181,6 +182,7 @@
       display: inline-block;
       letter-spacing: .05em;
     }
+    .btn-ghost:hover { background: var(--green-dark); color: #fff; }
     .hero-scroll {
       position: absolute;
       bottom: 40px;
@@ -334,27 +336,6 @@
     }
 
     /* ── VISION ── */
-    #vision {
-      background: #f0f8f4;
-      padding: 80px 8vw;
-      text-align: center;
-    }
-    .vision-inner { max-width: 700px; margin: 0 auto; }
-    .vision-copy {
-      font-size: clamp(32px, 5vw, 60px);
-      font-weight: 900;
-      letter-spacing: -.025em;
-      line-height: 1.2;
-      color: var(--text-dark);
-      margin-bottom: 24px;
-    }
-    .vision-copy em { font-style: normal; color: var(--green); }
-    .vision-sub {
-      font-size: 15px;
-      color: var(--text-mid);
-      line-height: 2;
-    }
-
     /* ── NEEDS CTA ── */
     #needs-cta { background: #fff; padding: 96px 8vw; }
     .needs-grid {
@@ -910,6 +891,25 @@
   </div>
 </div>
 
+<!-- NEEDS CTA -->
+<section id="needs-cta">
+  <h2 class="sec-title" style="text-align:center">あなたの課題はどちらですか？</h2>
+  <div class="needs-grid">
+    <div class="needs-card">
+      <div class="needs-icon">📈</div>
+      <h3 class="needs-title">集客・売上を上げたい</h3>
+      <p class="needs-desc">Instagram / TikTok / YouTube を活用して、来店・問い合わせ・EC売上につなげたい事業者様へ</p>
+      <a href="#cta" class="btn-primary">無料相談する →</a>
+    </div>
+    <div class="needs-card">
+      <div class="needs-icon">🎯</div>
+      <h3 class="needs-title">採用を強化したい</h3>
+      <p class="needs-desc">SNSで求職者にリーチし、会いたい人材に届く採用アカウントを構築したい企業様へ</p>
+      <a href="#cta" class="btn-primary">無料相談する →</a>
+    </div>
+  </div>
+</section>
+
 <!-- RESULTS -->
 <section id="results">
   <div class="results-grid">
@@ -952,33 +952,6 @@
     <p class="concept-body">
       私たちは、<strong>再生数より「実利」</strong>にこだわるSNSマーケティングチームです。担当者が最初から最後まで変わらず、クライアントの事業を深く理解した上で動きます。採用なら面談数、店舗なら来店数、ECなら売上という<strong>事業の目的に直結するKPI</strong>を設定し、3ヶ月かけて「勝ちパターン」を見つけます。
     </p>
-  </div>
-</section>
-
-<!-- VISION -->
-<section id="vision">
-  <div class="vision-inner">
-    <div class="vision-copy">SNSを、<em>売上に直結させる</em></div>
-    <p class="vision-sub">再生数やフォロワーではなく、問い合わせ・来店・採用・売上という<br />「事業のゴール」にコミットします。</p>
-  </div>
-</section>
-
-<!-- NEEDS CTA -->
-<section id="needs-cta">
-  <h2 class="sec-title" style="text-align:center">あなたの課題はどちらですか？</h2>
-  <div class="needs-grid">
-    <div class="needs-card">
-      <div class="needs-icon">📈</div>
-      <h3 class="needs-title">集客・売上を上げたい</h3>
-      <p class="needs-desc">Instagram / TikTok / YouTube を活用して、来店・問い合わせ・EC売上につなげたい事業者様へ</p>
-      <a href="#cta" class="btn-primary">無料相談する →</a>
-    </div>
-    <div class="needs-card">
-      <div class="needs-icon">🎯</div>
-      <h3 class="needs-title">採用を強化したい</h3>
-      <p class="needs-desc">SNSで求職者にリーチし、会いたい人材に届く採用アカウントを構築したい企業様へ</p>
-      <a href="#cta" class="btn-primary">無料相談する →</a>
-    </div>
   </div>
 </section>
 
@@ -1028,7 +1001,7 @@
       <div class="service-num">04</div>
       <h3>動画撮影・編集<br />台本制作</h3>
       <div class="service-hook">クオリティの高い映像を、費用を抑えて作りたい方へ</div>
-      <p>CM・ミュージックビデオの制作経験多数。<strong>他社より圧倒的にクオリティの高い映像を、格安で</strong>提供できます。企画・台本・撮影・編集まで一貫対応。SNS運用とセットでなくても、単体でのご依頼も歓迎です。</p>
+      <p>CM・ミュージックビデオの制作経験をもつ代表が直接関与。<strong>企画・台本・撮影・編集まで一貫対応</strong>するため、クオリティを保ちながらコストを抑えられます。SNS運用とセットでなくても、単体でのご依頼も歓迎です。</p>
       <div class="service-tags">
         <span class="service-tag">CM・MV制作経験多数</span>
         <span class="service-tag">台本・企画・撮影・編集</span>
@@ -1096,7 +1069,7 @@
     <div class="strength-card fade-in">
       <div class="strength-num">02</div>
       <h3 class="strength-title">SNS × 動画 × 販売導線の一気通貫</h3>
-      <p class="strength-desc">運用・動画制作・販売導線設計・クラウドファンディングまで、バラバラに外注せず1社で完結。コストも手間も半分以下に。</p>
+      <p class="strength-desc">運用・動画制作・販売導線設計・クラウドファンディングまで、バラバラに外注せず1社で完結。窓口が一本化されるため、コミュニケーションコストを大幅に削減できます。</p>
     </div>
     <div class="strength-card fade-in">
       <div class="strength-num">03</div>
@@ -1134,18 +1107,6 @@
       <div class="case-num">3,500<span style="font-size:0.5em">万円</span></div>
       <div class="case-label">達成金額</div>
       <div class="case-desc">SNSと動画を組み合わせたプロジェクト拡散で、クラウドファンディング3,500万円を達成。</div>
-    </div>
-    <div class="case-card fade-in">
-      <div class="case-genre">💆 介護・福祉 / 運用4ヶ月</div>
-      <div class="case-num">180<span style="font-size:0.5em">%</span></div>
-      <div class="case-label">採用応募数 前期比UP</div>
-      <div class="case-desc">福祉施設の採用SNSをゼロから構築。「働く現場のリアル」を発信し、採用応募が1.8倍に増加。</div>
-    </div>
-    <div class="case-card fade-in">
-      <div class="case-genre">🛒 小売店 / 運用2ヶ月</div>
-      <div class="case-num">8<span style="font-size:0.5em">倍</span></div>
-      <div class="case-label">SNS経由売上</div>
-      <div class="case-desc">TikTokショップ導入と動画訴求の組み合わせで、SNS経由の売上が2ヶ月で8倍に。</div>
     </div>
   </div>
 </section>
