@@ -308,6 +308,35 @@
       letter-spacing: .12em;
     }
 
+    /* ── STATS ── */
+    #stats { background: var(--green-dark); padding: 48px 8vw; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .stats-item {
+      text-align: center;
+      padding: 32px 24px;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .stats-item:last-child { border-right: none; }
+    .stats-num {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+    .stats-unit { font-size: 0.5em; font-weight: 700; }
+    .stats-label { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 10px; line-height: 1.6; }
+    @media(max-width:640px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .stats-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .stats-item:last-child { border-bottom: none; }
+    }
+
     /* ── WHO WE ARE ── */
     #concept {
       background: linear-gradient(150deg, #ffffff 0%, #f0fdf4 100%);
@@ -1056,6 +1085,24 @@
   </div>
 </div>
 
+<!-- STATS -->
+<section id="stats" class="sec">
+  <div class="stats-grid fade-in">
+    <div class="stats-item">
+      <div class="stats-num">3,500<span class="stats-unit">万円</span></div>
+      <div class="stats-label">クラウドファンディング達成</div>
+    </div>
+    <div class="stats-item">
+      <div class="stats-num">100<span class="stats-unit">万再生</span></div>
+      <div class="stats-label">新作アカウント運用初月</div>
+    </div>
+    <div class="stats-item">
+      <div class="stats-num">5<span class="stats-unit">媒体</span></div>
+      <div class="stats-label">Instagram / TikTok / YouTube / Threads / X</div>
+    </div>
+  </div>
+</section>
+
 <!-- WHO WE ARE -->
 <section id="concept">
   <div class="concept-left">
@@ -1073,50 +1120,6 @@
       だから弊社では、数字を見ながら<strong>ターゲット層へのリーチ率・プロフィール遷移率・問い合わせ数</strong>を追います。初動の3投稿で結果を出すことは稀です。3ヶ月かけて「勝ちパターン」を見つけ、そこから伸ばしていく。それが運用のリアルです。
     </p>
   </div>
-</section>
-
-<!-- PRICE -->
-<section id="price" class="sec">
-  <div class="sec-label">PRICE</div>
-  <h2 class="sec-title">料金プラン</h2>
-  <p class="price-lead">
-    大手代理店の相場と比べてみてください。<br />
-    中小企業・個人事業主が動きやすい価格で提供しています。
-  </p>
-
-  <div class="price-compare fade-in">
-    <div class="price-compare-header">
-      <div>サービス内容</div>
-      <div>大手代理店 相場</div>
-      <div>第弐ヴォヌール</div>
-    </div>
-    <div class="price-compare-row">
-      <div>SNS運用代行（月額）</div>
-      <div class="col-other">30万円〜</div>
-      <div class="col-us">5万円〜</div>
-    </div>
-    <div class="price-compare-row">
-      <div>リール・ショート動画制作（1本）</div>
-      <div class="col-other">3〜10万円</div>
-      <div class="col-us">1万円〜</div>
-    </div>
-    <div class="price-compare-row">
-      <div>アカウント設計・初期構築</div>
-      <div class="col-other">別途10万円〜</div>
-      <div class="col-us">込み</div>
-    </div>
-    <div class="price-compare-row">
-      <div>担当者の固定</div>
-      <div class="col-other">都度変わる</div>
-      <div class="col-us">最初から最後まで同じ</div>
-    </div>
-    <div class="price-compare-row">
-      <div>補助金対応</div>
-      <div class="col-other">非対応が多い</div>
-      <div class="col-us">相談・申請サポートあり</div>
-    </div>
-  </div>
-  <p class="price-compare-note">※ 料金は事業規模・依頼内容により変動します。まずは無料相談でお見積もりします。</p>
 </section>
 
 <!-- SERVICE -->
@@ -1174,6 +1177,50 @@
     </div>
 
   </div>
+</section>
+
+<!-- PRICE -->
+<section id="price" class="sec">
+  <div class="sec-label">PRICE</div>
+  <h2 class="sec-title">料金プラン</h2>
+  <p class="price-lead">
+    大手代理店の相場と比べてみてください。<br />
+    中小企業・個人事業主が動きやすい価格で提供しています。
+  </p>
+
+  <div class="price-compare fade-in">
+    <div class="price-compare-header">
+      <div>サービス内容</div>
+      <div>大手代理店 相場</div>
+      <div>第弐ヴォヌール</div>
+    </div>
+    <div class="price-compare-row">
+      <div>SNS運用代行（月額）</div>
+      <div class="col-other">30万円〜</div>
+      <div class="col-us">5万円〜</div>
+    </div>
+    <div class="price-compare-row">
+      <div>リール・ショート動画制作（1本）</div>
+      <div class="col-other">3〜10万円</div>
+      <div class="col-us">1万円〜</div>
+    </div>
+    <div class="price-compare-row">
+      <div>アカウント設計・初期構築</div>
+      <div class="col-other">別途10万円〜</div>
+      <div class="col-us">込み</div>
+    </div>
+    <div class="price-compare-row">
+      <div>担当者の固定</div>
+      <div class="col-other">都度変わる</div>
+      <div class="col-us">最初から最後まで同じ</div>
+    </div>
+    <div class="price-compare-row">
+      <div>補助金対応</div>
+      <div class="col-other">非対応が多い</div>
+      <div class="col-us">相談・申請サポートあり</div>
+    </div>
+  </div>
+  <p class="price-compare-note">※ 料金は事業規模・依頼内容により変動します。まずは無料相談でお見積もりします。</p>
 </section>
 
 <!-- STRENGTH -->
