@@ -1461,6 +1461,14 @@
     });
   }, { threshold: 0.05, rootMargin: "0px 0px -40px 0px" });
   document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+  // ページロード時にビューポート内の要素を即座に表示
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.fade-in').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) el.classList.add('visible');
+    });
+  });
 </script>
 
 </body>
