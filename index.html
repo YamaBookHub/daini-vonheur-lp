@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>株式会社第弐ヴォヌール｜SNS運用・動画制作・TikTok Shop支援</title>
-  <meta name="description" content="Instagram/TikTok運用代行、クラウドファンディング支援、TikTok LIVE、TikTok Shop、動画撮影・編集・台本制作。板橋区発のSNSマーケティングチーム。" />
+  <title>株式会社第弐ヴォヌール｜SNS運用・動画制作・クラウドファンディング支援</title>
+  <meta name="description" content="Instagram/TikTok/YouTube/Threads/X運用代行、クラウドファンディング支援、SNSライブ・ショップ販売支援、動画撮影・編集・台本制作。板橋区発のSNSマーケティングチーム。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
@@ -616,6 +616,55 @@
       .case-featured-right { padding: 28px 28px; }
     }
 
+    /* ── ABOUT ── */
+    #about { background: #f8fdf9; }
+    .about-card {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #cde8d8;
+      border-radius: 20px;
+      padding: 48px 44px;
+    }
+    .about-avatar {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      color: #fff;
+      font-size: 22px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-info { flex: 1; }
+    .about-name { font-size: 22px; font-weight: 900; color: var(--text-dark); margin-bottom: 4px; }
+    .about-role { font-size: 13px; color: var(--green); font-weight: 700; margin-bottom: 20px; letter-spacing: 0.04em; }
+    .about-body { font-size: 15px; color: var(--text-mid); line-height: 1.9; margin-bottom: 24px; }
+    .about-ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+      border: 1.5px solid var(--green);
+      border-radius: 99px;
+      padding: 8px 18px;
+      transition: background .2s, color .2s;
+    }
+    .about-ig:hover { background: var(--green); color: #fff; }
+    @media(max-width:640px) {
+      .about-card { flex-direction: column; align-items: center; text-align: center; padding: 36px 24px; gap: 24px; }
+      .about-ig { margin: 0 auto; }
+    }
+
     /* ── SUBSIDY ── */
     #subsidy { background: #fff; }
     .subsidy-inner {
@@ -965,7 +1014,7 @@
   <p class="hero-sub">
     「再生数は伸びてるのに、売上が変わらない」<br />
     その悩み、<strong>SNSの設計</strong>から変えます。<br /><br />
-    Instagram・TikTok・YouTube・動画・クラファンまで<br />
+    Instagram・TikTok・YouTube・動画・クラウドファンディングまで<br />
     窓口1本で完結します。
   </p>
   <div class="hero-cta">
@@ -974,25 +1023,27 @@
   </div>
 </div>
 
-<!-- NEEDS CTA -->
-<section id="needs-cta">
-  <h2 class="sec-title" style="text-align:center">あなたの課題はどちらですか？</h2>
-  <div class="needs-grid">
-    <div class="needs-card">
-      <div class="needs-icon">📈</div>
-      <h3 class="needs-title">集客・売上を上げたい</h3>
-      <p class="needs-desc">Instagram / TikTok / YouTube を活用して、来店・問い合わせ・EC売上につなげたい事業者様へ</p>
-      <a href="#cta" class="btn-primary">無料相談する →</a>
+<!-- CASES -->
+<section id="cases" class="sec">
+  <div class="sec-label">CASE STUDY</div>
+  <h2 class="sec-title">実績紹介</h2>
+  <div class="case-featured fade-in">
+    <div class="case-featured-left">
+      <div class="case-genre">クラウドファンディング支援</div>
+      <div class="case-featured-num">3,500<span class="case-featured-unit">万円</span></div>
+      <div class="case-label">達成金額</div>
     </div>
-    <div class="needs-card">
-      <div class="needs-icon">🎯</div>
-      <h3 class="needs-title">採用を強化したい</h3>
-      <p class="needs-desc">SNSで求職者にリーチし、会いたい人材に届く採用アカウントを構築したい企業様へ</p>
-      <a href="#cta" class="btn-primary">無料相談する →</a>
+    <div class="case-featured-right">
+      <p class="case-featured-body">SNSと動画を組み合わせ、プロジェクト公開前から認知を積み上げる設計を実施。掲載中の拡散も並走し、クラウドファンディング3,500万円を達成しました。</p>
+      <ul class="case-featured-points">
+        <li>掲載前〜終了後まで一貫サポート</li>
+        <li>SNS投稿・動画・ライブを組み合わせた拡散設計</li>
+        <li>目標金額を大幅に超えて達成</li>
+      </ul>
     </div>
   </div>
+  <p class="cases-note">※ 現在も複数のクライアントと進行中です。実績・事例のご相談はお気軽に。</p>
 </section>
-
 
 <!-- WHO WE ARE -->
 <section id="concept">
@@ -1033,11 +1084,11 @@
 
     <div class="service-card fade-in">
       <div class="service-num">02</div>
-      <h3>SNSライブ・<br />ショップ販売支援</h3>
-      <div class="service-hook">ライブ配信を「売上」に変えたい方へ</div>
-      <p>ライブ配信の企画・運営から、SNSショップでの商品販売まで一貫してサポート。<strong>「配信しっぱなし」ではなく、購買につながる設計</strong>で、視聴者を購入者に変えます。</p>
+      <h3>SNSライブ支援 /<br />SNSショップ支援</h3>
+      <div class="service-hook">ライブ配信・SNSショップを売上につなげたい方へ</div>
+      <p>Instagram・YouTube・各種SNSでのライブ配信の企画・運営から、SNSショップでの商品販売まで一貫サポート。<strong>配信して終わりではなく、購買につながる導線設計</strong>まで担います。</p>
       <div class="service-tags">
-        <span class="service-tag">ライブ配信設計・運営</span>
+        <span class="service-tag">ライブ配信企画・運営</span>
         <span class="service-tag">SNSショップ構築</span>
         <span class="service-tag">販売導線設計</span>
       </div>
@@ -1058,8 +1109,8 @@
     <div class="service-card fade-in">
       <div class="service-num">04</div>
       <h3>動画撮影・編集<br />台本制作</h3>
-      <div class="service-hook">クオリティの高い映像を、費用を抑えて作りたい方へ</div>
-      <p>CM・ミュージックビデオの制作経験をもつ代表が直接関与。<strong>企画・台本・撮影・編集まで一貫対応</strong>するため、クオリティを保ちながらコストを抑えられます。SNS運用とセットでなくても、単体でのご依頼も歓迎です。</p>
+      <div class="service-hook">他社より圧倒的にいい映像を、格安で作りたい方へ</div>
+      <p>CM・ミュージックビデオの制作経験をもつ代表が直接関与。<strong>企画・台本・撮影・編集まで一貫対応</strong>するため、他社と比べて圧倒的にクオリティの高い映像を格安で提供できます。SNS運用とセットでなくても、単体でのご依頼も歓迎です。</p>
       <div class="service-tags">
         <span class="service-tag">CM・MV制作経験多数</span>
         <span class="service-tag">台本・企画・撮影・編集</span>
@@ -1137,26 +1188,22 @@
   </div>
 </section>
 
-<!-- CASES -->
-<section id="cases" class="sec">
-  <div class="sec-label">CASE STUDY</div>
-  <h2 class="sec-title">実績紹介</h2>
-  <div class="case-featured fade-in">
-    <div class="case-featured-left">
-      <div class="case-genre">クラウドファンディング支援</div>
-      <div class="case-featured-num">3,500<span class="case-featured-unit">万円</span></div>
-      <div class="case-label">達成金額</div>
-    </div>
-    <div class="case-featured-right">
-      <p class="case-featured-body">SNSと動画を組み合わせ、プロジェクト公開前から認知を積み上げる設計を実施。掲載中の拡散も並走し、クラウドファンディング3,500万円を達成しました。</p>
-      <ul class="case-featured-points">
-        <li>掲載前〜終了後まで一貫サポート</li>
-        <li>SNS投稿・動画・ライブを組み合わせた拡散設計</li>
-        <li>目標金額を大幅に超えて達成</li>
-      </ul>
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="sec-label">ABOUT</div>
+  <h2 class="sec-title">こんな人がやっています</h2>
+  <div class="about-card fade-in">
+    <div class="about-avatar">手塚</div>
+    <div class="about-info">
+      <div class="about-name">手塚 幸福</div>
+      <div class="about-role">代表取締役 / SNSディレクター</div>
+      <p class="about-body">
+        CM・ミュージックビデオの制作現場を経て、SNSマーケティングの世界へ。「バズっても売上が出ない」という現場の矛盾を変えるため、再生数ではなく<strong>売上・来店・面談数</strong>にこだわる運用を実践しています。<br /><br />
+        すべての案件を代表が直接担当。担当者が途中で変わることはありません。
+      </p>
+      <a href="https://www.instagram.com/daini_vonheur/" target="_blank" rel="noopener" class="about-ig">📸 Instagram @daini_vonheur</a>
     </div>
   </div>
-  <p class="cases-note">※ 現在も複数のクライアントと進行中です。実績・事例のご相談はお気軽に。</p>
 </section>
 
 <!-- SUBSIDY -->
@@ -1233,7 +1280,6 @@
       💬 LINEで相談する
     </a>
   </div>
-  <p class="cta-note">※ メールでのご相談は <a href="mailto:info@daini-vonheur.com" style="color:rgba(255,255,255,0.4);text-decoration:underline;">こちら</a></p>
 </section>
 
 <!-- FOOTER -->
