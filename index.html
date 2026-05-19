@@ -250,6 +250,14 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
     }
+    .results-grid--single {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .results-grid--single .result-item {
+      border-right: none;
+    }
     .result-item {
       padding: 64px 20px;
       border-right: 1px solid var(--green-mid);
@@ -521,6 +529,11 @@
     #cases { background: #f8fdf9; }
     .cases-grid {
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    }
+    .cases-grid--single {
+      grid-template-columns: 1fr;
+      max-width: 520px;
+      margin: 0 auto;
     }
     @media (max-width: 900px) {
       .cases-grid { grid-template-columns: repeat(2, 1fr); }
@@ -923,26 +936,11 @@
 
 <!-- RESULTS -->
 <section id="results">
-  <div class="results-grid">
-    <div class="result-item fade-in">
-      <div class="result-num"><span class="count" data-target="240" data-suffix="%">0</span></div>
-      <div class="result-name">来店数UP</div>
-      <div class="result-sub">飲食店様 運用3ヶ月</div>
-    </div>
-    <div class="result-item fade-in">
-      <div class="result-num"><span class="count" data-target="400" data-suffix="%">0</span></div>
-      <div class="result-name">売上UP</div>
-      <div class="result-sub">ECサイト様 運用2ヶ月</div>
-    </div>
-    <div class="result-item fade-in">
-      <div class="result-num"><span class="count" data-target="5">0</span><span class="result-unit">名</span></div>
-      <div class="result-name">面談獲得</div>
-      <div class="result-sub">採用系 運用1ヶ月</div>
-    </div>
+  <div class="results-grid results-grid--single">
     <div class="result-item fade-in">
       <div class="result-num"><span class="count" data-target="3500" data-suffix="万">0</span><span class="result-unit">円</span></div>
-      <div class="result-name">クラファン達成</div>
-      <div class="result-sub">ROLLS Eclipse</div>
+      <div class="result-name">クラウドファンディング達成</div>
+      <div class="result-sub">SNS・動画による認知拡大で目標額を大幅突破</div>
     </div>
   </div>
 </section>
@@ -988,7 +986,7 @@
       <div class="service-num">02</div>
       <h3>SNSライブ・<br />ショップ販売支援</h3>
       <div class="service-hook">ライブ配信を「売上」に変えたい方へ</div>
-      <p>ライブ配信の企画・運営から、SNSショップでの商品販売まで一貫してサポート。<strong>「配信しっぱなし」ではなく、購買につながる設計</strong>で、フォロワーを顧客に変えます。</p>
+      <p>ライブ配信の企画・運営から、SNSショップでの商品販売まで一貫してサポート。<strong>「配信しっぱなし」ではなく、購買につながる設計</strong>で、視聴者を購入者に変えます。</p>
       <div class="service-tags">
         <span class="service-tag">ライブ配信設計・運営</span>
         <span class="service-tag">SNSショップ構築</span>
@@ -1029,7 +1027,7 @@
   <h2 class="sec-title">料金プラン</h2>
   <p class="price-lead">
     大手代理店の相場と比べてみてください。<br />
-    同じクオリティで、圧倒的にリーズナブルに動けます。
+    中小企業・個人事業主が動きやすい価格で提供しています。
   </p>
 
   <div class="price-compare fade-in">
@@ -1085,7 +1083,7 @@
     <div class="strength-card fade-in">
       <div class="strength-num">03</div>
       <h3 class="strength-title">中小企業・個人事業主向け価格</h3>
-      <p class="strength-desc">大手代理店と同クオリティを、圧倒的にリーズナブルな価格で。補助金活用で実質負担をさらに抑えることも可能です。</p>
+      <p class="strength-desc">大手代理店に頼むような内容を、中小企業・個人事業主が手を出しやすい価格で。補助金を活用すれば実質負担をさらに抑えられます。</p>
     </div>
   </div>
 </section>
@@ -1093,31 +1091,13 @@
 <!-- CASES -->
 <section id="cases" class="sec">
   <div class="sec-label">CASE STUDY</div>
-  <h2 class="sec-title">支援実績・成功事例</h2>
-  <div class="cases-grid">
-    <div class="case-card fade-in">
-      <div class="case-genre">🍽️ 飲食店 / 運用3ヶ月</div>
-      <div class="case-num">240<span style="font-size:0.5em">%</span></div>
-      <div class="case-label">来店数 前年比UP</div>
-      <div class="case-desc">リール投稿を軸に3ヶ月でターゲット層へのリーチを最大化。来店数が前年比2.4倍に。</div>
-    </div>
-    <div class="case-card fade-in">
-      <div class="case-genre">🛍️ ECサイト / 運用2ヶ月</div>
-      <div class="case-num">400<span style="font-size:0.5em">%</span></div>
-      <div class="case-label">売上 前月比UP</div>
-      <div class="case-desc">SNS経由の販売導線を設計し直し、運用2ヶ月目で売上が4倍に。商品訴求動画が起爆剤に。</div>
-    </div>
-    <div class="case-card fade-in">
-      <div class="case-genre">👤 採用 / 運用1ヶ月</div>
-      <div class="case-num">5<span style="font-size:0.5em">名</span></div>
-      <div class="case-label">面談獲得</div>
-      <div class="case-desc">採用ターゲットに絞ったアカウント設計で即効果。「再生数」より「会いたい人に届ける」設計が決め手。</div>
-    </div>
+  <h2 class="sec-title">実績紹介</h2>
+  <div class="cases-grid cases-grid--single">
     <div class="case-card fade-in">
       <div class="case-genre">☁️ クラウドファンディング</div>
       <div class="case-num">3,500<span style="font-size:0.5em">万円</span></div>
       <div class="case-label">達成金額</div>
-      <div class="case-desc">SNSと動画を組み合わせたプロジェクト拡散で、クラウドファンディング3,500万円を達成。</div>
+      <div class="case-desc">SNSと動画を組み合わせた認知拡大・拡散設計で、クラウドファンディング3,500万円を達成。</div>
     </div>
   </div>
 </section>
