@@ -665,6 +665,39 @@
       .about-ig { margin: 0 auto; }
     }
 
+    /* ── SNS ── */
+    #sns { background: var(--green-dark); }
+    #sns .sec-label { color: rgba(255,255,255,0.5); }
+    #sns .sec-label::before { background: rgba(255,255,255,0.3); }
+    #sns .sec-title { color: #fff; }
+    .sns-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .sns-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 36px 48px;
+      border-radius: 20px;
+      text-decoration: none;
+      min-width: 200px;
+      transition: transform .2s, opacity .2s;
+    }
+    .sns-link:hover { transform: translateY(-4px); opacity: .85; }
+    .sns-link-ig { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2); }
+    .sns-link-line { background: #06C755; }
+    .sns-link-icon { font-size: 36px; }
+    .sns-link-name { font-size: 18px; font-weight: 900; color: #fff; }
+    .sns-link-handle { font-size: 13px; color: rgba(255,255,255,0.7); }
+    @media(max-width:640px) {
+      .sns-links { flex-direction: column; align-items: center; }
+      .sns-link { width: 100%; max-width: 280px; }
+    }
+
     /* ── SUBSIDY ── */
     #subsidy { background: #fff; }
     .subsidy-inner {
@@ -1023,28 +1056,6 @@
   </div>
 </div>
 
-<!-- CASES -->
-<section id="cases" class="sec">
-  <div class="sec-label">CASE STUDY</div>
-  <h2 class="sec-title">実績紹介</h2>
-  <div class="case-featured fade-in">
-    <div class="case-featured-left">
-      <div class="case-genre">クラウドファンディング支援</div>
-      <div class="case-featured-num">3,500<span class="case-featured-unit">万円</span></div>
-      <div class="case-label">達成金額</div>
-    </div>
-    <div class="case-featured-right">
-      <p class="case-featured-body">SNSと動画を組み合わせ、プロジェクト公開前から認知を積み上げる設計を実施。掲載中の拡散も並走し、クラウドファンディング3,500万円を達成しました。</p>
-      <ul class="case-featured-points">
-        <li>掲載前〜終了後まで一貫サポート</li>
-        <li>SNS投稿・動画・ライブを組み合わせた拡散設計</li>
-        <li>目標金額を大幅に超えて達成</li>
-      </ul>
-    </div>
-  </div>
-  <p class="cases-note">※ 現在も複数のクライアントと進行中です。実績・事例のご相談はお気軽に。</p>
-</section>
-
 <!-- WHO WE ARE -->
 <section id="concept">
   <div class="concept-left">
@@ -1062,6 +1073,50 @@
       だから弊社では、数字を見ながら<strong>ターゲット層へのリーチ率・プロフィール遷移率・問い合わせ数</strong>を追います。初動の3投稿で結果を出すことは稀です。3ヶ月かけて「勝ちパターン」を見つけ、そこから伸ばしていく。それが運用のリアルです。
     </p>
   </div>
+</section>
+
+<!-- PRICE -->
+<section id="price" class="sec">
+  <div class="sec-label">PRICE</div>
+  <h2 class="sec-title">料金プラン</h2>
+  <p class="price-lead">
+    大手代理店の相場と比べてみてください。<br />
+    中小企業・個人事業主が動きやすい価格で提供しています。
+  </p>
+
+  <div class="price-compare fade-in">
+    <div class="price-compare-header">
+      <div>サービス内容</div>
+      <div>大手代理店 相場</div>
+      <div>第弐ヴォヌール</div>
+    </div>
+    <div class="price-compare-row">
+      <div>SNS運用代行（月額）</div>
+      <div class="col-other">30万円〜</div>
+      <div class="col-us">5万円〜</div>
+    </div>
+    <div class="price-compare-row">
+      <div>リール・ショート動画制作（1本）</div>
+      <div class="col-other">3〜10万円</div>
+      <div class="col-us">1万円〜</div>
+    </div>
+    <div class="price-compare-row">
+      <div>アカウント設計・初期構築</div>
+      <div class="col-other">別途10万円〜</div>
+      <div class="col-us">込み</div>
+    </div>
+    <div class="price-compare-row">
+      <div>担当者の固定</div>
+      <div class="col-other">都度変わる</div>
+      <div class="col-us">最初から最後まで同じ</div>
+    </div>
+    <div class="price-compare-row">
+      <div>補助金対応</div>
+      <div class="col-other">非対応が多い</div>
+      <div class="col-us">相談・申請サポートあり</div>
+    </div>
+  </div>
+  <p class="price-compare-note">※ 料金は事業規模・依頼内容により変動します。まずは無料相談でお見積もりします。</p>
 </section>
 
 <!-- SERVICE -->
@@ -1121,50 +1176,6 @@
   </div>
 </section>
 
-<!-- PRICE -->
-<section id="price" class="sec">
-  <div class="sec-label">PRICE</div>
-  <h2 class="sec-title">料金プラン</h2>
-  <p class="price-lead">
-    大手代理店の相場と比べてみてください。<br />
-    中小企業・個人事業主が動きやすい価格で提供しています。
-  </p>
-
-  <div class="price-compare fade-in">
-    <div class="price-compare-header">
-      <div>サービス内容</div>
-      <div>大手代理店 相場</div>
-      <div>第弐ヴォヌール</div>
-    </div>
-    <div class="price-compare-row">
-      <div>SNS運用代行（月額）</div>
-      <div class="col-other">30万円〜</div>
-      <div class="col-us">5万円〜</div>
-    </div>
-    <div class="price-compare-row">
-      <div>リール・ショート動画制作（1本）</div>
-      <div class="col-other">3〜10万円</div>
-      <div class="col-us">1万円〜</div>
-    </div>
-    <div class="price-compare-row">
-      <div>アカウント設計・初期構築</div>
-      <div class="col-other">別途10万円〜</div>
-      <div class="col-us">込み</div>
-    </div>
-    <div class="price-compare-row">
-      <div>担当者の固定</div>
-      <div class="col-other">都度変わる</div>
-      <div class="col-us">最初から最後まで同じ</div>
-    </div>
-    <div class="price-compare-row">
-      <div>補助金対応</div>
-      <div class="col-other">非対応が多い</div>
-      <div class="col-us">相談・申請サポートあり</div>
-    </div>
-  </div>
-  <p class="price-compare-note">※ 料金は事業規模・依頼内容により変動します。まずは無料相談でお見積もりします。</p>
-</section>
-
 <!-- STRENGTH -->
 <section id="strength" class="sec">
   <div class="sec-label">STRENGTH</div>
@@ -1204,6 +1215,24 @@
       </p>
       <a href="https://www.instagram.com/daini_vonheur/" target="_blank" rel="noopener" class="about-ig">📸 Instagram @daini_vonheur</a>
     </div>
+  </div>
+</section>
+
+<!-- SNS -->
+<section id="sns" class="sec">
+  <div class="sec-label">FOLLOW US</div>
+  <h2 class="sec-title">公式アカウント</h2>
+  <div class="sns-links fade-in">
+    <a href="https://www.instagram.com/daini_vonheur/" target="_blank" rel="noopener" class="sns-link sns-link-ig">
+      <div class="sns-link-icon">📸</div>
+      <div class="sns-link-name">Instagram</div>
+      <div class="sns-link-handle">@daini_vonheur</div>
+    </a>
+    <a href="https://lin.ee/daini-vonheur" target="_blank" rel="noopener" class="sns-link sns-link-line">
+      <div class="sns-link-icon">💬</div>
+      <div class="sns-link-name">LINE公式</div>
+      <div class="sns-link-handle">無料相談はこちら</div>
+    </a>
   </div>
 </section>
 
@@ -1265,6 +1294,28 @@
   </div>
 </section>
 
+<!-- CASES -->
+<section id="cases" class="sec">
+  <div class="sec-label">CASE STUDY</div>
+  <h2 class="sec-title">実績紹介</h2>
+  <div class="case-featured fade-in">
+    <div class="case-featured-left">
+      <div class="case-genre">クラウドファンディング支援</div>
+      <div class="case-featured-num">3,500<span class="case-featured-unit">万円</span></div>
+      <div class="case-label">達成金額</div>
+    </div>
+    <div class="case-featured-right">
+      <p class="case-featured-body">SNSと動画を組み合わせ、プロジェクト公開前から認知を積み上げる設計を実施。掲載中の拡散も並走し、クラウドファンディング3,500万円を達成しました。</p>
+      <ul class="case-featured-points">
+        <li>掲載前〜終了後まで一貫サポート</li>
+        <li>SNS投稿・動画・ライブを組み合わせた拡散設計</li>
+        <li>目標金額を大幅に超えて達成</li>
+      </ul>
+    </div>
+  </div>
+  <p class="cases-note">※ 現在も複数のクライアントと進行中です。実績・事例のご相談はお気軽に。</p>
+</section>
+
 <!-- CTA -->
 <section id="cta">
   <div class="sec-label">CONTACT</div>
@@ -1293,7 +1344,7 @@
     <div class="footer-links">
       <a href="#concept">WHO WE ARE</a>
       <a href="#service">SERVICE</a>
-      <a href="#cases">CASES</a>
+      <a href="#price">PRICE</a>
       <a href="#subsidy">補助金</a>
       <a href="#cta">CONTACT</a>
       <a href="https://www.instagram.com/daini_vonheur/" target="_blank" rel="noopener">Instagram</a>
