@@ -147,19 +147,27 @@
     }
     .hero-below-cta {
       background: #fff;
-      padding: 64px 8vw;
+      padding: 56px 8vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
     }
     .hero-sub {
-      font-size: clamp(14px, 1.6vw, 18px);
+      font-size: clamp(14px, 1.5vw, 17px);
       color: var(--text-mid);
-      max-width: 480px;
-      line-height: 2.0;
-      margin-bottom: 40px;
+      line-height: 2.1;
+      margin: 0;
+    }
+    .hero-sub strong {
+      color: var(--text-dark);
+      font-weight: 700;
     }
     .hero-cta {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
+      align-items: center;
     }
     .btn-primary {
       background: var(--green);
@@ -351,7 +359,7 @@
 
     /* ── VISION ── */
     /* ── NEEDS CTA ── */
-    #needs-cta { background: #f8fdf9; padding: 96px 8vw; }
+    #needs-cta { background: #f8fdf9; padding: 64px 8vw; }
     .needs-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -360,10 +368,10 @@
       margin: 0 auto;
     }
     .needs-card {
-      background: #f8fdf9;
+      background: #fff;
       border: 1px solid #cde8d8;
       border-radius: 20px;
-      padding: 48px 36px;
+      padding: 36px 28px;
       text-align: center;
     }
     .needs-icon { font-size: 48px; margin-bottom: 20px; }
@@ -373,7 +381,7 @@
     /* ── SERVICE ── */
     #service {
       background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
-      padding: 96px 8vw;
+      padding: 72px 8vw;
     }
     .service-grid {
       display: grid;
@@ -510,8 +518,8 @@
     .strength-card {
       background: #fff;
       border: 1px solid #cde8d8;
-      border-radius: 20px;
-      padding: 40px 32px;
+      border-radius: 16px;
+      padding: 32px 28px;
     }
     .strength-num {
       font-size: 48px;
@@ -560,51 +568,52 @@
 
     /* case-featured */
     .case-featured {
-      display: grid; grid-template-columns: 1fr 2fr; gap: 0;
+      display: grid; grid-template-columns: 5fr 7fr; gap: 0;
       background: #fff; border: 1px solid #cde8d8; border-radius: 20px;
-      overflow: hidden;
+      overflow: hidden; min-height: 260px;
     }
     .case-featured-left {
       background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 100%);
-      padding: 48px 36px; display: flex; flex-direction: column;
+      padding: 44px 40px; display: flex; flex-direction: column;
       justify-content: center; align-items: flex-start;
     }
     .case-featured-left .case-genre {
-      color: rgba(255,255,255,0.7); margin-bottom: 20px;
+      color: rgba(255,255,255,0.75); margin-bottom: 16px;
+      font-size: 12px; letter-spacing: .12em;
     }
     .case-featured-num {
-      font-size: clamp(52px, 7vw, 84px); font-weight: 900;
+      font-size: clamp(56px, 6vw, 80px); font-weight: 900;
       color: #fff; letter-spacing: -0.04em; line-height: 1;
     }
     .case-featured-unit {
-      font-size: 0.45em; font-weight: 700; vertical-align: baseline;
+      font-size: 0.42em; font-weight: 700; vertical-align: baseline;
     }
     .case-featured-left .case-label {
-      color: rgba(255,255,255,0.85); margin-top: 12px; font-size: 13px;
+      color: rgba(255,255,255,0.8); margin-top: 14px; font-size: 13px; font-weight: 600;
     }
     .case-featured-right {
-      padding: 48px 40px; display: flex; flex-direction: column; justify-content: center;
+      padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; gap: 20px;
     }
     .case-featured-body {
-      font-size: 15px; color: var(--text-mid); line-height: 2; margin-bottom: 24px;
+      font-size: 14px; color: var(--text-mid); line-height: 2; margin: 0;
     }
     .case-featured-points {
-      list-style: none; display: flex; flex-direction: column; gap: 10px;
+      list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 0;
     }
     .case-featured-points li {
-      font-size: 14px; font-weight: 700; color: var(--text-dark);
+      font-size: 13px; font-weight: 700; color: var(--text-dark);
       padding-left: 20px; position: relative;
     }
     .case-featured-points li::before {
       content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 900;
     }
     .cases-note {
-      margin-top: 20px; font-size: 12px; color: var(--text-sub); text-align: center;
+      margin-top: 16px; font-size: 12px; color: var(--text-sub); text-align: center;
     }
     @media (max-width: 768px) {
-      .case-featured { grid-template-columns: 1fr; }
-      .case-featured-left { padding: 36px 28px; }
-      .case-featured-right { padding: 32px 28px; }
+      .case-featured { grid-template-columns: 1fr; min-height: auto; }
+      .case-featured-left { padding: 32px 28px; }
+      .case-featured-right { padding: 28px 28px; }
     }
 
     /* ── SUBSIDY ── */
@@ -682,7 +691,7 @@
     /* ── CTA ── */
     #cta {
       background: linear-gradient(135deg, #1f4f3a 0%, #2d6e50 50%, #3a8a66 100%);
-      padding: 112px 8vw;
+      padding: 80px 8vw;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -882,7 +891,7 @@
       .needs-card { padding: 32px 24px; }
       .strength-grid { grid-template-columns: 1fr; gap: 16px; }
       .cases-grid { grid-template-columns: 1fr; }
-      .hero-below-cta { padding: 48px 6vw; }
+      .hero-below-cta { padding: 48px 6vw; grid-template-columns: 1fr; gap: 28px; }
       .hero-cta { flex-direction: column; }
       .btn-primary, .btn-ghost { text-align: center; width: 100%; }
 
@@ -955,8 +964,10 @@
 <div class="hero-below-cta">
   <p class="hero-sub">
     「再生数は伸びてるのに、売上が変わらない」<br />
-    その悩み、SNSの設計から変えます。<br />
-    CM・MV制作出身の代表が、全案件を直接担当します。
+    その悩み、<strong>SNSの設計</strong>から変えます。<br /><br />
+    CM・MV制作出身の代表が、<strong>全案件を直接担当</strong>。<br />
+    Instagram・TikTok・YouTube・動画・クラファンまで<br />
+    窓口1本で完結します。
   </p>
   <div class="hero-cta">
     <a href="#cta" class="btn-primary">無料相談する →</a>
