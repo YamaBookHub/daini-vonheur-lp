@@ -29,8 +29,9 @@
     p { text-wrap: pretty; }
     .section-number { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; color: #6A6A6A; text-transform: uppercase; }
     .stat-number { font-family: 'DM Serif Display', serif; }
-    .fade-in-up { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-in-up { /* デフォルトで可視。JSがあればアニメーションを追加 */ }
+    .fade-in-up.animate { animation: fadeInUp 0.7s ease both; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     .tag-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 100px; background: rgba(232,184,75,0.15); color: #3D6B47; border: 1px solid rgba(232,184,75,0.35); }
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     html { scroll-behavior: smooth; }
@@ -66,7 +67,8 @@
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.classList.add('animate');
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.05, rootMargin: '0px 0px 200px 0px' });
