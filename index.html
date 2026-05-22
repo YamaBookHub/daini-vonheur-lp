@@ -607,87 +607,101 @@
     .strength-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.4; }
     .strength-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.9; }
 
-    /* ── CASES ── */
-    #cases { background: #fff; }
-    .cases-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    /* ── CASES (WORKS style) ── */
+    #cases { background: #fff; position: relative; overflow: hidden; }
+    .cases-bg-text {
+      position: absolute;
+      font-size: clamp(120px, 22vw, 320px);
+      font-weight: 900;
+      color: rgba(0,0,0,0.04);
+      letter-spacing: -.04em;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
     }
-    .cases-grid--single {
-      grid-template-columns: 1fr;
-      max-width: 520px;
-      margin: 0 auto;
+    .cases-inner { position: relative; z-index: 1; }
+    .case-works { display: flex; flex-direction: column; }
+    .case-work {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 64px;
+      align-items: center;
+      padding-bottom: 72px;
+      margin-bottom: 72px;
+      border-bottom: 1px solid var(--border);
     }
-    @media (max-width: 900px) {
-      .cases-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-work:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .case-work-visual { display: flex; justify-content: center; }
+    .case-phone-frame {
+      width: 200px;
+      height: 380px;
+      background: linear-gradient(160deg, #0d1f14 0%, #1f4f3a 100%);
+      border-radius: 32px;
+      border: 3px solid #2d6e50;
+      position: relative;
+      box-shadow: 0 32px 80px rgba(31,79,58,0.35), 0 0 0 1px rgba(255,255,255,0.06);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .case-card {
-      background: #fff; border: 1px solid #cde8d8; border-radius: 16px;
-      padding: 32px 28px; position: relative; overflow: hidden;
+    .case-phone-frame::before {
+      content: '';
+      position: absolute;
+      top: 14px; left: 50%;
+      transform: translateX(-50%);
+      width: 56px; height: 5px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 3px;
     }
-    .case-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--green-mid), var(--green));
+    .case-phone-inner { text-align: center; padding: 40px 24px; }
+    .case-phone-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: .16em;
+      color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 20px;
     }
-    .case-genre {
-      font-size: 11px; font-weight: 700; letter-spacing: .1em;
-      color: var(--green); text-transform: uppercase; margin-bottom: 16px;
+    .case-phone-amount {
+      font-size: 48px; font-weight: 900; color: #fff;
+      line-height: 1; letter-spacing: -.04em;
     }
-    .case-num {
-      font-size: clamp(36px, 5vw, 52px); font-weight: 900;
-      color: var(--text-dark); letter-spacing: -0.02em; line-height: 1;
-      margin-bottom: 8px;
+    .case-phone-unit { font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.65); margin-top: 6px; }
+    .case-phone-badge {
+      display: inline-block;
+      background: rgba(45,110,80,0.4);
+      border: 1px solid rgba(45,110,80,0.7);
+      color: #86efac;
+      font-size: 11px; font-weight: 700;
+      padding: 6px 14px; border-radius: 20px;
+      margin-top: 20px; line-height: 1.5;
     }
-    .case-label { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
-    .case-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
-
-    /* case-featured */
-    .case-featured {
-      display: grid; grid-template-columns: 5fr 7fr; gap: 0;
-      background: #fff; border: 1px solid #cde8d8; border-radius: 20px;
-      overflow: hidden; min-height: 260px;
+    .case-work-client {
+      font-size: 11px; font-weight: 700; letter-spacing: .14em;
+      color: var(--green); text-transform: uppercase; margin-bottom: 12px;
     }
-    .case-featured-left {
-      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 100%);
-      padding: 44px 40px; display: flex; flex-direction: column;
-      justify-content: center; align-items: flex-start;
+    .case-metrics-row { display: flex; gap: 12px; margin-bottom: 28px; }
+    .case-metric-box {
+      flex: 1;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
-    .case-featured-left .case-genre {
-      color: rgba(255,255,255,0.75); margin-bottom: 16px;
-      font-size: 12px; letter-spacing: .12em;
+    .case-metric-label { font-size: 10px; color: var(--text-mid); line-height: 1.5; margin-bottom: 8px; }
+    .case-metric-val {
+      font-size: clamp(18px, 2vw, 26px); font-weight: 900;
+      color: var(--green); line-height: 1; letter-spacing: -.03em;
     }
-    .case-featured-num {
-      font-size: clamp(56px, 6vw, 80px); font-weight: 900;
-      color: #fff; letter-spacing: -0.04em; line-height: 1;
-    }
-    .case-featured-unit {
-      font-size: 0.42em; font-weight: 700; vertical-align: baseline;
-    }
-    .case-featured-left .case-label {
-      color: rgba(255,255,255,0.8); margin-top: 14px; font-size: 13px; font-weight: 600;
-    }
-    .case-featured-right {
-      padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; gap: 20px;
-    }
-    .case-featured-body {
-      font-size: 14px; color: var(--text-mid); line-height: 2; margin: 0;
-    }
-    .case-featured-points {
-      list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 0;
-    }
-    .case-featured-points li {
-      font-size: 13px; font-weight: 700; color: var(--text-dark);
-      padding-left: 20px; position: relative;
-    }
-    .case-featured-points li::before {
-      content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 900;
-    }
-    .cases-note {
-      margin-top: 16px; font-size: 12px; color: var(--text-sub); text-align: center;
-    }
+    .case-metric-val small { font-size: 0.52em; font-weight: 700; }
+    .case-work-body { font-size: 14px; color: var(--text-mid); line-height: 2; }
+    .cases-note { margin-top: 40px; font-size: 12px; color: var(--text-sub); text-align: center; }
     @media (max-width: 768px) {
-      .case-featured { grid-template-columns: 1fr; min-height: auto; }
-      .case-featured-left { padding: 32px 28px; }
-      .case-featured-right { padding: 28px 28px; }
+      .case-work { grid-template-columns: 1fr; gap: 36px; padding-bottom: 56px; margin-bottom: 56px; }
+      .case-phone-frame { width: 160px; height: 300px; }
+      .case-phone-amount { font-size: 36px; }
     }
 
     /* ── ABOUT ── */
@@ -1411,24 +1425,79 @@
 
 <!-- CASES -->
 <section id="cases" class="sec">
-  <div class="sec-label">CASE STUDY</div>
-  <h2 class="sec-title">実績紹介</h2>
-  <div class="case-featured fade-in">
-    <div class="case-featured-left">
-      <div class="case-genre">クラウドファンディング支援</div>
-      <div class="case-featured-num">3,500<span class="case-featured-unit">万円</span></div>
-      <div class="case-label">達成金額</div>
+  <div class="cases-bg-text">WORKS</div>
+  <div class="cases-inner">
+    <div class="sec-label">CASE STUDY</div>
+    <h2 class="sec-title">実績紹介</h2>
+    <div class="case-works">
+
+      <!-- Case 1: CF -->
+      <div class="case-work fade-in">
+        <div class="case-work-visual">
+          <div class="case-phone-frame">
+            <div class="case-phone-inner">
+              <div class="case-phone-tag">Crowdfunding</div>
+              <div class="case-phone-amount">3,500</div>
+              <div class="case-phone-unit">万円</div>
+              <div class="case-phone-badge">目標大幅超え達成</div>
+            </div>
+          </div>
+        </div>
+        <div class="case-work-content">
+          <div class="case-work-client">Crowdfunding Support</div>
+          <div class="case-metrics-row">
+            <div class="case-metric-box">
+              <div class="case-metric-label">累計達成金額</div>
+              <div class="case-metric-val">3,500<small>万円</small></div>
+            </div>
+            <div class="case-metric-box">
+              <div class="case-metric-label">サポート期間</div>
+              <div class="case-metric-val">掲載前<small>〜終了後</small></div>
+            </div>
+            <div class="case-metric-box">
+              <div class="case-metric-label">拡散手法</div>
+              <div class="case-metric-val">SNS<small>×動画</small></div>
+            </div>
+          </div>
+          <p class="case-work-body">SNSと動画を組み合わせ、プロジェクト公開前から認知を積み上げる設計を実施。掲載中の拡散も並走し、クラウドファンディング3,500万円を達成しました。</p>
+        </div>
+      </div>
+
+      <!-- Case 2: SNS -->
+      <div class="case-work fade-in">
+        <div class="case-work-visual">
+          <div class="case-phone-frame">
+            <div class="case-phone-inner">
+              <div class="case-phone-tag">Instagram</div>
+              <div class="case-phone-amount">100<span style="font-size:.45em;vertical-align:middle;">万</span></div>
+              <div class="case-phone-unit">再生</div>
+              <div class="case-phone-badge">新作アカウント運用初月</div>
+            </div>
+          </div>
+        </div>
+        <div class="case-work-content">
+          <div class="case-work-client">SNS Operation / Instagram</div>
+          <div class="case-metrics-row">
+            <div class="case-metric-box">
+              <div class="case-metric-label">初月再生数</div>
+              <div class="case-metric-val">100<small>万回</small></div>
+            </div>
+            <div class="case-metric-box">
+              <div class="case-metric-label">達成期間</div>
+              <div class="case-metric-val">1<small>ヶ月</small></div>
+            </div>
+            <div class="case-metric-box">
+              <div class="case-metric-label">プラットフォーム</div>
+              <div class="case-metric-val" style="font-size:16px;letter-spacing:-.01em;">Instagram</div>
+            </div>
+          </div>
+          <p class="case-work-body">新規アカウントのゼロからの立ち上げ。投稿・リール設計から数値分析まで一括で担い、運用開始初月に100万再生を達成しました。</p>
+        </div>
+      </div>
+
     </div>
-    <div class="case-featured-right">
-      <p class="case-featured-body">SNSと動画を組み合わせ、プロジェクト公開前から認知を積み上げる設計を実施。掲載中の拡散も並走し、クラウドファンディング3,500万円を達成しました。</p>
-      <ul class="case-featured-points">
-        <li>掲載前〜終了後まで一貫サポート</li>
-        <li>SNS投稿・動画・ライブを組み合わせた拡散設計</li>
-        <li>目標金額を大幅に超えて達成</li>
-      </ul>
-    </div>
+    <p class="cases-note">※ 現在も複数のクライアントと進行中です。実績・事例のご相談はお気軽に。</p>
   </div>
-  <p class="cases-note">※ 現在も複数のクライアントと進行中です。実績・事例のご相談はお気軽に。</p>
 </section>
 
 <!-- CTA -->
