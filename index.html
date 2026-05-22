@@ -623,17 +623,51 @@
       line-height: 1;
     }
     .cases-inner { position: relative; z-index: 1; }
-    .case-works { display: flex; flex-direction: column; }
+    /* Slider wrapper */
+    .cases-slider-wrap { position: relative; overflow: hidden; }
+    .cases-track {
+      display: flex;
+      transition: transform .55s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
     .case-work {
+      min-width: 100%;
       display: grid;
       grid-template-columns: 5fr 7fr;
       gap: 64px;
       align-items: center;
-      padding-bottom: 72px;
-      margin-bottom: 72px;
-      border-bottom: 1px solid var(--border);
     }
-    .case-work:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    /* Slider nav */
+    .cases-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 56px;
+    }
+    .cases-arrow {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--text-dark);
+      transition: border-color .2s, color .2s, transform .2s;
+      flex-shrink: 0;
+    }
+    .cases-arrow:hover { border-color: var(--green); color: var(--green); transform: scale(1.08); }
+    .cases-dots { display: flex; gap: 8px; align-items: center; }
+    .cases-dot {
+      width: 8px; height: 8px;
+      border-radius: 4px;
+      background: var(--border);
+      cursor: pointer;
+      transition: width .3s, background .3s;
+    }
+    .cases-dot.active { width: 24px; background: var(--green); }
     .case-work-visual { display: flex; justify-content: center; }
     .case-phone-frame {
       width: 200px;
@@ -1429,10 +1463,11 @@
   <div class="cases-inner">
     <div class="sec-label">CASE STUDY</div>
     <h2 class="sec-title">実績紹介</h2>
-    <div class="case-works">
+    <div class="cases-slider-wrap">
+      <div class="cases-track" id="casesTrack">
 
       <!-- Case 1: CF -->
-      <div class="case-work fade-in">
+      <div class="case-work">
         <div class="case-work-visual">
           <div class="case-phone-frame">
             <div class="case-phone-inner">
@@ -1464,7 +1499,7 @@
       </div>
 
       <!-- Case 2: SNS -->
-      <div class="case-work fade-in">
+      <div class="case-work">
         <div class="case-work-visual">
           <div class="case-phone-frame">
             <div class="case-phone-inner">
@@ -1495,7 +1530,16 @@
         </div>
       </div>
 
-    </div>
+      </div><!-- /cases-track -->
+      <div class="cases-nav">
+        <button class="cases-arrow" id="casesPrev">←</button>
+        <div class="cases-dots" id="casesDots">
+          <div class="cases-dot active"></div>
+          <div class="cases-dot"></div>
+        </div>
+        <button class="cases-arrow" id="casesNext">→</button>
+      </div>
+    </div><!-- /cases-slider-wrap -->
     <p class="cases-note">※ 現在も複数のクライアントと進行中です。実績・事例のご相談はお気軽に。</p>
   </div>
 </section>
@@ -1601,6 +1645,33 @@
       if (rect.top < window.innerHeight) el.classList.add('visible');
     });
   });
+
+  // Cases slider
+  const casesTrack = document.getElementById('casesTrack');
+  const casesPrev  = document.getElementById('casesPrev');
+  const casesNext  = document.getElementById('casesNext');
+  const dots       = document.querySelectorAll('.cases-dot');
+  let casesIdx = 0;
+  const casesTotal = casesTrack ? casesTrack.children.length : 0;
+
+  function goToCase(idx) {
+    casesIdx = ((idx % casesTotal) + casesTotal) % casesTotal;
+    casesTrack.style.transform = `translateX(-${casesIdx * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === casesIdx));
+  }
+  if (casesTrack) {
+    casesPrev.addEventListener('click', () => goToCase(casesIdx - 1));
+    casesNext.addEventListener('click', () => goToCase(casesIdx + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goToCase(i)));
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    casesTrack.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    casesTrack.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) goToCase(dx < 0 ? casesIdx + 1 : casesIdx - 1);
+    });
+  }
 </script>
 
 </body>
