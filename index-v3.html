@@ -152,43 +152,53 @@ if (logoBtn) {
 
 // Results slider
 (function() {
-  var wrap = document.getElementById('results-slider');
+  var slider = document.getElementById('results-slider');
   var track = document.getElementById('results-track');
-  if (!wrap || !track) return;
+  if (!slider || !track) return;
   var slides = Array.from(track.children);
   var total = slides.length;
   var current = 0;
 
-  function setWidths() {
-    var w = wrap.offsetWidth;
-    slides.forEach(function(s) { s.style.width = w + 'px'; });
-    track.style.width = (w * total) + 'px';
+  function getW() {
+    return slider.getBoundingClientRect().width;
+  }
+
+  function init() {
+    var w = getW();
+    if (w <= 0) { requestAnimationFrame(init); return; }
+    slides.forEach(function(s) {
+      s.style.setProperty('width', w + 'px', 'important');
+      s.style.setProperty('min-width', w + 'px', 'important');
+      s.style.setProperty('max-width', w + 'px', 'important');
+      s.style.setProperty('flex-shrink', '0', 'important');
+    });
+    track.style.setProperty('width', (w * total) + 'px', 'important');
+    goTo(current);
   }
 
   function goTo(n) {
     current = Math.max(0, Math.min(n, total - 1));
-    var w = wrap.offsetWidth;
+    var w = getW();
     track.style.transform = 'translateX(-' + (current * w) + 'px)';
     document.querySelectorAll('.results-dot').forEach(function(dot, i) {
       dot.className = 'results-dot w-2.5 h-2.5 rounded-full transition-all ' + (i === current ? 'bg-[#70927A] scale-125' : 'bg-[#E0DDD6]');
     });
     var cur = document.getElementById('results-current');
     if (cur) cur.textContent = current + 1;
-    var prev = document.getElementById('results-prev');
-    var next = document.getElementById('results-next');
-    if (prev) prev.style.opacity = current === 0 ? '0.4' : '1';
-    if (next) next.style.opacity = current === total - 1 ? '0.4' : '1';
+    var prevBtn = document.getElementById('results-prev');
+    var nextBtn = document.getElementById('results-next');
+    if (prevBtn) prevBtn.style.opacity = current === 0 ? '0.4' : '1';
+    if (nextBtn) nextBtn.style.opacity = current === total - 1 ? '0.4' : '1';
   }
 
-  setWidths();
-  window.addEventListener('resize', function() { setWidths(); goTo(current); });
+  requestAnimationFrame(init);
+  window.addEventListener('resize', function() { init(); });
 
   document.getElementById('results-prev').addEventListener('click', function() { goTo(current - 1); });
   document.getElementById('results-next').addEventListener('click', function() { goTo(current + 1); });
   document.querySelectorAll('.results-dot').forEach(function(dot) {
     dot.addEventListener('click', function() { goTo(parseInt(dot.dataset.index)); });
   });
-  goTo(0);
 })();
 </script>
 </body>
