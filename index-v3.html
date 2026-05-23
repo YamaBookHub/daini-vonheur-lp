@@ -193,6 +193,8 @@ if (logoBtn) {
     else { requestAnimationFrame(init); }
   }
 
+  // 即時実行（DOMは既に構築済み）＋loadでも保険として実行
+  requestAnimationFrame(init);
   window.addEventListener('load', init);
   window.addEventListener('resize', function() { setWidths(); goTo(current); });
 
