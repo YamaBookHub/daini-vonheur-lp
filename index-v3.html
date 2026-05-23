@@ -44,11 +44,12 @@
     .menu-open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
     .menu-open span:nth-child(2) { opacity: 0; }
     .menu-open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
-    /* Hero slideshow */
-    @keyframes hero1 { 0%,26%{opacity:1} 33%,94%{opacity:0} 100%{opacity:1} }
-    @keyframes hero2 { 0%,26%{opacity:0} 33%,59%{opacity:1} 66%,100%{opacity:0} }
-    @keyframes hero3 { 0%,59%{opacity:0} 66%,92%{opacity:1} 100%{opacity:0} }
-    .hero-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 65%; }
+    /* Hero slideshow – 4 slides, 24s cycle */
+    @keyframes hero1 { 0%,17%{opacity:1} 21%,80%{opacity:0} 100%{opacity:1} }
+    @keyframes hero2 { 0%,21%{opacity:0} 25%,42%{opacity:1} 46%,100%{opacity:0} }
+    @keyframes hero3 { 0%,46%{opacity:0} 50%,67%{opacity:1} 71%,100%{opacity:0} }
+    @keyframes hero4 { 0%,71%{opacity:0} 75%,92%{opacity:1} 96%,100%{opacity:0} }
+    .hero-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 60%; }
   </style>
 </head>
 <body class="bg-[#FAFAFA] text-[#111111]">
@@ -56,14 +57,18 @@
 <div class="min-h-screen bg-[#FAFAFA] text-[#111111]"><header class="fixed top-0 left-0 right-0 z-50 bg-[#FAFAFA]/90 backdrop-blur-sm border-b border-[#E0E0E0]"><div class="container flex items-center justify-between h-14"><button class="flex items-center gap-2"><div class="w-7 h-7 rounded-full bg-[#1A7A52] flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram text-white"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></div><span class="font-['Zen_Kaku_Gothic_New'] font-bold text-sm tracking-wide">株式会社第弐ヴォヌール</span></button><nav class="hidden md:flex items-center gap-6 text-xs font-medium text-[#525252]"><button class="hover:text-[#1A7A52] transition-colors">私たちのこと</button><button class="hover:text-[#1A7A52] transition-colors">サービス・料金</button><button class="hover:text-[#1A7A52] transition-colors">強み</button><button class="hover:text-[#1A7A52] transition-colors">実績</button><button class="hover:text-[#1A7A52] transition-colors">補助金活用</button><button class="hover:text-[#1A7A52] transition-colors">相談する</button></nav><a href="#" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-1.5 bg-[#1A7A52] text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-[#14623F] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg> お問い合わせ</a><button id="hamburger-btn" class="md:hidden flex flex-col gap-1.5 p-1"><span class="block w-5 h-0.5 bg-[#111111] transition-all "></span><span class="block w-5 h-0.5 bg-[#111111] transition-all "></span><span class="block w-5 h-0.5 bg-[#111111] transition-all "></span></button></div></header><section id="hero" class="relative flex flex-col pt-14 overflow-hidden" style="min-height: 100svh;">
   <!-- 背景画像：全面。上がグラデーションで文字エリア、下に向けて画像が見える -->
   <div class="absolute inset-0">
-    <!-- スライド1: スマホで動画撮影・コンテンツクリエイター -->
-    <img alt="スマホで動画撮影" class="hero-slide" style="animation:hero1 18s ease-in-out infinite;" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80">
-    <!-- スライド2: 動画編集・モバイル撮影現場 -->
-    <img alt="動画編集現場" class="hero-slide" style="animation:hero2 18s ease-in-out infinite;opacity:0;" src="https://images.unsplash.com/photo-1551817958-d9d86fb29431?auto=format&fit=crop&w=1920&q=80">
+    <!-- スライド1: プロカメラマン・シネマティック撮影 -->
+    <img alt="プロカメラマン撮影" class="hero-slide" style="animation:hero1 24s ease-in-out infinite;object-position:center 55%;" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80">
+    <!-- スライド2: スマホで動画撮影・コンテンツクリエイター -->
+    <img alt="スマホで動画撮影" class="hero-slide" style="animation:hero2 24s ease-in-out infinite;opacity:0;object-position:center 50%;" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80">
     <!-- スライド3: クリエイター・PC編集作業 -->
-    <img alt="クリエイター編集" class="hero-slide" style="animation:hero3 18s ease-in-out infinite;opacity:0;" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1920&q=80">
-    <!-- 上から文字エリアを確保、下に向かって画像が現れる -->
-    <div class="absolute inset-0" style="background: linear-gradient(to bottom, #FAFAFA 0%, #FAFAFA 22%, rgba(250,250,250,0.55) 45%, rgba(250,250,250,0.0) 72%);"></div>
+    <img alt="クリエイター編集" class="hero-slide" style="animation:hero3 24s ease-in-out infinite;opacity:0;object-position:center 40%;" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1920&q=80">
+    <!-- スライド4: 動画編集・モバイル撮影現場 -->
+    <img alt="動画編集現場" class="hero-slide" style="animation:hero4 24s ease-in-out infinite;opacity:0;object-position:center 65%;" src="https://images.unsplash.com/photo-1551817958-d9d86fb29431?auto=format&fit=crop&w=1920&q=80">
+    <!-- 上：文字エリア確保グラデーション -->
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, #FAFAFA 0%, #FAFAFA 30%, rgba(250,250,250,0.65) 52%, rgba(250,250,250,0.1) 70%, rgba(250,250,250,0.0) 82%);"></div>
+    <!-- 下：ビネット（スクロール時に画像が膨張して見えるのを防ぐ） -->
+    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(10,10,10,0.45) 0%, rgba(10,10,10,0.1) 30%, transparent 55%);"></div>
   </div>
   <!-- テキスト：上部に配置 -->
   <div class="container relative z-10 pt-10 md:pt-14 flex-1 flex flex-col justify-start">
