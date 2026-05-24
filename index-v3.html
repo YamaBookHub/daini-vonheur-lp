@@ -216,7 +216,7 @@
   </div>
 
   <!-- パネル共通ラッパー：区外が基準（高さ決定）、区内がオーバーレイ -->
-  <div class="relative">
+  <div class="relative" id="subsidy-panels">
 
   <!-- ① 板橋区外パネル（基準レイヤー：通常フローで高さを確保・初期は透明） -->
   <div id="panel-other" class="bg-white rounded-2xl border border-[#E0E0E0] overflow-hidden transition-opacity duration-200 opacity-0 pointer-events-none">
@@ -402,7 +402,7 @@ function switchSubsidyTab(tab) {
 
 // Subsidy swipe
 (function() {
-  var el = document.querySelector('.relative');
+  var el = document.getElementById('subsidy-panels');
   if (!el) return;
   var startX = 0, startY = 0;
   el.addEventListener('touchstart', function(e) {
