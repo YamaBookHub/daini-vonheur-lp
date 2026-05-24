@@ -398,6 +398,24 @@ function switchSubsidyTab(tab) {
   btnOther.className = 'subsidy-tab flex-1 py-3 rounded-xl text-sm font-bold border-2 transition-all ' + (!isItabashi ? 'border-[#111111] bg-[#111111] text-white' : 'border-[#E0E0E0] bg-white text-[#525252]');
 }
 
+// Subsidy swipe
+(function() {
+  var el = document.querySelector('.relative');
+  if (!el) return;
+  var startX = 0, startY = 0;
+  el.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+  el.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - startX;
+    var dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      switchSubsidyTab(dx < 0 ? 'other' : 'itabashi');
+    }
+  }, { passive: true });
+})();
+
 // Results slider
 (function() {
   var viewport = document.getElementById('results-viewport');
