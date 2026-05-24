@@ -215,8 +215,10 @@
     <button id="tab-other" onclick="switchSubsidyTab('other')" class="subsidy-tab flex-1 py-3 rounded-xl text-sm font-bold border-2 border-[#E0E0E0] bg-white text-[#525252] transition-all">板橋区外の事業者</button>
   </div>
 
+  <!-- パネル共通ラッパー：高さ固定で切り替え時にガタつかない -->
+  <div class="relative">
   <!-- 板橋区内パネル -->
-  <div id="panel-itabashi" class="bg-white rounded-2xl border border-[#E0E0E0] overflow-hidden">
+  <div id="panel-itabashi" class="bg-white rounded-2xl border border-[#E0E0E0] overflow-hidden transition-opacity duration-200">
     <div class="bg-[#10B981] px-6 py-4">
       <p class="font-zen font-bold text-lg text-white">板橋区中小企業魅力向上支援包括補助事業助成金</p>
       <p class="text-white/80 text-xs mt-1">地元だからこそ使える、最大の補助金</p>
@@ -236,7 +238,7 @@
   </div>
 
   <!-- 板橋区外パネル -->
-  <div id="panel-other" class="bg-white rounded-2xl border border-[#E0E0E0] overflow-hidden hidden">
+  <div id="panel-other" class="bg-white rounded-2xl border border-[#E0E0E0] overflow-hidden absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-200">
     <div class="bg-[#111111] px-6 py-4">
       <p class="font-zen font-bold text-lg text-white">小規模事業者持続化補助金</p>
       <p class="text-white/60 text-xs mt-1">全国どこでも使える国の補助金</p>
@@ -266,7 +268,7 @@
       </div>
     </div>
   </div>
-</div>
+  </div><!-- /相対ラッパー終了 -->
 
 <!-- 下部CTA -->
 <div class="fade-in-up mt-8"><div class="bg-white rounded-2xl p-6 md:p-8 border border-[#E0E0E0] flex flex-col md:flex-row items-center gap-6"><div class="flex-1 text-center md:text-left"><p class="font-zen font-bold text-lg text-[#111111] mb-1">補助金申請のご相談も承ります</p><p class="text-xs text-[#525252] leading-relaxed">「どの補助金が自分に合うかわからない」「申請の手順を教えてほしい」といったご相談もお気軽にどうぞ（書類作成の代行は対応しておりません）。</p></div><a href="#" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-2 bg-[#06C755] hover:bg-[#05b34c] text-white font-bold px-6 py-3 rounded-full shadow-md transition-all text-xs whitespace-nowrap"><svg viewBox="0 0 24 24" class="w-4 h-4 fill-white"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.3 5.12 3.35 6.82L4.5 22l4.38-2.3C9.86 19.88 10.92 20 12 20c5.52 0 10-4.03 10-9S17.52 2 12 2zm1 13H7v-2h6v2zm2-4H7V9h8v2z"></path></svg>LINEで補助金を相談する</a></div></div>
@@ -383,8 +385,13 @@ if (logoBtn) {
 // Subsidy tab switch
 function switchSubsidyTab(tab) {
   var isItabashi = tab === 'itabashi';
-  document.getElementById('panel-itabashi').classList.toggle('hidden', !isItabashi);
-  document.getElementById('panel-other').classList.toggle('hidden', isItabashi);
+  var pI = document.getElementById('panel-itabashi');
+  var pO = document.getElementById('panel-other');
+  // opacity切り替え（高さ変化なし）
+  pI.style.opacity = isItabashi ? '1' : '0';
+  pI.style.pointerEvents = isItabashi ? 'auto' : 'none';
+  pO.style.opacity = isItabashi ? '0' : '1';
+  pO.style.pointerEvents = isItabashi ? 'none' : 'auto';
   var btnItabashi = document.getElementById('tab-itabashi');
   var btnOther = document.getElementById('tab-other');
   btnItabashi.className = 'subsidy-tab flex-1 py-3 rounded-xl text-sm font-bold border-2 transition-all ' + (isItabashi ? 'border-[#10B981] bg-[#10B981] text-white' : 'border-[#E0E0E0] bg-white text-[#525252]');
