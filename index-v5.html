@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>株式会社第弐ヴォヌール | SNS運用代行・動画制作</title>
+  <meta name="description" content="バズっても、売れなきゃ意味がない。株式会社第弐ヴォヌールは「売上」にこだわるSNS運用チーム。Instagram/TikTok運用代行・動画制作・販売導線設計。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'zen': ['Zen Kaku Gothic New', 'sans-serif'],
+            'dm': ['DM Serif Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --green: #8FC5A3;
+      --green-dark: #6DAF8A;
+      --coral: #E68A82;
+      --bg: #F8F7F2;
+      --dark: #4A4A4A;
+      --muted: #6A6A6A;
+      --border: #E0DDD8;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-break: strict;
+      overflow-wrap: anywhere;
+    }
+    h1, h2, h3, h4 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .font-zen { font-family: 'Zen Kaku Gothic New', sans-serif; }
+    .font-dm { font-family: 'DM Serif Display', serif; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.25em; color: var(--muted); text-transform: uppercase; }
+
+    /* Fade-up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+      display: flex;
+      align-items: center;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--dark);
+      text-decoration: none;
+      line-height: 1.2;
+    }
+    .logo span {
+      display: block;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    nav.pc-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    nav.pc-nav a {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    nav.pc-nav a:hover { color: var(--dark); }
+    .btn-header {
+      background: var(--dark);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 8px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-header:hover { background: #333; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+      padding: 20px 24px 28px;
+      flex-direction: column;
+      gap: 0;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration: none;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.05em;
+    }
+    .mobile-nav a:last-child {
+      border-bottom: none;
+      margin-top: 16px;
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 14px;
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 64px;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-text {
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      transform: translateY(-50%);
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(100px, 18vw, 220px);
+      color: rgba(143, 197, 163, 0.08);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .hero-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--green-dark);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-label::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--green-dark);
+    }
+    .hero-service-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--green-dark);
+      border: 1px solid var(--green);
+      border-radius: 20px;
+      padding: 5px 16px;
+      margin-bottom: 28px;
+    }
+    .hero-h1 {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--coral);
+    }
+    .hero-sub {
+      font-size: clamp(14px, 1.5vw, 16px);
+      line-height: 1.9;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 40px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--coral);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 16px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #d97770; transform: translateY(-2px); }
+    .btn-primary svg { flex-shrink: 0; }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 14px 28px;
+      border-radius: 6px;
+      border: 1.5px solid var(--border);
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--dark); transform: translateY(-2px); }
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      background: var(--dark);
+      padding: 48px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 24px 16px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-num em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .stat-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+    }
+
+    /* Section base */
+    .section {
+      padding: 96px 0;
+    }
+    .section-title-en {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .section-title-ja {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.4;
+      margin-bottom: 32px;
+    }
+
+    /* Story cards */
+    .story-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .story-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 28px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .story-card-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 48px;
+      color: rgba(143, 197, 163, 0.2);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .story-card h3 {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .story-card p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+    .vision-box {
+      background: var(--green);
+      border-radius: 12px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .vision-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .vision-text {
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 64px 0;
+      text-align: center;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-section p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .cta-section h2 {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    /* Service Plans */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .plan-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .plan-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .plan-card.featured { border-color: var(--green); border-width: 2px; }
+    .plan-badge {
+      background: var(--green);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      padding: 5px 16px;
+      text-align: center;
+    }
+    .plan-header {
+      padding: 28px 28px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .plan-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .plan-freq {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green-dark);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .plan-desc {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+    .plan-body {
+      padding: 24px 28px 32px;
+    }
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .plan-features li {
+      font-size: 13px;
+      color: var(--dark);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.6;
+    }
+    .plan-features li::before {
+      content: '✓';
+      color: var(--green-dark);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Strength */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .strength-item {
+      text-align: center;
+      padding: 40px 28px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s;
+    }
+    .strength-item:hover { transform: translateY(-4px); }
+    .strength-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(143, 197, 163, 0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+    }
+    .strength-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 13px;
+      color: var(--green-dark);
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+    }
+    .strength-item h3 {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .strength-item p {
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+    .strength-highlight {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--coral);
+      background: rgba(230, 138, 130, 0.1);
+      border-radius: 4px;
+      padding: 3px 10px;
+      margin-top: 10px;
+    }
+
+    /* Results slider */
+    .results-slider {
+      position: relative;
+      overflow: hidden;
+    }
+    .results-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.4s ease;
+    }
+    .result-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 36px 32px;
+      min-width: calc(50% - 12px);
+      flex-shrink: 0;
+    }
+    .result-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--green-dark);
+      border: 1px solid var(--green);
+      border-radius: 20px;
+      padding: 4px 12px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .result-card h3 {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .result-card p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .result-metrics {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .result-metric {
+      text-align: center;
+    }
+    .result-metric-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 32px;
+      color: var(--coral);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .result-metric-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .slider-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .slider-btn:hover { border-color: var(--dark); background: var(--dark); }
+    .slider-btn:hover svg { stroke: #fff; }
+    .slider-btn svg { stroke: var(--dark); }
+    .slider-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .slider-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .slider-dot.active { background: var(--dark); transform: scale(1.3); }
+
+    /* Members */
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .member-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 40px 36px;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      transition: transform 0.2s;
+    }
+    .member-card:hover { transform: translateY(-4px); }
+    .member-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(143, 197, 163, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 32px;
+    }
+    .member-role {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--green-dark);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .member-name {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    .member-name-en {
+      font-family: 'DM Serif Display', serif;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .member-bio {
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    /* Subsidy */
+    .subsidy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .subsidy-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .subsidy-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--green);
+    }
+    .subsidy-card.coral::before { background: var(--coral); }
+    .subsidy-area {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--green-dark);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .subsidy-card.coral .subsidy-area { color: var(--coral); }
+    .subsidy-card h3 {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .subsidy-amount {
+      font-family: 'DM Serif Display', serif;
+      font-size: 40px;
+      color: var(--green-dark);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .subsidy-card.coral .subsidy-amount { color: var(--coral); }
+    .subsidy-rate {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .subsidy-card p {
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+    .subsidy-note {
+      margin-top: 24px;
+      background: rgba(143, 197, 163, 0.08);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+      border: 1px solid rgba(143, 197, 163, 0.2);
+    }
+
+    /* Contact */
+    .contact-section {
+      background: var(--dark);
+      padding: 96px 0;
+      text-align: center;
+    }
+    .contact-section .section-label { color: rgba(255,255,255,0.4); }
+    .contact-section h2 {
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .contact-section p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.6);
+      max-width: 520px;
+      margin: 0 auto 40px;
+    }
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--coral);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 18px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-contact:hover { background: #d97770; transform: translateY(-2px); }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      padding: 40px 0;
+      text-align: center;
+    }
+    footer .logo { color: #fff; display: inline-block; margin-bottom: 12px; }
+    footer .logo span { color: rgba(255,255,255,0.4); }
+    footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* Section number */
+    .section-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 11px;
+      color: var(--green-dark);
+      letter-spacing: 0.2em;
+      margin-bottom: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav.pc-nav { display: none; }
+      .hamburger { display: flex; }
+      .hero-bg-text { display: none; }
+      .story-cards { grid-template-columns: 1fr; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .strength-grid { grid-template-columns: 1fr; }
+      .members-grid { grid-template-columns: 1fr; }
+      .subsidy-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+      .stat-item:nth-child(3),
+      .stat-item:nth-child(4) { border-bottom: none; }
+      .result-card { min-width: calc(100% - 0px); }
+      .member-card { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
+      .vision-box { padding: 36px 24px; }
+      .section { padding: 72px 0; }
+    }
+    @media (max-width: 480px) {
+      .hero-cta-row { flex-direction: column; align-items: flex-start; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      Daini Vonheur
+      <span>株式会社第弐ヴォヌール</span>
+    </a>
+    <nav class="pc-nav">
+      <a href="#story">私たちのこと</a>
+      <a href="#service">サービス・料金</a>
+      <a href="#strength">強み</a>
+      <a href="#results">実績</a>
+      <a href="#members">メンバー</a>
+      <a href="#subsidy">補助金</a>
+      <a href="#contact" class="btn-header">お問い合わせ</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#story" onclick="closeMobileNav()">私たちのこと</a>
+  <a href="#service" onclick="closeMobileNav()">サービス・料金</a>
+  <a href="#strength" onclick="closeMobileNav()">強み</a>
+  <a href="#results" onclick="closeMobileNav()">実績</a>
+  <a href="#members" onclick="closeMobileNav()">メンバー</a>
+  <a href="#subsidy" onclick="closeMobileNav()">補助金</a>
+  <a href="#contact" onclick="closeMobileNav()">無料相談を申し込む</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg-text">SNS</div>
+  <div class="container">
+    <div class="hero-label fade-up">SNS MANAGEMENT</div>
+    <div class="fade-up delay-1">
+      <span class="hero-service-tag">SNS運用代行・動画制作</span>
+    </div>
+    <h1 class="hero-h1 fade-up delay-2">
+      バズっても、<em>売れなきゃ</em><br>意味がない。
+    </h1>
+    <p class="hero-sub fade-up delay-3">
+      フォロワーが増えても、再生数が回っても、売上に変わらないなら——それは運用の方法が違うだけかもしれません。私たちは「数字」ではなく「売上」にこだわるSNS運用チームです。
+    </p>
+    <div class="hero-cta-row fade-up delay-4">
+      <a href="#contact" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        無料相談を申し込む
+      </a>
+      <a href="#story" class="btn-secondary">
+        まずは私たちのことを知る
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-num">20<em>+</em></div>
+        <div class="stat-label">支援アカウント数</div>
+      </div>
+      <div class="stat-item fade-up delay-1">
+        <div class="stat-num">124<em>万</em></div>
+        <div class="stat-label">最大売上導線</div>
+      </div>
+      <div class="stat-item fade-up delay-2">
+        <div class="stat-num">1<em>万+</em></div>
+        <div class="stat-label">フォロワー増加<br>（2ヶ月）</div>
+      </div>
+      <div class="stat-item fade-up delay-3">
+        <div class="stat-num">14<em>万</em></div>
+        <div class="stat-label">運用経験<br>フォロワー規模</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUR STORY ===== -->
+<section class="section" id="story">
+  <div class="container">
+    <div class="section-label fade-up">OUR STORY</div>
+    <div class="section-title-ja fade-up delay-1">
+      こんなに頑張って投稿しているのに、<br>売上が変わらない。もったいないよね。
+    </div>
+
+    <div class="story-cards">
+      <div class="story-card fade-up">
+        <div class="story-card-num">01</div>
+        <h3>再生数が増えても、売上が変わらなかった。</h3>
+        <p>SNSをやれば売れると思っていた。でも現実は違った。フォロワーが増えても、再生数が回っても、売上は変わらない——その経験が、私たちの原点です。</p>
+      </div>
+      <div class="story-card fade-up delay-1">
+        <div class="story-card-num">02</div>
+        <h3>だから私たちは、売れる導線を追いかけてきた。</h3>
+        <p>フォロワー14万規模のメディア運用、20以上のアカウント支援。数字の向こうにある「お客様の行動」を、ずっと追いかけてきました。</p>
+      </div>
+      <div class="story-card fade-up delay-2">
+        <div class="story-card-num">03</div>
+        <h3>頑張って投稿しているのに、報われない人を減らしたい。</h3>
+        <p>SNSで結果が出ていない事業者さんが、ひとりでも笑顔になれるように。それが第弐ヴォヌールの、変わらない想いです。</p>
+      </div>
+    </div>
+
+    <div class="vision-box fade-up">
+      <div class="vision-label">VISION</div>
+      <div class="vision-text">SNSで報われない事業者を、ひとりも残したくない。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VISION後CTA ===== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="section-label fade-up" style="margin-bottom: 16px;">FOR BUSINESS OWNERS</div>
+    <h2 class="fade-up delay-1">「うちのSNS、どうすればいい？」<br>その悩み、一緒に考えます。</h2>
+    <p class="fade-up delay-2">今すぐ決めなくていい。まずは気軽に話しかけてください。</p>
+    <a href="#contact" class="btn-primary fade-up delay-3">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      無料相談を申し込む
+    </a>
+  </div>
+</section>
+
+<!-- ===== 01 SERVICE & PRICE ===== -->
+<section class="section" id="service">
+  <div class="container">
+    <div class="section-num fade-up">01</div>
+    <div class="section-label fade-up">SERVICE &amp; PRICE</div>
+    <div class="section-title-en fade-up delay-1">Plans</div>
+    <div class="section-title-ja fade-up delay-2" style="margin-bottom: 48px;">あなたのフェーズに合わせた<br>3つのプラン</div>
+
+    <div class="plans-grid">
+      <div class="plan-card fade-up">
+        <div class="plan-header">
+          <div class="plan-name">LIGHT</div>
+          <div class="plan-freq">月3〜5投稿</div>
+          <p class="plan-desc">まずはSNSを動かすことからはじめたい方へ。</p>
+        </div>
+        <div class="plan-body">
+          <ul class="plan-features">
+            <li>月3〜5投稿（リール or フィード）</li>
+            <li>キャプション・ハッシュタグ作成</li>
+            <li>月次レポート</li>
+            <li>LINE相談対応</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="plan-card featured fade-up delay-1">
+        <div class="plan-badge">MOST POPULAR</div>
+        <div class="plan-header">
+          <div class="plan-name">STANDARD</div>
+          <div class="plan-freq">月8〜12投稿</div>
+          <p class="plan-desc">認知から購買までの流れを設計したい方へ。</p>
+        </div>
+        <div class="plan-body">
+          <ul class="plan-features">
+            <li>月8〜12投稿（リール＋フィード）</li>
+            <li>販売導線設計・プロフィール最適化</li>
+            <li>ショート動画制作（月2本）</li>
+            <li>週次レポート＋改善提案</li>
+            <li>月1回オンライン打ち合わせ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="plan-card fade-up delay-2">
+        <div class="plan-header">
+          <div class="plan-name">FULL</div>
+          <div class="plan-freq">完全お任せ</div>
+          <p class="plan-desc">本業に集中しながら成果もほしい方へ。</p>
+        </div>
+        <div class="plan-body">
+          <ul class="plan-features">
+            <li>投稿数・動画本数 完全カスタム</li>
+            <li>複数SNS一括管理（Instagram/TikTok等）</li>
+            <li>広告運用サポート</li>
+            <li>クラウドファンディング支援</li>
+            <li>専任担当者アサイン</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="fade-up" style="text-align:center; margin-top: 32px; font-size: 13px; color: var(--muted);">
+      ※ 料金はご要望・規模に合わせてお見積もりします。まずはお気軽にご相談ください。
+    </p>
+  </div>
+</section>
+
+<!-- ===== 02 STRENGTH ===== -->
+<section class="section" id="strength" style="background: #fff;">
+  <div class="container">
+    <div class="section-num fade-up">02</div>
+    <div class="section-label fade-up">STRENGTH</div>
+    <div class="section-title-en fade-up delay-1">Why Us</div>
+    <div class="section-title-ja fade-up delay-2" style="margin-bottom: 48px;">私たちが選ばれる、3つの理由</div>
+
+    <div class="strength-grid">
+      <div class="strength-item fade-up">
+        <div class="strength-icon">📈</div>
+        <div class="strength-num">STRENGTH 01</div>
+        <h3>売上直結型の<br>運用設計</h3>
+        <p>「バズ」ではなく「売上」を目標に設計。フォロワー300人で月124万円の販売導線を実現した実績があります。</p>
+        <span class="strength-highlight">300フォロワーで124万円の実績</span>
+      </div>
+      <div class="strength-item fade-up delay-1">
+        <div class="strength-icon">🎯</div>
+        <div class="strength-num">STRENGTH 02</div>
+        <h3>実績に裏付けられた<br>導線設計</h3>
+        <p>20アカウント以上の支援実績。業種・規模を問わず、お客様の行動パターンを熟知した導線設計が強みです。</p>
+        <span class="strength-highlight">20アカウント以上支援</span>
+      </div>
+      <div class="strength-item fade-up delay-2">
+        <div class="strength-icon">🎬</div>
+        <div class="strength-num">STRENGTH 03</div>
+        <h3>動画×SNSの<br>ワンストップ対応</h3>
+        <p>ショート動画制作からSNS運用まで、一貫して対応。外注の手間なく、スピーディーに施策を実行できます。</p>
+        <span class="strength-highlight">動画制作＋運用を一括対応</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 RESULTS ===== -->
+<section class="section" id="results">
+  <div class="container">
+    <div class="section-num fade-up">03</div>
+    <div class="section-label fade-up">RESULTS</div>
+    <div class="section-title-en fade-up delay-1">Case Studies</div>
+    <div class="section-title-ja fade-up delay-2" style="margin-bottom: 48px;">実績のご紹介</div>
+
+    <div class="results-slider fade-up">
+      <div class="results-track" id="resultsTrack">
+        <div class="result-card">
+          <div class="result-tag">CASE 01</div>
+          <h3>かおよTV</h3>
+          <p>コンテンツ戦略の見直しと投稿設計の最適化により、フォロワー数・再生数ともに大幅増加。SNSを起点とした問い合わせ数の向上を実現しました。</p>
+          <div class="result-metrics">
+            <div class="result-metric">
+              <div class="result-metric-num">↑</div>
+              <div class="result-metric-label">フォロワー大幅増加</div>
+            </div>
+            <div class="result-metric">
+              <div class="result-metric-num">↑</div>
+              <div class="result-metric-label">再生数大幅増加</div>
+            </div>
+            <div class="result-metric">
+              <div class="result-metric-num">↑</div>
+              <div class="result-metric-label">問い合わせ増加</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-tag">CASE 02</div>
+          <h3>ROLLS OFFICIAL.JP</h3>
+          <p>開始からわずか2ヶ月で1万フォロワー増加を達成。ショート動画を活用した認知拡大と、購買へつながる導線設計で売上向上に貢献しました。</p>
+          <div class="result-metrics">
+            <div class="result-metric">
+              <div class="result-metric-num">1<span style="font-size:16px;">万+</span></div>
+              <div class="result-metric-label">フォロワー増加</div>
+            </div>
+            <div class="result-metric">
+              <div class="result-metric-num">2</div>
+              <div class="result-metric-label">ヶ月で達成</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-controls">
+      <button class="slider-btn" id="prevBtn" aria-label="前へ">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="slider-dots">
+        <div class="slider-dot active" data-index="0"></div>
+        <div class="slider-dot" data-index="1"></div>
+      </div>
+      <button class="slider-btn" id="nextBtn" aria-label="次へ">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 MEMBERS ===== -->
+<section class="section" id="members" style="background: #fff;">
+  <div class="container">
+    <div class="section-num fade-up">04</div>
+    <div class="section-label fade-up">MEMBERS</div>
+    <div class="section-title-en fade-up delay-1">Our Team</div>
+    <div class="section-title-ja fade-up delay-2" style="margin-bottom: 48px;">チームメンバー</div>
+
+    <div class="members-grid">
+      <div class="member-card fade-up">
+        <div class="member-avatar">🌿</div>
+        <div>
+          <div class="member-role">Co-Founder / SNS Strategist</div>
+          <div class="member-name">階方 くるみ</div>
+          <div class="member-name-en">Kurumi Kashikata</div>
+          <p class="member-bio">フォロワー14万規模のSNSメディア運用を経験後、20アカウント以上の事業者支援に携わる。「売上につながる運用設計」を得意とし、数字の向こうにあるお客様の行動を起点とした戦略立案が強み。</p>
+        </div>
+      </div>
+      <div class="member-card fade-up delay-1">
+        <div class="member-avatar">🎬</div>
+        <div>
+          <div class="member-role">Co-Founder / Video Creator</div>
+          <div class="member-name">鈴木 藍里</div>
+          <div class="member-name-en">Airi Suzuki</div>
+          <p class="member-bio">英会話教室や地域事業者を中心にSNS運用と動画制作を支援。ショート動画制作のプロとして、視聴者の心を動かすコンテンツ設計を担当。動画×SNSのワンストップ支援を実現する。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 SUBSIDY ===== -->
+<section class="section" id="subsidy">
+  <div class="container">
+    <div class="section-num fade-up">05</div>
+    <div class="section-label fade-up">SUBSIDY</div>
+    <div class="section-title-en fade-up delay-1">補助金</div>
+    <div class="section-title-ja fade-up delay-2" style="margin-bottom: 16px;">補助金を活用して、<br>SNS運用をはじめよう</div>
+    <p class="fade-up delay-3" style="font-size: 14px; color: var(--muted); margin-bottom: 40px; max-width: 560px;">お住まいのエリアによって活用できる補助金が異なります。対象要件などはお気軽にご相談ください。</p>
+
+    <div class="subsidy-grid">
+      <div class="subsidy-card fade-up">
+        <div class="subsidy-area">板橋区内の事業者様</div>
+        <h3>板橋区中小企業魅力向上支援<br>包括補助事業助成金</h3>
+        <div class="subsidy-amount">50<span style="font-size:22px; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900;">万円</span></div>
+        <div class="subsidy-rate">補助率：1/2〜4/5</div>
+        <p>板橋区内で事業を営む中小企業・個人事業主が対象。SNS運用代行・動画制作費用が対象経費になる場合があります。</p>
+      </div>
+      <div class="subsidy-card coral fade-up delay-1">
+        <div class="subsidy-area">板橋区外の事業者様</div>
+        <h3>小規模事業者<br>持続化補助金</h3>
+        <div class="subsidy-amount">50<span style="font-size:22px; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900;">万円</span></div>
+        <div class="subsidy-rate">補助率：2/3</div>
+        <p>全国の小規模事業者が対象。販路開拓・集客強化を目的としたSNS活用費用が対象になる場合があります。</p>
+      </div>
+    </div>
+
+    <div class="subsidy-note fade-up">
+      ※ 補助金の採択可否・対象経費は各公募要領や審査によって異なります。詳細は所管機関または当社へご相談ください。申請サポートについてもお気軽にお問い合わせください。
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 CONTACT ===== -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-label fade-up">06 CONTACT</div>
+    <h2 class="fade-up delay-1">まずは、気軽に<br>話しかけてください。</h2>
+    <p class="fade-up delay-2">今すぐ決めなくていい。「うちのSNS、どうすればいいんだろう？」という段階からでも、一緒に考えます。</p>
+    <a href="https://lin.ee/vonheur" target="_blank" rel="noopener" class="btn-contact fade-up delay-3">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      無料相談を申し込む
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <a href="#" class="logo">
+      Daini Vonheur
+      <span>株式会社第弐ヴォヌール</span>
+    </a>
+    <p style="margin-top: 8px;">&copy; 2025 株式会社第弐ヴォヌール. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+
+  function closeMobileNav() {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+  }
+
+  // Fade-up IntersectionObserver
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Results Slider
+  const track = document.getElementById('resultsTrack');
+  const dots = document.querySelectorAll('.slider-dot');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let currentSlide = 0;
+  const totalSlides = 2;
+
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  function goToSlide(index) {
+    if (!isMobile()) {
+      track.style.transform = 'translateX(0)';
+      dots.forEach(d => d.classList.remove('active'));
+      dots[0].classList.add('active');
+      currentSlide = 0;
+      return;
+    }
+    currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
+    const cardWidth = track.querySelector('.result-card').offsetWidth + 24;
+    track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+
+  prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+  nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.index)));
+  });
+  window.addEventListener('resize', () => goToSlide(currentSlide));
+</script>
+</body>
+</html>
