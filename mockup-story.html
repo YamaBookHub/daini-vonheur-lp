@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OUR STORY モックアップ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F8F7F2;
+      --dark: #4A4A4A;
+      --green: #8FC5A3;
+      --coral: #E68A82;
+    }
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    }
+    .serif { font-family: 'DM Serif Display', serif; }
+
+    /* カード hover */
+    .story-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    /* アクセントライン */
+    .accent-line {
+      width: 48px;
+      height: 3px;
+      background: var(--green);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- OUR STORY セクション -->
+<section style="background: var(--bg); padding: 100px 0;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
+
+    <!-- セクションラベル -->
+    <div style="margin-bottom: 1rem;">
+      <span class="serif" style="font-size: 0.75rem; letter-spacing: 0.2em; color: var(--green);">OUR STORY</span>
+    </div>
+
+    <!-- メインキャッチ -->
+    <div style="margin-bottom: 4rem; max-width: 720px;">
+      <div class="accent-line"></div>
+      <h2 style="font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.7; color: var(--dark);">
+        こんなに頑張って投稿しているのに、<br>売上が変わらない。<span style="color: var(--coral);">もったいないよね。</span>
+      </h2>
+    </div>
+
+    <!-- ストーリーカード 3枚 -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+
+      <!-- カード1 -->
+      <div class="story-card" style="background: white; border-radius: 16px; padding: 2.5rem; border-top: 4px solid var(--coral);">
+        <div style="font-size: 0.7rem; letter-spacing: 0.2em; color: var(--coral); margin-bottom: 1rem;">01 / ORIGIN</div>
+        <h3 style="font-size: 1.2rem; font-weight: 700; line-height: 1.6; margin-bottom: 1.2rem;">
+          再生数が増えても、<br>売上が変わらなかった。
+        </h3>
+        <p style="font-size: 0.9rem; line-height: 1.9; color: #666;">
+          SNSをやれば売れると思っていた。でも現実は違った。フォロワーが増えても、再生数が回っても、売上は変わらない——その経験が、私たちの原点です。
+        </p>
+      </div>
+
+      <!-- カード2 -->
+      <div class="story-card" style="background: white; border-radius: 16px; padding: 2.5rem; border-top: 4px solid var(--green);">
+        <div style="font-size: 0.7rem; letter-spacing: 0.2em; color: var(--green); margin-bottom: 1rem;">02 / PRACTICE</div>
+        <h3 style="font-size: 1.2rem; font-weight: 700; line-height: 1.6; margin-bottom: 1.2rem;">
+          だから私たちは、<br>売れる導線を追いかけてきた。
+        </h3>
+        <p style="font-size: 0.9rem; line-height: 1.9; color: #666;">
+          フォロワー14万規模のメディア運用、20以上のアカウント支援。数字の向こうにある「お客様の行動」を、ずっと追いかけてきました。
+        </p>
+      </div>
+
+      <!-- カード3 -->
+      <div class="story-card" style="background: white; border-radius: 16px; padding: 2.5rem; border-top: 4px solid var(--dark);">
+        <div style="font-size: 0.7rem; letter-spacing: 0.2em; color: var(--dark); margin-bottom: 1rem;">03 / VISION</div>
+        <h3 style="font-size: 1.2rem; font-weight: 700; line-height: 1.6; margin-bottom: 1.2rem;">
+          頑張って投稿しているのに、<br>報われない人を減らしたい。
+        </h3>
+        <p style="font-size: 0.9rem; line-height: 1.9; color: #666;">
+          SNSで結果が出ていない事業者さんが、ひとりでも笑顔になれるように。それが第弐ヴォヌールの、変わらない想いです。
+        </p>
+      </div>
+
+    </div>
+
+    <!-- VISION ボックス -->
+    <div style="background: var(--dark); color: white; border-radius: 16px; padding: 3rem; text-align: center;">
+      <div style="font-size: 0.7rem; letter-spacing: 0.3em; color: var(--green); margin-bottom: 1.5rem;">VISION</div>
+      <p class="serif" style="font-size: clamp(1.3rem, 3vw, 1.9rem); line-height: 1.8; font-weight: 400;">
+        SNSで報われない事業者を、<br>ひとりも残したくない。
+      </p>
+      <div style="width: 40px; height: 2px; background: var(--green); margin: 1.5rem auto 0;"></div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
