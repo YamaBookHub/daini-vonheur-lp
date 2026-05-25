@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第弐ヴォヌール LP制作スケジュール</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Zen Kaku Gothic New', sans-serif; background: #F8F7F2; }
+
+    :root {
+      --green: #8FC5A3;
+      --coral: #E68A82;
+      --ink: #2A2A2A;
+      --muted: #7A7A6E;
+      --card: #FFFFFF;
+      --border: #E4E2D9;
+    }
+
+    .phase-header {
+      background: linear-gradient(135deg, var(--green) 0%, #72B08C 100%);
+    }
+    .phase-header.coral {
+      background: linear-gradient(135deg, var(--coral) 0%, #D9786F 100%);
+    }
+    .phase-header.current {
+      background: linear-gradient(135deg, #F5C842 0%, #E6B830 100%);
+    }
+
+    .badge-parallel {
+      background: #E8F5ED;
+      color: #3D8A5A;
+      border: 1px solid #8FC5A3;
+    }
+    .badge-approval {
+      background: #FDECEA;
+      color: #C0524B;
+      border: 1px solid #E68A82;
+    }
+    .badge-sequential {
+      background: #F0EEE8;
+      color: #5A5A50;
+      border: 1px solid #C8C6BC;
+    }
+
+    .gantt-bar {
+      height: 20px;
+      border-radius: 4px;
+    }
+    .gantt-green { background: #8FC5A3; }
+    .gantt-coral { background: #E68A82; opacity: 0.85; }
+    .gantt-yellow { background: #F5C842; }
+    .gantt-gray { background: #C8C6BC; }
+
+    .timeline-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .approval-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #FDECEA;
+      border: 1px solid #E68A82;
+      color: #C0524B;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 500;
+    }
+
+    .current-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #FEF6D6;
+      border: 1px solid #F5C842;
+      color: #9A7C00;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 700;
+    }
+
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid var(--border); }
+
+    .day-col { width: 32px; }
+
+    @media (max-width: 768px) {
+      .gantt-section { overflow-x: auto; }
+    }
+  </style>
+</head>
+<body class="min-h-screen py-10 px-4">
+
+  <!-- Header -->
+  <div class="max-w-5xl mx-auto mb-10">
+    <div class="flex items-start justify-between flex-wrap gap-4">
+      <div>
+        <p class="text-xs tracking-widest text-gray-400 mb-1">第弐ヴォヌール 株式会社</p>
+        <h1 class="text-2xl font-bold" style="color:#2A2A2A;">LP制作プロジェクト スケジュール</h1>
+        <p class="text-sm mt-1" style="color:#7A7A6E;">作成日：2026年5月25日　／　完成目標：Day 1 から約 <strong style="color:#2A2A2A;">14日</strong></p>
+      </div>
+      <div class="flex flex-col gap-2 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-3 h-3 rounded-sm gantt-green"></span><span style="color:#2A2A2A;">並列実行タスク</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-3 h-3 rounded-sm gantt-coral"></span><span style="color:#2A2A2A;">承認待ちフェーズ</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-3 h-3 rounded-sm gantt-yellow"></span><span style="color:#2A2A2A;">現在地</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="max-w-5xl mx-auto mb-8 flex flex-wrap gap-3 text-xs">
+    <span class="badge-parallel px-3 py-1 rounded-full font-medium">⟳ 並列実行可</span>
+    <span class="badge-approval px-3 py-1 rounded-full font-medium">✓ 社長承認</span>
+    <span class="badge-sequential px-3 py-1 rounded-full font-medium">→ 順次実行</span>
+  </div>
+
+  <!-- Phases -->
+  <div class="max-w-5xl mx-auto flex flex-col gap-6">
+
+    <!-- PHASE 1 -->
+    <div class="rounded-2xl overflow-hidden shadow-sm border" style="border-color:#E4E2D9;">
+      <div class="phase-header current px-6 py-4 flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-3">
+          <span class="text-white text-lg font-bold opacity-80">PHASE 1</span>
+          <span class="text-white font-bold text-base">思想・ストーリーを固める</span>
+          <span class="current-badge">← 現在地</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-white text-sm opacity-80">Day 1–3</span>
+          <span class="approval-flag">✓ 社長承認あり</span>
+        </div>
+      </div>
+      <div class="bg-white px-6 py-5">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr style="background:#F8F7F2; color:#7A7A6E;">
+                <th class="text-left px-3 py-2 font-medium">タスク</th>
+                <th class="text-center px-3 py-2 font-medium">所要時間</th>
+                <th class="text-center px-3 py-2 font-medium">実行モード</th>
+                <th class="text-left px-3 py-2 font-medium">備考</th>
+              </tr>
+            </thead>
+            <tbody style="color:#2A2A2A;">
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">会社の強み・差別化ポイントの言語化</td>
+                <td class="text-center px-3 py-3">1〜2h</td>
+                <td class="text-center px-3 py-3"><span class="badge-sequential px-2 py-0.5 rounded-full text-xs">→ 順次</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">社長ヒアリング or 資料確認</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">ターゲット顧客ペルソナの設定</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">強み言語化と同時進行可</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">競合調査・ポジショニング整理</td>
+                <td class="text-center px-3 py-3">1〜2h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">ペルソナ設定と同時進行可</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">LPのコアメッセージ（大テーマ）策定</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="badge-sequential px-2 py-0.5 rounded-full text-xs">→ 順次</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">上記3点完了後</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8; background:#FDECEA22;">
+                <td class="px-3 py-3 font-medium" style="color:#C0524B;">【社長承認①】思想・メッセージの確認</td>
+                <td class="text-center px-3 py-3">0.5h</td>
+                <td class="text-center px-3 py-3"><span class="approval-flag">✓ 承認</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#C0524B;">ここで方向性を確定。手戻りはここで防ぐ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="rounded-2xl overflow-hidden shadow-sm border" style="border-color:#E4E2D9;">
+      <div class="phase-header px-6 py-4 flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-3">
+          <span class="text-white text-lg font-bold opacity-80">PHASE 2</span>
+          <span class="text-white font-bold text-base">ページ構成・導線を固める</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-white text-sm opacity-80">Day 3–5</span>
+          <span class="approval-flag">✓ 社長承認あり</span>
+        </div>
+      </div>
+      <div class="bg-white px-6 py-5">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr style="background:#F8F7F2; color:#7A7A6E;">
+                <th class="text-left px-3 py-2 font-medium">タスク</th>
+                <th class="text-center px-3 py-2 font-medium">所要時間</th>
+                <th class="text-center px-3 py-2 font-medium">実行モード</th>
+                <th class="text-left px-3 py-2 font-medium">備考</th>
+              </tr>
+            </thead>
+            <tbody style="color:#2A2A2A;">
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">セクション構成案の作成（ワイヤーフレーム相当）</td>
+                <td class="text-center px-3 py-3">2h</td>
+                <td class="text-center px-3 py-3"><span class="badge-sequential px-2 py-0.5 rounded-full text-xs">→ 順次</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">PHASE 1 承認後に開始</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">CTAボタン配置・導線設計</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">構成案と同時進行可</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">問い合わせ導線・フォーム方式決定</td>
+                <td class="text-center px-3 py-3">0.5h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">LINE / メール / 外部ツール</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8; background:#FDECEA22;">
+                <td class="px-3 py-3 font-medium" style="color:#C0524B;">【社長承認②】ページ構成・導線の確認</td>
+                <td class="text-center px-3 py-3">0.5h</td>
+                <td class="text-center px-3 py-3"><span class="approval-flag">✓ 承認</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#C0524B;">セクション順・CTA位置を確定</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="rounded-2xl overflow-hidden shadow-sm border" style="border-color:#E4E2D9;">
+      <div class="phase-header px-6 py-4 flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-3">
+          <span class="text-white text-lg font-bold opacity-80">PHASE 3</span>
+          <span class="text-white font-bold text-base">全セクションのコピーを書く</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-white text-sm opacity-80">Day 5–8</span>
+          <span class="approval-flag">✓ 社長承認あり</span>
+        </div>
+      </div>
+      <div class="bg-white px-6 py-5">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr style="background:#F8F7F2; color:#7A7A6E;">
+                <th class="text-left px-3 py-2 font-medium">タスク</th>
+                <th class="text-center px-3 py-2 font-medium">所要時間</th>
+                <th class="text-center px-3 py-2 font-medium">実行モード</th>
+                <th class="text-left px-3 py-2 font-medium">備考</th>
+              </tr>
+            </thead>
+            <tbody style="color:#2A2A2A;">
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">ファーストビュー・キャッチコピー</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="badge-sequential px-2 py-0.5 rounded-full text-xs">→ 順次</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">最重要。他より先に完成させる</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">課題提示・共感セクションのコピー</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">サービス紹介と同時進行可</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">サービス内容・強みセクションのコピー</td>
+                <td class="text-center px-3 py-3">1.5h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">課題提示と同時進行可</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">実績・事例・数字のコピー</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">FAQ・CTAと同時進行可</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">FAQ・CTAセクションのコピー</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">実績と同時進行可</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8; background:#FDECEA22;">
+                <td class="px-3 py-3 font-medium" style="color:#C0524B;">【社長承認③】全コピーの確認・修正</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="approval-flag">✓ 承認</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#C0524B;">コピー確定後にデザイン工程へ進む</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="rounded-2xl overflow-hidden shadow-sm border" style="border-color:#E4E2D9;">
+      <div class="phase-header coral px-6 py-4 flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-3">
+          <span class="text-white text-lg font-bold opacity-80">PHASE 4</span>
+          <span class="text-white font-bold text-base">デザイン・モックアップを固める</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-white text-sm opacity-80">Day 8–12</span>
+          <span class="approval-flag">✓ 社長承認あり</span>
+        </div>
+      </div>
+      <div class="bg-white px-6 py-5">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr style="background:#F8F7F2; color:#7A7A6E;">
+                <th class="text-left px-3 py-2 font-medium">タスク</th>
+                <th class="text-center px-3 py-2 font-medium">所要時間</th>
+                <th class="text-center px-3 py-2 font-medium">実行モード</th>
+                <th class="text-left px-3 py-2 font-medium">備考</th>
+              </tr>
+            </thead>
+            <tbody style="color:#2A2A2A;">
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">ブランドカラー・フォント・トンマナ決定</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="badge-sequential px-2 py-0.5 rounded-full text-xs">→ 順次</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">デザインの軸を最初に固める</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">FVデザイン（PC・SP両対応）</td>
+                <td class="text-center px-3 py-3">3h</td>
+                <td class="text-center px-3 py-3"><span class="badge-sequential px-2 py-0.5 rounded-full text-xs">→ 順次</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">トンマナ確定後に開始</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">各セクションのHTML/CSSコーディング</td>
+                <td class="text-center px-3 py-3">4〜6h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">セクションごとにエージェント分担可</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">画像・素材の選定・最適化</td>
+                <td class="text-center px-3 py-3">2h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">コーディングと同時進行可</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">SP（スマホ）レスポンシブ対応</td>
+                <td class="text-center px-3 py-3">2h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">PC版と並行して進められる</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8; background:#FDECEA22;">
+                <td class="px-3 py-3 font-medium" style="color:#C0524B;">【社長承認④】デザイン・モックアップの確認</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="approval-flag">✓ 承認</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#C0524B;">ビジュアル全体のGO/修正指示</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 5 -->
+    <div class="rounded-2xl overflow-hidden shadow-sm border" style="border-color:#E4E2D9;">
+      <div class="phase-header coral px-6 py-4 flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-3">
+          <span class="text-white text-lg font-bold opacity-80">PHASE 5</span>
+          <span class="text-white font-bold text-base">完成・公開</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-white text-sm opacity-80">Day 12–14</span>
+          <span class="approval-flag">✓ 最終承認</span>
+        </div>
+      </div>
+      <div class="bg-white px-6 py-5">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr style="background:#F8F7F2; color:#7A7A6E;">
+                <th class="text-left px-3 py-2 font-medium">タスク</th>
+                <th class="text-center px-3 py-2 font-medium">所要時間</th>
+                <th class="text-center px-3 py-2 font-medium">実行モード</th>
+                <th class="text-left px-3 py-2 font-medium">備考</th>
+              </tr>
+            </thead>
+            <tbody style="color:#2A2A2A;">
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">最終テキスト・コピーの校正</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">表示確認と同時進行可</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">ブラウザ・デバイス表示確認（QA）</td>
+                <td class="text-center px-3 py-3">1h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">Chrome / Safari / iOS / Android</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">OGP設定・メタ情報の整備</td>
+                <td class="text-center px-3 py-3">0.5h</td>
+                <td class="text-center px-3 py-3"><span class="badge-parallel px-2 py-0.5 rounded-full text-xs">⟳ 並列</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">SNSシェア時の表示対策</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8;">
+                <td class="px-3 py-3">本番環境へのデプロイ</td>
+                <td class="text-center px-3 py-3">0.5h</td>
+                <td class="text-center px-3 py-3"><span class="badge-sequential px-2 py-0.5 rounded-full text-xs">→ 順次</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#7A7A6E;">QA完了後に実施</td>
+              </tr>
+              <tr class="border-t" style="border-color:#F0EEE8; background:#FDECEA22;">
+                <td class="px-3 py-3 font-medium" style="color:#C0524B;">【社長最終承認⑤】公開前の最終確認</td>
+                <td class="text-center px-3 py-3">0.5h</td>
+                <td class="text-center px-3 py-3"><span class="approval-flag">✓ 承認</span></td>
+                <td class="px-3 py-3 text-xs" style="color:#C0524B;">社長OKで即公開</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Gantt Chart -->
+  <div class="max-w-5xl mx-auto mt-12 mb-4">
+    <h2 class="text-lg font-bold mb-1" style="color:#2A2A2A;">ガントチャート概観</h2>
+    <p class="text-xs mb-5" style="color:#7A7A6E;">目安日程（作業開始日 = Day 1）。承認待ち時間を含む。</p>
+
+    <div class="bg-white rounded-2xl shadow-sm border overflow-x-auto" style="border-color:#E4E2D9;">
+      <div class="p-6" style="min-width:600px;">
+
+        <!-- Day headers -->
+        <div class="flex mb-3">
+          <div style="width:200px; flex-shrink:0;"></div>
+          <div class="flex flex-1">
+            <div class="flex w-full">
+              <!-- 14 day labels -->
+              <script>
+                document.write(Array.from({length:14}, (_,i) =>
+                  `<div class="text-center text-xs flex-1" style="color:#7A7A6E;">D${i+1}</div>`
+                ).join(''));
+              </script>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase rows -->
+        <div class="flex flex-col gap-3">
+
+          <!-- Row: PHASE 1 -->
+          <div class="flex items-center gap-3">
+            <div class="text-xs font-medium" style="width:200px; flex-shrink:0; color:#2A2A2A;">
+              PHASE 1<br><span style="color:#7A7A6E; font-weight:400;">思想・ストーリー</span>
+            </div>
+            <div class="flex flex-1 relative" style="height:20px;">
+              <div class="absolute gantt-bar gantt-yellow" style="left:0%; width:21.4%;"></div><!-- Day 1-3 -->
+            </div>
+          </div>
+
+          <!-- Approval 1 -->
+          <div class="flex items-center gap-3">
+            <div class="text-xs" style="width:200px; flex-shrink:0; color:#C0524B;">✓ 承認①</div>
+            <div class="flex flex-1 relative" style="height:20px;">
+              <div class="absolute gantt-bar gantt-coral" style="left:21.4%; width:3.6%;"></div>
+            </div>
+          </div>
+
+          <!-- Row: PHASE 2 -->
+          <div class="flex items-center gap-3">
+            <div class="text-xs font-medium" style="width:200px; flex-shrink:0; color:#2A2A2A;">
+              PHASE 2<br><span style="color:#7A7A6E; font-weight:400;">ページ構成・導線</span>
+            </div>
+            <div class="flex flex-1 relative" style="height:20px;">
+              <div class="absolute gantt-bar gantt-green" style="left:21.4%; width:14.3%;"></div><!-- Day 3-5 -->
+            </div>
+          </div>
+
+          <!-- Approval 2 -->
+          <div class="flex items-center gap-3">
+            <div class="text-xs" style="width:200px; flex-shrink:0; color:#C0524B;">✓ 承認②</div>
+            <div class="flex flex-1 relative" style="height:20px;">
+              <div class="absolute gantt-bar gantt-coral" style="left:35.7%; width:3.6%;"></div>
+            </div>
+          </div>
+
+          <!-- Row: PHASE 3 -->
+          <div class="flex items-center gap-3">
+            <div class="text-xs font-medium" style="width:200px; flex-shrink:0; color:#2A2A2A;">
+              PHASE 3<br><span style="color:#7A7A6E; font-weight:400;">コピーライティング</span>
+            </div>
+            <div class="flex flex-1 relative" style="height:20px;">
+              <div class="absolute gantt-bar gantt-green" style="left:35.7%; width:21.4%;"></div><!-- Day 5-8 -->
+            </div>
+          </div>
+
+          <!-- Approval 3 -->
+          <div class="flex items-center gap-3">
+            <div class="text-xs" style="width:200px; flex-shrink:0; color:#C0524B;">✓ 承認③</div>
+            <div class="flex flex-1 relative" style="height:20px;">
+              <div class="absolute gantt-bar gantt-coral" style="left:57.1%; width:3.6%;"></div>
+            </div>
+          </div>
+
+          <!-- Row: PHASE 4 -->
+          <div class="flex items-center gap-3">
+            <div class="text-xs font-medium" style="width:200px; flex-shrink:0; color:#2A2A2A;">
+              PHASE 4<br><span style="color:#7A7A6E; font-weight:400;">デザイン・コーディング</span>
+            </div>
+            <div class="flex flex-1 relative" style="height:20px;">
+              <div class="absolute gantt-bar gantt-green" style="left:57.1%; width:28.6%;"></div><!-- Day 8-12 -->
+            </div>
+          </div>
+
+          <!-- Approval 4 -->
+          <div class="flex items-center gap-3">
+            <div class="text-xs" style="width:200px; flex-shrink:0; color:#C0524B;">✓ 承認④</div>
+            <div class="flex flex-1 relative" style="height:20px;">
+              <div class="absolute gantt-bar gantt-coral" style="left:85.7%; width:3.6%;"></div>
+            </div>
+          </div>
+
+          <!-- Row: PHASE 5 -->
+          <div class="flex items-center gap-3">
+            <div class="text-xs font-medium" style="width:200px; flex-shrink:0; color:#2A2A2A;">
+              PHASE 5<br><span style="color:#7A7A6E; font-weight:400;">完成・公開</span>
+            </div>
+            <div class="flex flex-1 relative" style="height:20px;">
+              <div class="absolute gantt-bar gantt-green" style="left:78.6%; width:14.3%;"></div><!-- Day 11-14 -->
+            </div>
+          </div>
+
+          <!-- Approval 5 -->
+          <div class="flex items-center gap-3">
+            <div class="text-xs" style="width:200px; flex-shrink:0; color:#C0524B;">✓ 最終承認⑤</div>
+            <div class="flex flex-1 relative" style="height:20px;">
+              <div class="absolute gantt-bar gantt-coral" style="left:92.9%; width:7.1%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Day scale bottom -->
+        <div class="flex mt-4 border-t pt-2" style="border-color:#F0EEE8;">
+          <div style="width:200px; flex-shrink:0;"></div>
+          <div class="flex flex-1">
+            <script>
+              document.write(Array.from({length:14}, (_,i) =>
+                `<div class="text-center text-xs flex-1" style="color:#7A7A6E;">D${i+1}</div>`
+              ).join(''));
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="max-w-5xl mx-auto mt-8 mb-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white rounded-2xl p-5 shadow-sm border text-center" style="border-color:#E4E2D9;">
+        <div class="text-3xl font-bold mb-1" style="color:#8FC5A3;">14日</div>
+        <div class="text-xs" style="color:#7A7A6E;">全体目安期間</div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm border text-center" style="border-color:#E4E2D9;">
+        <div class="text-3xl font-bold mb-1" style="color:#E68A82;">5回</div>
+        <div class="text-xs" style="color:#7A7A6E;">社長承認タイミング</div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm border text-center" style="border-color:#E4E2D9;">
+        <div class="text-3xl font-bold mb-1" style="color:#8FC5A3;">10+</div>
+        <div class="text-xs" style="color:#7A7A6E;">並列実行可能タスク</div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm border text-center" style="border-color:#E4E2D9;">
+        <div class="text-3xl font-bold mb-1" style="color:#2A2A2A;">5</div>
+        <div class="text-xs" style="color:#7A7A6E;">フェーズ構成</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="text-center text-xs pb-8" style="color:#BCBAB2;">
+    第弐ヴォヌール 株式会社　LP制作スケジュール　／　2026.05.25 作成
+  </div>
+
+</body>
+</html>
