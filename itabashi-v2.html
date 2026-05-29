@@ -131,7 +131,8 @@ if (statsSection) statsObserver.observe(statsSection.closest('section') || stats
 /* ===== モバイル最適化 (max 767px) ===== */
 @media (max-width: 767px) {
   /* Stats bar: 数値大きく・ガタつき防止 */
-  .stat-number { font-size: 1.4rem !important; line-height: 1.3 !important; font-weight: 700; min-height: 3rem; display: flex !important; align-items: center; justify-content: center; }
+  .stat-number { display: block !important; min-height: 3.5rem; }
+  .stat-val { font-size: 1.4rem !important; line-height: 1.3 !important; font-weight: 700; }
 
   /* Service table: tighter cell padding */
   #service table th,
