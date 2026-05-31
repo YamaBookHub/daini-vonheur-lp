@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第弐ヴォヌール LP 制作提案資料｜実在LP参考ベース</title>
+<style>
+  :root{
+    --navy:#2A2520; --gold:#E8B84B; --coral:#E07A5F; --cream:#FAF7F2;
+    --line:#E8E4DC; --gray:#5A5550; --bg:#F4F0E8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif;color:var(--navy);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{background:var(--navy);color:#fff;padding:32px 0 28px}
+  header .wrap{display:flex;flex-direction:column;gap:6px}
+  header .eyebrow{color:var(--gold);font-size:13px;letter-spacing:.1em;font-weight:600}
+  header h1{font-size:24px;font-weight:800;letter-spacing:.01em}
+  header p{font-size:14px;color:#cfcabf;margin-top:4px}
+
+  /* intro */
+  .intro{background:#fff;border-bottom:1px solid var(--line);padding:24px 0}
+  .intro .wrap{font-size:14px;color:var(--gray)}
+  .intro b{color:var(--navy)}
+  .intro .live{display:inline-flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;margin-top:10px;text-decoration:none;color:var(--navy)}
+  .intro .live::before{content:"🔗"}
+
+  /* tabs */
+  .tabbar{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .tabbar .wrap{display:flex;gap:4px;overflow-x:auto;padding:10px 20px}
+  .tab{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--gray);font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.2s}
+  .tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+  /* panel */
+  .panel{display:none;padding:32px 0 64px}
+  .panel.active{display:block}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .sec-num{font-size:13px;color:var(--coral);font-weight:700;letter-spacing:.08em}
+  .sec-title{font-size:22px;font-weight:800}
+  .sec-desc{font-size:14px;color:var(--gray);margin-bottom:24px}
+
+  /* reference box */
+  .ref{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+  .ref-label{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--gray);border-radius:6px;padding:3px 10px;margin-bottom:12px}
+  .ref h4{font-size:15px;margin-bottom:4px}
+  .ref h4 a{color:var(--coral);text-decoration:none;font-size:12px;font-weight:600;margin-left:8px}
+  .ref .quote{background:var(--bg);border-left:3px solid var(--gold);padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;margin:8px 0;color:var(--navy)}
+  .ref ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--gray)}
+  .ref ul li{margin-bottom:4px}
+
+  /* ours box */
+  .ours{background:linear-gradient(135deg,#FFF8E8,#FFF1DD);border:2px solid var(--gold);border-radius:14px;padding:22px;margin:20px 0 8px}
+  .ours-label{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:#B8860B;margin-bottom:12px}
+  .ours-label::before{content:"✅"}
+  .ours .big{font-size:21px;font-weight:800;line-height:1.4;margin:6px 0}
+  .ours .big .hl{color:var(--coral)}
+  .ours .note{font-size:13px;color:var(--gray);margin-top:10px}
+  .ours .body{font-size:14px;color:var(--navy);margin-top:8px}
+
+  /* pattern options */
+  .opts-title{font-size:13px;font-weight:700;color:var(--gray);margin:24px 0 10px;display:flex;align-items:center;gap:8px}
+  .opts-title::before{content:"";width:18px;height:2px;background:var(--coral)}
+  .opt{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:10px}
+  .opt .tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:var(--bg);border-radius:6px;padding:2px 9px;margin-bottom:8px}
+  .opt .copy{font-size:18px;font-weight:800;line-height:1.45}
+  .opt .copy .hl{color:var(--coral)}
+  .opt .why{font-size:12.5px;color:var(--gray);margin-top:6px}
+  .opt.is-current{border-color:var(--gold);background:#FFFDF7}
+  .opt.is-current .tag{background:var(--gold);color:#fff}
+
+  /* todo box */
+  .todo{background:#FDF3F0;border:1px dashed var(--coral);border-radius:12px;padding:16px 18px;margin-top:14px;font-size:13.5px}
+  .todo b{color:var(--coral)}
+
+  .footer{padding:30px 0;text-align:center;font-size:12px;color:var(--gray);border-top:1px solid var(--line)}
+  @media(max-width:680px){
+    header h1{font-size:19px}
+    .sec-title{font-size:19px}
+    .ours .big{font-size:18px}
+    .opt .copy{font-size:16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">PROPOSAL ─ 制作提案資料</span>
+    <h1>株式会社第弐ヴォヌール｜LP制作提案</h1>
+    <p>実在する「売れているLP」を参考に、各セクションを設計しました。</p>
+  </div>
+</header>
+
+<div class="intro">
+  <div class="wrap">
+    本資料は、<b>実際に公開・運用されているLP</b>を参考事例として分析し、それを踏まえて第弐ヴォヌールのLPをどう設計したか／今後どう改善できるかをセクション単位でまとめたものです。各参考LPは実在ページにリンクしています。
+    <br>
+    <a class="live" href="https://yamabookhub.github.io/daini-vonheur-lp/itabashi-v2.html" target="_blank">完成中のLP実物を見る</a>
+  </div>
+</div>
+
+<div class="tabbar">
+  <div class="wrap" id="tabbar">
+    <button class="tab active" data-t="hero">① ファーストビュー</button>
+    <button class="tab" data-t="story">② ストーリー / 共感</button>
+    <button class="tab" data-t="results">③ 実績・信頼性</button>
+    <button class="tab" data-t="offer">④ オファー / 料金</button>
+    <button class="tab" data-t="cta">⑤ CTA</button>
+  </div>
+</div>
+
+<!-- ===== ① HERO ===== -->
+<section class="panel active" data-p="hero">
+<div class="wrap">
+  <div class="sec-head"><span class="sec-num">SECTION 01</span><span class="sec-title">ファーストビュー（キャッチコピー）</span></div>
+  <p class="sec-desc">「3秒で価値が伝わるか」が勝負。実在LPはどう一言で価値を出しているか。</p>
+
+  <div class="ref">
+    <span class="ref-label">参考①：板橋インスタサポート（実在）</span>
+    <h4>地域密着 Instagram運用代行<a href="https://yamabookhub.github.io/daini-vonheur-lp/itabashi-v1.html" target="_blank">▸ ページを見る</a></h4>
+    <div class="quote">「板橋から、Instagramで地域を動かす。」</div>
+    <ul><li>「どこから × 何で × 何を動かす」を一文に凝縮</li><li>ターゲット（地域事業者）が自分事として読める</li></ul>
+  </div>
+
+  <div class="ref">
+    <span class="ref-label">参考②：Heart Full（実在）</span>
+    <h4>Instagram・TikTok運用代行<a href="https://h-full.co.jp/sns-marketing-lp/" target="_blank">▸ ページを見る</a></h4>
+    <div class="quote">「企業アカウントで リール再生100万回を目指す」</div>
+    <ul><li>冒頭から具体数値（100万回）で掴む</li></ul>
+  </div>
+
+  <div class="ref">
+    <span class="ref-label">参考③：RIZAP（実在・名作LP）</span>
+    <h4>パーソナルジム<a href="https://www.rizap.jp/" target="_blank">▸ ページを見る</a></h4>
+    <div class="quote">「変わるよろこびを、人生のあらゆる挑戦へ。」</div>
+    <ul><li>機能でなく「変化（ベネフィット）」を感情で語る</li></ul>
+  </div>
+
+  <div class="ours">
+    <span class="ours-label">第弐ヴォヌールのLP（現在の実装）</span>
+    <div class="big">フォロワーを増やすだけじゃない。<br><span class="hl">売れるストーリー</span>をお届けします。</div>
+    <div class="note">▶ 参考LPと同じく「フォロワー（資産）→売上（結果）」をターゲットの悩みに沿って一文化。板橋ママの構文を継承。</div>
+  </div>
+
+  <div class="opts-title">他に検討できるキャッチ案</div>
+  <div class="opt is-current"><span class="tag">A案（採用中）</span><div class="copy">フォロワーを増やすだけじゃない。<span class="hl">売れるストーリー</span>をお届けします。</div><div class="why">共感型。今のターゲットの悩みに寄り添う。</div></div>
+  <div class="opt"><span class="tag">B案</span><div class="copy">その<span class="hl">フォロワー</span>を、<span class="hl">売上</span>に変える。</div><div class="why">ベネフィット直球・最短。インパクト大。</div></div>
+  <div class="opt"><span class="tag">C案</span><div class="copy">SNSから、<span class="hl">累計8,000万円</span>。<br>売れる仕組みを設計します。</div><div class="why">実績数値で掴む。信頼性を冒頭で補える（Heart Full/AdMarket型）。</div></div>
+  <div class="opt"><span class="tag">D案</span><div class="copy">「いいね」は増えた。<br>でも、<span class="hl">売上</span>は？</div><div class="why">問いかけで刺す。RIZAPのような感情フック。</div></div>
+  <div class="opt"><span class="tag">E案</span><div class="copy">バズらなくていい。<br><span class="hl">売れれば</span>いい。</div><div class="why">バズ至上主義を否定し本質に振り切る潔さ。</div></div>
+</div>
+</section>
+
+<!-- ===== ② STORY ===== -->
+<section class="panel" data-p="story">
+<div class="wrap">
+  <div class="sec-head"><span class="sec-num">SECTION 02</span><span class="sec-title">ストーリー / 共感セクション</span></div>
+  <p class="sec-desc">いきなり売り込まず「自分のことを分かっている」と共感させる。3社とも同じ構造。</p>
+
+  <div class="ref">
+    <span class="ref-label">参考①：AdMarket（実在）</span>
+    <h4>SNS運用代行<a href="https://www.ad-market.jp/instagramlp/" target="_blank">▸ ページを見る</a></h4>
+    <div class="quote">見出し「SNS運用の よくあるお悩み」</div>
+    <ul><li>「自社で運用しているがフォロワーが増えない」</li><li>「どう運営すればいいかわからない」</li><li>「忙しくて投稿まで手が回らない」</li><li>→ 顧客の生の言葉で悩みを3つ列挙</li></ul>
+  </div>
+
+  <div class="ref">
+    <span class="ref-label">参考②：板橋インスタサポート（実在）</span>
+    <h4>共感の入り方<a href="https://yamabookhub.github.io/daini-vonheur-lp/itabashi-v1.html" target="_blank">▸ ページを見る</a></h4>
+    <div class="quote">「こんなにいいお店なのに、インスタで魅力が伝わってない。もったいないよね。」</div>
+    <ul><li>読者が心の中で思っていることを“代弁”する書き出し</li></ul>
+  </div>
+
+  <div class="ours">
+    <span class="ours-label">第弐ヴォヌールのLP（現在の実装）</span>
+    <div class="big">売上をつくるのは、<br>フォロワーじゃない。<span class="hl">ファンです。</span></div>
+    <div class="body">「フォロワーは何千人もいるのに、売上はほとんど変わっていない。」という“顧客の生の声”で共感 → 「フォロワーは知っているだけの人／ファンは応援したくなる人」と課題を分解 → 「だから一気通貫で設計する」と解決提示。<b>共感→課題→解決</b>の型を踏襲。</div>
+  </div>
+
+  <div class="opts-title">他に検討できる共感の入り方</div>
+  <div class="opt is-current"><span class="tag">A案（採用中）</span><div class="copy">「フォロワーは何千人もいるのに、売上は変わっていない。」</div><div class="why">顧客の声で共感→ファン論で課題分解。</div></div>
+  <div class="opt"><span class="tag">B案：お悩み列挙型（AdMarket式）</span><div class="copy">こんなお悩み、ありませんか？</div><div class="why">「フォロワーが増えない」「投稿が続かない」「売上に繋がらない」を箇条書きで。SNSの定番で分かりやすい。</div></div>
+  <div class="opt"><span class="tag">C案：もったいない型（板橋ママ式）</span><div class="copy">いい商品なのに、<span class="hl">届いてない。</span></div><div class="why">感情に訴える温かいトーン。中小事業者に刺さる。</div></div>
+</div>
+</section>
+
+<!-- ===== ③ RESULTS ===== -->
+<section class="panel" data-p="results">
+<div class="wrap">
+  <div class="sec-head"><span class="sec-num">SECTION 03</span><span class="sec-title">実績・信頼性の証明</span></div>
+  <p class="sec-desc">★最重要。「誰の成果か」が無いと数字は疑われる。実在LPの見せ方が参考になる。</p>
+
+  <div class="ref">
+    <span class="ref-label">参考①：Heart Full（実在）CASE STUDY型</span>
+    <h4>業種＋Before→After<a href="https://h-full.co.jp/sns-marketing-lp/" target="_blank">▸ ページを見る</a></h4>
+    <ul><li>フォトスタジオ「売上が1年で250%に」</li><li>家電・インテリア「フォロワー1万→5.6万」「Reels再生140万超」「来店 月1人→月10人」</li><li>→ <b>業種を明示＋変化量を数値化</b></li></ul>
+  </div>
+
+  <div class="ref">
+    <span class="ref-label">参考②：SmartHR（実在・BtoB名作）</span>
+    <h4>定量実績の畳みかけ<a href="https://smarthr.jp/" target="_blank">▸ ページを見る</a></h4>
+    <ul><li>「登録80,000社」「継続率99%」「工数88%削減」</li><li>導入企業を<b>業種＋従業員規模</b>つきで掲載（自分と似た企業を読者が探せる）</li></ul>
+  </div>
+
+  <div class="ref">
+    <span class="ref-label">参考③：リプカ（実在）お客様の声</span>
+    <h4>実名＋成果<a href="https://ripuca.co.jp/lp-instagram/" target="_blank">▸ ページを見る</a></h4>
+    <div class="quote">「TAKUMI TOKYO様：半年で売上が10倍以上に」</div>
+    <ul><li>実名＋具体成果のセットで信憑性を担保</li></ul>
+  </div>
+
+  <div class="ours">
+    <span class="ours-label">第弐ヴォヌールのLP（現在の実装）</span>
+    <div class="body"><b>実績帯</b>（累計売上8,000万円／再生400万回／フォロワー4,000人増／支援20アカウント以上）＋<b>成果事例スライダー6件</b>を実装済み。Before→Afterの数値はHeart Full型に沿っている。</div>
+    <div class="note">▶ ただし現状は「数値はあるが“誰の成果か”が弱い」。下記の追加で信頼性が大きく上がります。</div>
+  </div>
+
+  <div class="todo">
+    <b>⚠ 追加で必要な素材（社長ヒアリング）</b><br>
+    ・お客様の声（取引先名 or「飲食店A様」等の業種＋規模ラベル＋一言コメント＋可能なら顔写真/ロゴ）<br>
+    ・Makuakeプロジェクトの実URL（8,000万円の裏付け）<br>
+    ・運用アカウント名 or 実リール（出せる範囲で）<br>
+    → SmartHR式に「業種＋規模」ラベルを付けるだけで“自分事化”して刺さります。
+  </div>
+</div>
+</section>
+
+<!-- ===== ④ OFFER ===== -->
+<section class="panel" data-p="offer">
+<div class="wrap">
+  <div class="sec-head"><span class="sec-num">SECTION 04</span><span class="sec-title">オファー / 料金</span></div>
+  <p class="sec-desc">「料金は問い合わせください」はNG。料金・特典・保証・期限を明示できると強い。</p>
+
+  <div class="ref">
+    <span class="ref-label">参考①：AdMarket（実在）料金明示型</span>
+    <h4>3段階プラン<a href="https://www.ad-market.jp/instagramlp/" target="_blank">▸ ページを見る</a></h4>
+    <ul><li>10万円/月〜・20万円/月〜・30万円/月〜の3段階を明示</li><li>→ 比較検討させて問い合わせの質を上げる</li></ul>
+  </div>
+
+  <div class="ref">
+    <span class="ref-label">参考②：RIZAP（実在）保証型</span>
+    <h4>総額＋返金保証<a href="https://www.rizap.jp/plan" target="_blank">▸ ページを見る</a></h4>
+    <ul><li>総額提示「298,000円〜」＋内訳併記</li><li><b>30日間全額返金保証</b>／「無理な勧誘は一切ございません」で不安除去</li></ul>
+  </div>
+
+  <div class="ref">
+    <span class="ref-label">参考③：SmartHR（実在）無料入口型</span>
+    <h4>温度別の入口<a href="https://smarthr.jp/" target="_blank">▸ ページを見る</a></h4>
+    <ul><li>「15日間無料トライアル」「コスト削減シミュレーター」「資料3点セット」</li><li>→ 検討段階に応じた入口を複数用意</li></ul>
+  </div>
+
+  <div class="ours">
+    <span class="ours-label">第弐ヴォヌールのLP（現在の実装）</span>
+    <div class="body">料金の目安テーブル（アカウント設計3万円〜／リール1万円〜/本 など）を明示済み＋「<b>初回相談は無料（30分）</b>」を追記済み。AdMarketの料金明示型に近い。</div>
+    <div class="note">▶ さらに「不安除去文（無理な勧誘なし）」「初回特典」を足すと、RIZAP型の安心感に近づきます。</div>
+  </div>
+
+  <div class="opts-title">追加検討できるオファー要素</div>
+  <div class="opt"><span class="tag">案1</span><div class="copy">「無理な勧誘は一切ありません」</div><div class="why">RIZAP式の不安除去。相談CTAの近くに置く。</div></div>
+  <div class="opt"><span class="tag">案2</span><div class="copy">初回限定：<span class="hl">無料アカウント診断</span></div><div class="why">SmartHR式の低ハードル入口。素材があれば追加可。</div></div>
+  <div class="opt"><span class="tag">案3</span><div class="copy">月額プランを3段階で明示</div><div class="why">AdMarket式。出せる範囲でプラン化すると比較しやすい。</div></div>
+</div>
+</section>
+
+<!-- ===== ⑤ CTA ===== -->
+<section class="panel" data-p="cta">
+<div class="wrap">
+  <div class="sec-head"><span class="sec-num">SECTION 05</span><span class="sec-title">CTA（行動ボタン）</span></div>
+  <p class="sec-desc">迷わせない。同じアクションは文言を統一し、2〜3個に絞る。</p>
+
+  <div class="ref">
+    <span class="ref-label">参考①：Heart Full（実在）</span>
+    <h4>2択提示<a href="https://h-full.co.jp/sns-marketing-lp/" target="_blank">▸ ページを見る</a></h4>
+    <ul><li>「まずは無料相談する」＋「資料無料ダウンロード」</li><li>→ ハードル高低の2択を併置</li></ul>
+  </div>
+
+  <div class="ref">
+    <span class="ref-label">参考②：SmartHR（実在）</span>
+    <h4>温度別CTA<a href="https://smarthr.jp/" target="_blank">▸ ページを見る</a></h4>
+    <ul><li>無料トライアル／オンラインデモ／資料3点セット</li><li>→ 買う気の温度差で入口を分ける</li></ul>
+  </div>
+
+  <div class="ours">
+    <span class="ours-label">第弐ヴォヌールのLP（現在の実装）</span>
+    <div class="body">相談系CTAを「<b>無料相談する</b>」に統一済み（ヘッダー・ヒーロー・VISION下・CONTACT の4箇所で反復）。窓口はInstagram DM。補助金のみLINE窓口で別動線。</div>
+    <div class="note">▶ 「迷わせないCTA」はクリア済み。今後、Heart Full式に「資料DL」の第2導線を足す余地あり（素材次第）。</div>
+  </div>
+
+  <div class="opts-title">今後の検討</div>
+  <div class="opt"><span class="tag">案1</span><div class="copy">主動線：無料相談する（DM）</div><div class="why">現行。最もハードルが低く第弐ヴォヌールの窓口と一致。</div></div>
+  <div class="opt"><span class="tag">案2</span><div class="copy">第2導線：<span class="hl">サービス資料をダウンロード</span></div><div class="why">まだ相談まで踏み切れない層の受け皿。資料素材が必要。</div></div>
+</div>
+</section>
+
+<div class="footer">
+  株式会社第弐ヴォヌール LP制作提案資料 ／ 参考LPはすべて実在ページ（2026年5月時点で確認）
+</div>
+
+<script>
+  document.getElementById('tabbar').addEventListener('click', function(e){
+    var b = e.target.closest('.tab'); if(!b) return;
+    document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});
+    b.classList.add('active');
+    var key = b.dataset.t;
+    document.querySelectorAll('.panel').forEach(function(p){
+      p.classList.toggle('active', p.dataset.p===key);
+    });
+    window.scrollTo(0,0);
+  });
+</script>
+</body>
+</html>
