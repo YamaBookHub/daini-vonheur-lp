@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>キャッチ比較｜第弐ヴォヌール</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:#222;color:#2A2520}
+  .top{background:#2A2520;color:#fff;padding:20px;text-align:center}
+  .top h1{font-size:16px;color:#E8B84B;font-weight:700}
+  .top p{font-size:12px;color:#cfcabf;margin-top:4px}
+  .grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;padding:24px 12px 60px}
+  .card{width:390px;max-width:94vw}
+  .card .name{color:#fff;font-weight:700;font-size:14px;margin-bottom:8px;text-align:center}
+  .card .name span{color:#E8B84B}
+
+  /* hero mock — itabashi-v2と同じ見た目 */
+  .hero{position:relative;background:#FAFAF7;border-radius:14px;overflow:hidden;min-height:560px;display:flex;flex-direction:column;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+  .hero-img{position:relative;flex:1;min-height:320px;overflow:hidden}
+  .hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-img .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,250,247,.1),transparent,#FAFAF7)}
+  .hero-body{position:relative;z-index:2;margin-top:-90px;padding:0 22px 28px}
+  .eyebrow{font-family:'Shippori Mincho',serif;font-size:11px;letter-spacing:.12em;color:#5A5550;font-weight:700;display:block;margin-bottom:2px}
+  .sub-en{font-size:11px;color:#5A5550;display:block;margin-bottom:16px}
+  h1.catch{font-family:'Shippori Mincho',serif;font-weight:800;color:#2A2520;line-height:1.4;margin-bottom:16px}
+  .catch .uline{position:relative;display:inline-block}
+  .catch .uline::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:4px;background:#E8B84B;border-radius:2px}
+  .lead{font-size:14px;color:#5A5550;line-height:1.7;margin-bottom:18px}
+  .btns{display:flex;flex-direction:column;gap:10px}
+  .btn1{background:#E8B84B;color:#fff;font-weight:700;text-align:center;padding:13px;border-radius:999px;font-size:14px}
+  .btn2{border:1px solid rgba(42,37,32,.2);color:#2A2520;text-align:center;padding:13px;border-radius:999px;font-size:14px;background:rgba(255,255,255,.6)}
+
+  /* A案 2段 */
+  .catchA{font-size:30px}
+  /* B案 3段（4行） */
+  .catchB{font-size:27px}
+  .note{background:#fff;border-radius:10px;padding:12px 14px;margin-top:12px;font-size:12.5px;color:#5A5550;line-height:1.6}
+  .note b{color:#2A2520}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>ヒーロー キャッチ 2案 比較</h1>
+  <p>実際のヒーロー（itabashi-v2）と同じ見た目・スマホ幅で表示しています</p>
+</div>
+
+<div class="grid">
+
+  <!-- A案 -->
+  <div class="card">
+    <div class="name"><span>A案</span>　フォロワーを、お客様に。（2段・最短）</div>
+    <div class="hero">
+      <div class="hero-img">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663071634244/Bsvu9FEoJBBT43dB4xqDWE/hero-itabashi-v4_9abd85d1.png" alt="">
+        <div class="ov"></div>
+      </div>
+      <div class="hero-body">
+        <span class="eyebrow">DAINI VONHEUR</span>
+        <span class="sub-en">SNSマーケティング × 一気通貫型</span>
+        <h1 class="catch catchA">フォロワーを、<br><span class="uline">お客様に。</span></h1>
+        <p class="lead">SNS運用から動画制作、販売導線、クラウドファンディングまで一気通貫。</p>
+        <div class="btns">
+          <div class="btn1">無料相談する</div>
+          <div class="btn2">私たちのことを知る →</div>
+        </div>
+      </div>
+    </div>
+    <div class="note"><b>含意：</b>「フォロワー止まりにしない＝売上に変える」を短く。板橋ママの「AをBに動かす」構文。インパクト最大・余白が映える。</div>
+  </div>
+
+  <!-- B案 -->
+  <div class="card">
+    <div class="name"><span>B案</span>　フォロワーを、ファンに。ファンを、お客様に。（3段・プロセス）</div>
+    <div class="hero">
+      <div class="hero-img">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663071634244/Bsvu9FEoJBBT43dB4xqDWE/hero-itabashi-v4_9abd85d1.png" alt="">
+        <div class="ov"></div>
+      </div>
+      <div class="hero-body">
+        <span class="eyebrow">DAINI VONHEUR</span>
+        <span class="sub-en">SNSマーケティング × 一気通貫型</span>
+        <h1 class="catch catchB">フォロワーを、ファンに。<br><span class="uline">ファンを、お客様に。</span></h1>
+        <p class="lead">SNS運用から動画制作、販売導線、クラウドファンディングまで一気通貫。</p>
+        <div class="btns">
+          <div class="btn1">無料相談する</div>
+          <div class="btn2">私たちのことを知る →</div>
+        </div>
+      </div>
+    </div>
+    <div class="note"><b>含意：</b>フォロワー→ファン→お客様の<b>プロセスが全部見える</b>。OUR STORY（フォロワー=知っているだけ／ファン=応援したくなる人）と完全連動。情報量で納得感。</div>
+  </div>
+
+</div>
+</body>
+</html>
