@@ -384,7 +384,8 @@ document.addEventListener('DOMContentLoaded', function() {
 .text-\[\#df846e\]{color:#df846e!important}
 /* 強みカード：上=画像くっきり / 下=白で文字（透過廃止） */
 .str-card{position:relative;border-radius:1rem;border:1px solid #E8E4DC;height:100%;overflow:hidden;background:#fff;transition:all .3s;padding:0;}
-.str-card .str-photo{height:140px;background-size:cover;background-position:center;width:100%;}
+.str-card .str-photo{position:relative;height:150px;background-size:cover;background-position:center;width:100%;}
+.str-card .str-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff);}
 .str-card:hover{box-shadow:0 14px 30px rgba(0,0,0,.1);transform:translateY(-4px);}
 /* 画像バンドの下に来る既存コンテンツ（アイコン行/見出し/本文）に余白を付与 */
 .str-card>div:not(.str-photo){position:relative;padding:1.25rem 1.5rem 1.5rem;z-index:1;}
