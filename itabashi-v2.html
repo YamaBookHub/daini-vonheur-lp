@@ -451,6 +451,33 @@ document.addEventListener('DOMContentLoaded', function() {
   width:11px;height:11px;border-top:4px solid #E8B84B;border-right:4px solid #E8B84B;
   transform:rotate(45deg);border-radius:2px;
 }
+/* ===== 補助金セクション：色だけ役所トンマナ（#subsidyスコープ・HTML不変） ===== */
+/* 背景：ゴールド系→濃紺 / ブルー系→紺グレイ / コーラル→朱。塗りは!importantで確実に上書き */
+#subsidy .bg-\[\#E8B84B\]{background-color:#00118F!important;}
+#subsidy .bg-\[\#d4a63a\]{background-color:#000C6B!important;}
+#subsidy .bg-\[\#E8B84B\]\/10{background-color:rgba(0,17,143,.08)!important;}
+#subsidy .bg-\[\#E8B84B\]\/15{background-color:rgba(0,17,143,.12)!important;}
+#subsidy .bg-\[\#FFF8DC\]{background-color:#EEF1F8!important;}
+#subsidy .bg-\[\#89C4D4\]{background-color:#1F3A5F!important;}
+#subsidy .bg-\[\#6ab0c4\]{background-color:#16304F!important;}
+#subsidy .bg-\[\#89C4D4\]\/10{background-color:rgba(31,58,95,.08)!important;}
+#subsidy .bg-\[\#EBF6FA\]{background-color:#EEF1F8!important;}
+#subsidy .bg-\[\#E07A5F\]{background-color:#C8161D!important;}
+#subsidy .bg-\[\#E07A5F\]\/10{background-color:rgba(200,22,29,.08)!important;}
+/* 文字色 */
+#subsidy .text-\[\#E8B84B\]{color:#00118F!important;}
+#subsidy .text-\[\#B8860B\]{color:#00118F!important;}
+#subsidy .text-\[\#89C4D4\]{color:#1F3A5F!important;}
+#subsidy .text-\[\#2E7D8C\]{color:#1F3A5F!important;}
+#subsidy .text-\[\#E07A5F\]{color:#C8161D!important;}
+/* 枠線 */
+#subsidy .border-\[\#E8B84B\]\/20{border-color:rgba(0,17,143,.25)!important;}
+#subsidy .border-\[\#89C4D4\]{border-color:#1F3A5F!important;}
+#subsidy .border-\[\#89C4D4\]\/20{border-color:rgba(31,58,95,.25)!important;}
+#subsidy .border-\[\#89C4D4\]\/30{border-color:rgba(31,58,95,.3)!important;}
+#subsidy .border-\[\#E07A5F\]\/20{border-color:rgba(200,22,29,.25)!important;}
+#subsidy .border-\[\#F5E6A3\]{border-color:#C7D0E8!important;}
+
 /* ===== モバイル最適化 (max 767px) ===== */
 @media (max-width: 767px) {
   /* Stats bar: ①②③ 段階的に大きく */
