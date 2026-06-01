@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>背景画像プレビュー（ヒーロー＋強み）</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#2A2520;--gold:#E8B84B;--coral:#E07A5F;--cream:#FAFAF7;--gray:#5A5550}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#ddd;font-family:'Noto Sans JP',sans-serif;color:var(--navy)}
+  .wrap{max-width:430px;margin:0 auto;padding:14px}
+  h2{font-size:15px;margin:22px 0 8px;border-left:4px solid var(--coral);padding-left:8px}
+  .tag{font-size:12px;color:#fff;background:#1c1c1c;padding:6px 12px;border-radius:6px;display:inline-block;margin:14px 0 6px}
+
+  /* ヒーロー候補（全面写真＋テキスト） */
+  .hero{position:relative;height:300px;border-radius:14px;overflow:hidden;margin-bottom:8px}
+  .hero img{width:100%;height:100%;object-fit:cover}
+  .hero .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,250,247,.15),rgba(250,250,247,.55) 60%,var(--cream))}
+  .hero .tx{position:absolute;left:18px;bottom:24px;right:18px}
+  .hero .tx h1{font-family:'Shippori Mincho',serif;font-size:26px;font-weight:800;line-height:1.4}
+  .mk{position:relative;display:inline-block}
+  .mk::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.06em;height:.42em;background:rgba(232,184,75,.55);z-index:-1;border-radius:3px}
+
+  /* 強みカード3パターン */
+  .scard{border-radius:16px;overflow:hidden;border:1px solid #E8E4DC;margin-bottom:10px;background:#fff}
+  /* パターン1：上写真＋下白 */
+  .p1 .ph{height:120px;position:relative}.p1 .ph img{width:100%;height:100%;object-fit:cover}
+  .p1 .bd{padding:14px}
+  .p1 h3{font-family:'Shippori Mincho',serif;font-size:15px;margin-bottom:6px}
+  .p1 p{font-size:12px;color:var(--gray);line-height:1.6}
+  /* パターン2：全面写真＋暗オーバーレイ＋白文字 */
+  .p2{position:relative;height:180px;color:#fff}
+  .p2 img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+  .p2 .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,.85),rgba(20,16,12,.45))}
+  .p2 .bd{position:absolute;inset:0;padding:16px;display:flex;flex-direction:column;justify-content:flex-end}
+  .p2 h3{font-family:'Shippori Mincho',serif;font-size:15px;margin-bottom:6px}
+  .p2 p{font-size:12px;opacity:.9;line-height:1.6}
+  /* パターン3：薄い半透明背景＋黒文字 */
+  .p3{position:relative;padding:16px}
+  .p3 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18}
+  .p3 .bd{position:relative}
+  .p3 h3{font-family:'Shippori Mincho',serif;font-size:15px;margin-bottom:6px}
+  .p3 p{font-size:12px;color:var(--gray);line-height:1.6}
+</style></head><body>
+<div class="wrap">
+
+<h2>■ ヒーロー背景候補（抽象・明るい）</h2>
+<div class="tag">H1 ピーチ＆ベージュの上昇フロー</div>
+<div class="hero"><img src="https://images.pexels.com/photos/13551576/pexels-photo-13551576.jpeg?auto=compress&cs=tinysrgb&w=900"><div class="ov"></div><div class="tx"><h1>フォロワーを、<br><span class="mk">お客様</span>に変える。</h1></div></div>
+<div class="tag">H2 ゴールドの上昇曲線</div>
+<div class="hero"><img src="https://images.pexels.com/photos/15286002/pexels-photo-15286002.jpeg?auto=compress&cs=tinysrgb&w=900"><div class="ov"></div><div class="tx"><h1>フォロワーを、<br><span class="mk">お客様</span>に変える。</h1></div></div>
+<div class="tag">H3 夜明けのゴールド質感</div>
+<div class="hero"><img src="https://images.pexels.com/photos/30289689/pexels-photo-30289689.jpeg?auto=compress&cs=tinysrgb&w=900"><div class="ov"></div><div class="tx"><h1>フォロワーを、<br><span class="mk">お客様</span>に変える。</h1></div></div>
+<div class="tag">H4 上品な微細ライン</div>
+<div class="hero"><img src="https://images.pexels.com/photos/7605642/pexels-photo-7605642.jpeg?auto=compress&cs=tinysrgb&w=900"><div class="ov"></div><div class="tx"><h1>フォロワーを、<br><span class="mk">お客様</span>に変える。</h1></div></div>
+
+<h2>■ 強みカード：パターン1（上に写真＋下は白）</h2>
+<div class="scard p1"><div class="ph"><img src="https://images.pexels.com/photos/14240656/pexels-photo-14240656.jpeg?auto=compress&cs=tinysrgb&w=600"></div><div class="bd"><h3>「点」ではなく「線」でつなぐストーリー設計</h3><p>認知から購買までを一本の線でつなぐ盤石な仕組みを構築します。</p></div></div>
+<div class="scard p1"><div class="ph"><img src="https://images.pexels.com/photos/2335052/pexels-photo-2335052.jpeg?auto=compress&cs=tinysrgb&w=600"></div><div class="bd"><h3>心を動かす映像で、「ファン」をつくる</h3><p>CM撮影で培った技術力。自社初投稿で20万インプレッション達成。</p></div></div>
+<div class="scard p1"><div class="ph"><img src="https://images.pexels.com/photos/3785932/pexels-photo-3785932.jpeg?auto=compress&cs=tinysrgb&w=600"></div><div class="bd"><h3>完全自社完結の一気通貫型</h3><p>下請けを挟まず全工程を自社で。連絡のタイムラグがありません。</p></div></div>
+
+<h2>■ 強みカード：パターン2（全面写真＋暗＋白文字）</h2>
+<div class="scard p2"><img src="https://images.pexels.com/photos/14240656/pexels-photo-14240656.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="ov"></div><div class="bd"><h3>「点」ではなく「線」でつなぐストーリー設計</h3><p>認知から購買までを一本の線でつなぐ盤石な仕組みを構築します。</p></div></div>
+<div class="scard p2"><img src="https://images.pexels.com/photos/2671447/pexels-photo-2671447.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="ov"></div><div class="bd"><h3>心を動かす映像で、「ファン」をつくる</h3><p>CM撮影で培った技術力。自社初投稿で20万インプレッション達成。</p></div></div>
+<div class="scard p2"><img src="https://images.pexels.com/photos/3785929/pexels-photo-3785929.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="ov"></div><div class="bd"><h3>完全自社完結の一気通貫型</h3><p>下請けを挟まず全工程を自社で。連絡のタイムラグがありません。</p></div></div>
+
+<h2>■ 強みカード：パターン3（薄い半透明背景＋黒文字）</h2>
+<div class="scard p3"><img src="https://images.pexels.com/photos/14240656/pexels-photo-14240656.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="bd"><h3>「点」ではなく「線」でつなぐストーリー設計</h3><p>認知から購買までを一本の線でつなぐ盤石な仕組みを構築します。</p></div></div>
+<div class="scard p3"><img src="https://images.pexels.com/photos/2335052/pexels-photo-2335052.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="bd"><h3>心を動かす映像で、「ファン」をつくる</h3><p>CM撮影で培った技術力。自社初投稿で20万インプレッション達成。</p></div></div>
+<div class="scard p3"><img src="https://images.pexels.com/photos/3785932/pexels-photo-3785932.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="bd"><h3>完全自社完結の一気通貫型</h3><p>下請けを挟まず全工程を自社で。連絡のタイムラグがありません。</p></div></div>
+
+<div style="height:30px"></div>
+</div></body></html>
