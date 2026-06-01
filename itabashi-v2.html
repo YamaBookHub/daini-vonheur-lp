@@ -391,15 +391,13 @@ document.addEventListener('DOMContentLoaded', function() {
 .str-card>div:not(.str-photo){position:relative;padding:1.25rem 1.5rem 1.5rem;z-index:1;}
 .str-card>h3{padding:0 1.5rem;}
 .str-card>p{padding:0 1.5rem 1.5rem;}
-/* 成果事例タイトル：ででーんバナー（#2A2520・月桂冠） */
-.result-title{position:relative;margin:0 auto 20px;padding:22px 16px 18px;max-width:340px;border-radius:16px;background:linear-gradient(160deg,#3a322b 0%,#2A2520 55%,#1c1813 100%);box-shadow:0 16px 40px rgba(42,37,32,.45),inset 0 1px 0 rgba(255,255,255,.06);text-align:center;overflow:hidden;}
-.result-title::before{content:"";position:absolute;inset:6px;border:1.5px solid rgba(232,184,75,.55);border-radius:11px;pointer-events:none;}
-.result-title::after{content:"";position:absolute;inset:9px;border:1px solid rgba(232,184,75,.22);border-radius:8px;pointer-events:none;}
-.result-title .rt-star{position:relative;display:block;color:#E8B84B;font-size:12px;letter-spacing:6px;margin-bottom:6px;opacity:.9;}
+/* 成果事例タイトル：背景なし・月桂冠＋濃ゴールド文字 */
+.result-title{position:relative;margin:0 auto 18px;padding:8px 16px 12px;max-width:340px;text-align:center;background:none;border:none;box-shadow:none;}
+.result-title .rt-star{display:block;color:#C8922B;font-size:12px;letter-spacing:6px;margin-bottom:4px;opacity:.85;}
 .result-title .rt-wrap{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:6px;max-width:100%;}
-.result-title .rt-laurel{width:30px;height:auto;flex-shrink:0;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));}
+.result-title .rt-laurel{width:30px;height:auto;flex-shrink:0;}
 .result-title .rt-r{transform:scaleX(-1);}
-.result-title .rt-text{display:inline-block;white-space:nowrap;font-family:'Shippori Mincho',serif;font-weight:800;font-size:clamp(1.7rem,7vw,2.3rem);line-height:1.1;letter-spacing:.02em;background:linear-gradient(180deg,#FCEFC2 0%,#F0C75E 40%,#E8B84B 60%,#B8821F 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35));}
+.result-title .rt-text{display:inline-block;white-space:nowrap;font-family:'Shippori Mincho',serif;font-weight:800;font-size:clamp(1.8rem,8vw,2.6rem);line-height:1.1;letter-spacing:.02em;background:linear-gradient(180deg,#D9A53A 0%,#C8922B 50%,#9A6F1E 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 /* VISION：Instagramリール風 */
 .reel-frame{position:relative;max-width:300px;margin:0 auto;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,rgba(20,16,12,.35) 0%,rgba(20,16,12,.45) 45%,rgba(15,12,10,.82) 100%),url('https://www.pakutaso.com/shared/img/thumb/PK4131312PAR58133.jpg') center 20%/cover no-repeat,#211c18;box-shadow:0 24px 60px rgba(0,0,0,.28);color:#fff;text-align:left;font-family:'Noto Sans JP',sans-serif;}
 .reel-frame::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 70% at 80% 8%,rgba(232,184,75,.12),transparent 55%);pointer-events:none;}
