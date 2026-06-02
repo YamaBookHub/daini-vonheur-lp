@@ -499,6 +499,9 @@ document.addEventListener('DOMContentLoaded', function() {
 #results button[onclick^="goResultsSlide(resultsCurrentV2"] svg{stroke:#C8922B!important;}
 /* 実績スライドカードをクリームに（セクション白から浮かせる） */
 #results .bg-white{background-color:transparent!important;box-shadow:none!important;}
+/* ここ1（セクション上端→ラベル）を1remに */
+#service,#strength,#subsidy,#results,#contact{padding-top:1rem!important;}
+@media(min-width:768px){#service,#strength,#subsidy,#results,#contact{padding-top:1rem!important;}}
 /* セクション上余白(ここ1)とラベル下余白(ここ2)を同値に */
 #service .sec-label-c,#strength .sec-label-c,#subsidy .sec-label-c,#results .sec-label-c,#contact .c-lbl{margin-bottom:1rem!important;}
 @media(min-width:768px){#service .sec-label-c,#strength .sec-label-c,#subsidy .sec-label-c,#results .sec-label-c,#contact .c-lbl{margin-bottom:1rem!important;}}
