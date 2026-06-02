@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>セクションラベル 3案比較</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Noto+Sans+JP:wght@500;700&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#2A2520;--gold:#E8B84B;--coral:#E07A5F;--cream:#FAFAF7;--gray:#5A5550}
+  body{margin:0;background:var(--cream);font-family:'Noto Sans JP',sans-serif;color:var(--navy);padding:18px}
+  h1{font-size:16px;margin:0 0 4px}
+  .note{font-size:12px;color:var(--gray);margin-bottom:18px}
+  .case{background:#fff;border:1px solid #E8E4DC;border-radius:14px;padding:22px 18px;margin-bottom:16px}
+  .casettl{font-size:13px;font-weight:700;color:var(--coral);margin-bottom:16px;border-bottom:1px dashed #E8E4DC;padding-bottom:8px}
+  .h2demo{font-family:'Shippori Mincho',serif;font-size:24px;font-weight:800;margin-top:4px}
+
+  /* 現状（参考） */
+  .now .num{font-family:'DM Serif Display',serif;font-style:italic;font-size:13px;color:var(--gray);letter-spacing:.05em}
+
+  /* 案A：日本語小見出し */
+  .a .lbl{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.08em}
+  .a .lbl::before{content:"";width:20px;height:1px;background:var(--gold)}
+  .a .lbl::after{content:"";width:20px;height:1px;background:var(--gold)}
+
+  /* 案B：英字のみ番号なし */
+  .b .lbl{font-family:'DM Serif Display',serif;font-style:italic;font-size:15px;color:var(--gold);letter-spacing:.04em}
+
+  /* 案C：縦棒＋日本語 */
+  .c .lbl{display:inline-block;font-size:12px;font-weight:700;color:var(--navy);border-left:4px solid var(--gold);padding-left:10px;letter-spacing:.06em}
+</style></head><body>
+<h1>セクションラベル 3案比較</h1>
+<div class="note">「私たちの強み」セクションを例に表示。良い記号（A/B/C）を伝えてください。</div>
+
+<div class="case now">
+  <div class="casettl">現状（板橋ママと同型・変更対象）</div>
+  <div class="num">02 / STRENGTH</div>
+  <div class="h2demo">私たちの強み</div>
+</div>
+
+<div class="case a">
+  <div class="casettl">案A：日本語小見出し（両側ライン）</div>
+  <div class="lbl">私たちの強み</div>
+  <div class="h2demo">SNS・動画・販売導線を、ひとつに。</div>
+</div>
+
+<div class="case b">
+  <div class="casettl">案B：英字のみ・番号なし（DM Serif斜体）</div>
+  <div class="lbl">Strength</div>
+  <div class="h2demo">私たちの強み</div>
+</div>
+
+<div class="case c">
+  <div class="casettl">案C：縦棒＋日本語</div>
+  <div class="lbl">私たちの強み</div>
+  <div class="h2demo">SNS・動画・販売導線を、ひとつに。</div>
+</div>
+
+<div style="height:20px"></div>
+<div class="note">※ 案A・Cは「ラベル＝日本語」にするため、大見出しは別の言葉にする想定。案Bはラベル英字・大見出し日本語の現状維持型。</div>
+</body></html>
