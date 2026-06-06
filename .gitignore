@@ -5,3 +5,6 @@
 img-preview.html
 写真/
 素材依頼リスト.md
+
+# Claude Code ローカル設定（個人用・コミットしない）
+.claude/settings.local.json
