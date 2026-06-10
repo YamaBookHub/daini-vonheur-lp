@@ -58,7 +58,7 @@
 
 ## 絶対ルール
 - **itabashi-v1.html は絶対に触らない**（指標・バックアップ。読み取り専用扱い）
-- **`itabashi-v3.html` が唯一の作業対象**（改善作業版）。`itabashi-v2.html` は95%FB対応版の保存・触らない。index系等の他HTMLもいじらない（誤爆防止）
+- **`index.html` が唯一の作業対象**（LP本体・公開URLのルート）。`itabashi-v3.html` は index.html へのリダイレクトのみ（触らない）。`itabashi-v2.html` は95%FB対応版の保存・触らない。index系等の他HTMLもいじらない（誤爆防止）
 - **確定デザイン仕様（ブレさせない）：**
   - 軸：**フォロワー → ファン → 売上**（全セクション共通）
   - キャッチ（FV・**承認済み**）：**「見た目は個性派、中身は本格派。／ その名は、第弐ヴォヌール。／ 売れる答えは、いつもひとつ。」**
@@ -130,7 +130,8 @@ FV → RESULTS（成果事例）→ OUR STORY → SERVICE & PRICE → STRENGTH �
 
 | ファイル | 内容 |
 |---|---|
-| **`itabashi-v3.html`** | **★現在の作業本体（唯一の編集対象・改善版）** |
+| **`index.html`** | **★現在の作業本体（唯一の編集対象・LP本体）** |
+| `itabashi-v3.html` | 旧URL→index.htmlへのリダイレクト（触らない） |
 | `itabashi-v2.html` | 95%FB対応版の保存（触らない） |
 | `itabashi-v1.html` | 板橋ママLP（指標・読み取り専用。絶対に触らない） |
 | `proposal.html` | 制作提案資料（実在LP参考ベース・タブ切替式） |
